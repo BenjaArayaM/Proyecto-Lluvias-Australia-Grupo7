@@ -1,0 +1,23 @@
+# MCDI501 — dependencias iniciales para Python 3.12.
+# Los mínimos del núcleo, estadística y visualización proceden del repositorio docente.
+# Instalación, pip check e importaciones comprobados en Windows el 2026-10-10.
+# Versiones exactas observadas: requirements-lock-windows.txt.
+# La ejecución del notebook de la Formativa 1 sigue pendiente.
+
+# Núcleo científico
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+
+# Estadística y modelamiento
+statsmodels>=0.14
+scikit-learn>=1.4
+
+# Visualización
+matplotlib>=3.8
+seaborn>=0.13
+
+# Notebooks y ejecución reproducible
+jupyterlab>=4.0
+ipykernel>=6.0
+nbconvert>=7.0

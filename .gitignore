@@ -1,0 +1,35 @@
+# Entornos virtuales locales
+/.venv/
+/venv/
+/env/
+
+# Dataset original y copias procesadas locales
+/data/raw/
+/data/processed/
+weatherAUS.csv
+/archive*.zip
+/base_proyecto_mcdi501.zip
+
+# Credenciales y configuración privada
+.env
+.env.*
+*.pem
+*.key
+
+# Cachés de Python y Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Archivos temporales y del sistema
+/tmp/
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Se conservan notebooks, resultados, informes y evidencias pertinentes.

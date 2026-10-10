@@ -1,0 +1,22 @@
+{
+  "fecha_registro_utc": "2026-10-10T15:57:07.308999+00:00",
+  "python": "3.12.0",
+  "plataforma": "Windows-10-10.0.19045-SP0",
+  "ejecutable": "C:\\Users\\benja\\OneDrive\\Escritorio\\Proyecto-Lluvias-Australia-Grupo7\\.venv\\Scripts\\python.exe",
+  "dependencias": {
+    "archivo": "requirements-lock-windows.txt",
+    "sha256": "b28ffcedf8a084bbd2d9dff03e9ba1bfece206f6c9e78d87f10a1b5edcd2955d"
+  },
+  "kernel": {
+    "nombre": "grupo7_mcdi501",
+    "display_name": "Python (Grupo 7 - MCDI501)",
+    "argv": [
+      "C:\\Users\\benja\\OneDrive\\Escritorio\\Proyecto-Lluvias-Australia-Grupo7\\.venv\\Scripts\\python.exe",
+      "-Xfrozen_modules=off",
+      "-m",
+      "ipykernel_launcher",
+      "-f",
+      "{connection_file}"
+    ]
+  }
+}
