@@ -1,102 +1,93 @@
 # MCDI501 — Lluvias en Australia — Grupo 7
 
-Proyecto acumulativo de Estadística Computacional para la Toma de Decisiones, del Magíster en Ciencia de Datos e Inteligencia Artificial de la Universidad Andrés Bello.
+Proyecto acumulativo de Estadística Computacional para la Toma de Decisiones, Magíster en Ciencia de Datos e Inteligencia Artificial, Universidad Andrés Bello.
 
-**Estudiante:** Benjamín Araya. Los demás integrantes se incorporarán cuando se confirme su identificación para este curso.
+**Integrantes del Grupo 7:** Benjamín Araya, Alan Cañete, Patricio Cortez y Jorge Guaico. Nómina de cuatro integrantes confirmada para MCDI501 por el estudiante el 10 de octubre de 2026.
 
-**Repositorio de trabajo:** https://github.com/BenjaArayaM/Proyecto-Lluvias-Australia-Grupo7
+**Repositorio:** https://github.com/BenjaArayaM/Proyecto-Lluvias-Australia-Grupo7
 
-## Problema y dataset
+## Problema y datos
 
-El problema general es estudiar la ocurrencia de lluvia al día siguiente en localidades de Australia a partir de información meteorológica. La variable objetivo es `RainTomorrow`.
+Exploramos la lluvia al día siguiente (`RainTomorrow`) usando información meteorológica de localidades de Australia. Unidad observada: localidad y fecha. Fuente: https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package/data
 
-- Dataset: Rain in Australia.
-- Fuente: https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package/data
-- Archivo esperado: `data/raw/weatherAUS.csv`.
-- Unidad de observación: un registro meteorológico de una localidad en una fecha.
+El archivo original se conserva en `data/raw/weatherAUS.csv`, fuera de Git y sin imputaciones ni modificaciones. La versión comprobada contiene **145.460 filas, 23 columnas, 49 localidades y 14.094.055 bytes**; cubre 2007-11-01 a 2017-06-25. SHA-256:
 
-El dataset original se conserva sin modificaciones, una sola vez y fuera del versionamiento. Su copia local se comprobará antes de comenzar el análisis. No se redistribuye el CSV en este paquete; las condiciones de redistribución deben verificarse antes de cualquier publicación de datos.
+`573fd715cd69fcacc4df32024d823b450ae3edaae7e8ff2eeb623adbed424014`
 
-## Evaluaciones y estado
+El ZIP de la Formativa 1 no redistribuye el dataset. Cada integrante debe obtener el archivo legítimamente y comprobar su identidad antes de reproducir el análisis.
+
+## Evaluaciones
 
 | Identificador | Evaluación | Ponderación | Estado |
 |---|---|---:|---|
-| `01_formativa1` | Formativa 1 — Informe 1 | 0 % | Pendiente de desarrollo |
-| `02_sumativa1` | Sumativa 1 — Informe técnico de avance | 20 % | Pendiente de desarrollo |
-| `03_sumativa2` | Sumativa 2 — Informe 3 | 20 % | Pendiente de desarrollo |
-| `04_formativa2` | Formativa 2 — Informe 4 | 0 % | Pendiente de desarrollo |
-| `05_sumativa3` | Sumativa 3 — Cierre y comunicación | 60 % | Pendiente de desarrollo |
+| 01_formativa1 | Formativa 1 — Informe 1 | 0 % | Análisis ejecutado en Work y reproducido en Windows; resultados conciliados y nómina confirmada. Canvas pendiente. |
+| 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Pendiente de autorización y desarrollo. |
+| 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Pendiente de autorización y desarrollo. |
+| 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Pendiente de autorización y desarrollo. |
+| 05_sumativa3 | Sumativa 3 — Cierre y comunicación | 60 % | Pendiente de autorización y desarrollo. |
 
-La evaluación activa es la Formativa 1. La estructura de todas las evaluaciones está preparada para conservar continuidad; cada fase se desarrolla cuando el estudiante la autoriza.
+La preparación de las cinco carpetas permite continuidad; no significa que se hayan iniciado las otras evaluaciones.
 
-## Organización
+## Organización del proyecto
 
-| Ruta | Uso |
+| Ruta | Contenido |
 |---|---|
-| `.venv/` | Entorno virtual local, excluido de Git. Se crea en cada computador. |
-| `data/raw/` | Dataset original, excluido de Git. |
-| `src/` | Funciones comunes, cuando sea necesario reutilizar código. |
-| `notebooks/` | Notebooks identificados por evaluación. |
-| `results/<identificador>/` | Tablas, gráficos y resultados estadísticos exportados. |
-| `reports/<identificador>/` | Informes editables y PDF. |
-| `evidence/<identificador>/` | Evidencias de ejecución y entrega. |
-| `presentations/05_sumativa3/` | Presentación final y materiales asociados. |
-| `docs/` | Requisitos, decisiones metodológicas y continuidad. |
-| `requirements.txt` | Dependencias directas y versiones mínimas del proyecto. |
-| `requirements-lock-windows.txt` | Versiones exactas instaladas en el entorno Windows del estudiante. |
+| data/raw/ | CSV original, excluido de Git. |
+| src/formativa1.py | Funciones de lectura, auditoría, análisis y exportación de F1. |
+| notebooks/ | Un notebook por evaluación; F1 ya preparado. |
+| results/<identificador>/ | Tablas, gráficos y resultados numéricos por fase. |
+| reports/<identificador>/ | Fuentes editables del informe, PDF y materiales de comunicación. |
+| evidence/<identificador>/ | Evidencias diferenciadas de preparación, ejecución y entrega. |
+| presentations/05_sumativa3/ | Presentación final cuando se autorice. |
+| docs/ | Requisitos, decisiones, continuidad e instalación de F1. |
+| requirements.txt | Dependencias directas del proyecto. |
+| requirements-lock-windows.txt | Versiones exactas instaladas en el computador del estudiante. |
+| .venv/ | Entorno local no versionado; cada integrante prepara el suyo. |
 
-Los archivos `.gitkeep` permiten conservar directorios inicialmente vacíos en Git; no representan análisis realizados. `data/raw/` se crea localmente y permanece excluido.
+## Formativa 1 preparada
 
-Nombres previstos para los notebooks:
+- Notebook `notebooks/01_formativa1_eda_inferencia.ipynb`: 41 celdas, 19 de código, con explicaciones, salidas, interpretaciones y limitaciones.
+- Módulo `src/formativa1.py`.
+- 19 tablas CSV, ocho figuras y `results/01_formativa1/resultados.json`.
+- Informe editable en LaTeX y PDF compilado de 13 páginas (portada e índice incluidos) en `reports/01_formativa1/`. El Word anterior se conserva como referencia.
+- Borrador de foro y guía para dos comentarios; todavía no publicados.
+- Matriz completa de siete criterios: máximo 99 puntos, según la rúbrica oficial.
+- Evidencias diferenciadas Work/Windows, comparación de resultados y ficha de continuidad; no se declaran entregas realizadas.
 
-- `01_formativa1_eda_inferencia.ipynb`
-- `02_sumativa1_analisis_exploratorio_inferencial.ipynb`
-- `03_sumativa2_validacion_simulacion_remuestreo.ipynb`
-- `04_formativa2_modelamiento_predictivo.ipynb`
-- `05_sumativa3_modelamiento_integrado.ipynb`
+El análisis incluye ficha de variables, calidad, descripción, relaciones bivariadas, cobertura, faltantes, tres IC individuales y una prueba básica. La inferencia usa **49 resúmenes por localidad**, con igual peso, y un modelo exploratorio condicionado a independencia aproximada entre localidades. No se ha validado independencia espacial ni representatividad nacional. No se imputa, elimina globalmente ni modela la variable objetivo.
 
-Los notebooks todavía no han sido generados. No hay resultados estadísticos ni informes de evaluación dentro de esta base.
+## Entornos y ejecución comprobada
 
-## Entorno y dependencias
+En Windows se verificaron Python 3.12.0, `.venv`, importaciones, `pip check`, versiones exactas, kernel `grupo7_mcdi501`, apertura de JupyterLab y arranque de un kernel. El estudiante comprobó además el CSV, el commit inicial **d5142a1** y la creación local de la rama **formativa1-benjamin**. No hay evidencia de una publicación remota del proyecto.
 
-En el computador del estudiante se comprobaron el 2026-10-10:
+Las 19 celdas de análisis se ejecutaron en Work con Python 3.12.14, un kernel real ipykernel en memoria y las mismas versiones de NumPy (2.5.3), pandas (3.0.6), SciPy (1.18.1) y matplotlib (3.11.2) registradas en Windows. Se verificaron identidad del CSV, integridad de datos, conteos, medias, intervalos y prueba. Los sockets de kernel están bloqueados en Work. El estudiante acreditó posteriormente la ejecución completa en JupyterLab Windows con su registro del 10 de octubre de 2026 a las 18:02 UTC y la salida final correcta. Se conciliaron las 19 tablas y resultados.json: 17 tablas coinciden tras adaptar los saltos de línea y las demás diferencias numéricas son del orden de 1e-14, sin cambiar las cifras publicadas.
 
-- Python 3.12.0, la activación de `.venv` y la ruta del intérprete activo.
-- Instalación de las dependencias de `requirements.txt` y comprobación con `python -m pip check`: `No broken requirements found.`
-- Importación correcta de las diez bibliotecas principales; sus versiones se detallan en `evidence/01_formativa1/preparacion_entorno.md`.
-- Registro del kernel `grupo7_mcdi501`, con nombre visible **Python (Grupo 7 - MCDI501)** y ruta al intérprete de `.venv` comprobada en `kernel.json`.
-- Registro de versiones mediante `pip freeze --all` en `requirements-lock-windows.txt` y generación de `evidence/01_formativa1/entorno.json` con fecha, plataforma, intérprete, configuración del kernel y SHA-256 del archivo de dependencias.
+`evidence/01_formativa1/ejecucion_work.json` y `validacion_notebook_work.json` describen la comprobación Work. `ejecucion_windows.json` conserva el registro aportado por el estudiante y `validacion_windows.json`/`validacion_windows.md` documentan la comparación independiente. Los registros locales del estudiante `entorno.json`, `preparacion_entorno.md` y `requirements-lock-windows.txt` se conservan y no son reemplazados por este paquete.
 
-`requirements.txt` define las dependencias directas y sus mínimos; `requirements-lock-windows.txt` conserva la instalación exacta observada, incluidas las dependencias transitivas y pip. Este registro corresponde a Windows y debe revisarse para reproducir el entorno en otro sistema operativo.
+## Reproducción en el proyecto local
 
-Estas comprobaciones verifican la preparación y las importaciones. La apertura de JupyterLab, el arranque del kernel y la ejecución completa del notebook de la Formativa 1 siguen pendientes.
+Para reproducir el análisis desde cero, consultar `docs/instalacion_formativa1.md`, abrir el notebook y seleccionar **Python (Grupo 7 - MCDI501)**. Reiniciar el kernel y ejecutar todas las celdas, guardar, revisar los resultados y comprobar `evidence/01_formativa1/ejecucion_windows.json`. La celda final debe indicar **FORMATIVA 1 — EJECUCIÓN COMPLETA: CORRECTA**.
 
-## Reproducción
+Las rutas son relativas. La semilla registrada es 50107; no se realiza remuestreo aleatorio en F1. Los CSV se exportan con codificación UTF-8 con BOM para facilitar su lectura en Excel. Cada cálculo conserva sus conteos y sus exclusiones. Si cambia el archivo de datos, el notebook detiene la ejecución al no coincidir su identidad; antes de analizar otra versión se revisa la metodología y la trazabilidad.
 
-La preparación local se guía y verifica paso a paso con el estudiante. Otro integrante deberá crear su propio entorno, instalar las dependencias verificadas y disponer del mismo CSV en `data/raw/`. En Windows, las versiones exactas de referencia están en `requirements-lock-windows.txt`; cada integrante registra su propio intérprete y kernel.
+## Edición del informe
 
-Todos los análisis utilizarán rutas relativas al proyecto. Se documentarán semillas, versiones, hash del dataset y transformaciones. La reproducción de resultados se describirá cuando exista un notebook ejecutado y validado; todavía no hay un procedimiento de análisis terminado.
+La fuente vigente es `reports/01_formativa1/informe_formativa1_grupo7.tex`. Sus nueve tablas, tres ecuaciones, texto y referencias son editables. El logo permanece junto al `.tex` y las cinco figuras utilizadas se leen desde `results/01_formativa1/figures/`, conservando la estructura aprobada. `docs/edicion_informe_latex.md` explica la edición, la compilación con pdfLaTeX y el uso del ZIP autónomo para Overleaf.
 
-## Continuidad y metodología
+La compilación y la revisión de las 13 páginas se realizaron en Work; el ZIP autónomo también se compiló fuera del árbol del proyecto. La comprobación del análisis Windows continúa acreditada y esta actualización no requiere ejecutarlo otra vez. La compilación en el computador del estudiante o en su cuenta de Overleaf aún no se ha acreditado. La evidencia del formato se registra en `evidence/01_formativa1/validacion_latex.json` y `validacion_latex.md`.
 
-Los resultados exportados de una evaluación permanecen en su directorio y las fases posteriores los consultan mediante rutas relativas. Cada ficha de continuidad identifica los archivos y la versión de los resultados reutilizados.
+`manifiesto_paquete.json` conserva las huellas del paquete anterior F1-1.1. `manifiesto_latex.json` identifica esta actualización de formato F1-1.2; ambos mantienen el análisis F1-1.0.
 
-La estructura temporal y geográfica exige revisar dependencia entre observaciones, heterogeneidad por localidad, faltantes y alcance de las inferencias. Las imputaciones y transformaciones definitivas se decidirán para la evaluación correspondiente. El preprocesamiento y la selección de variables para modelamiento se ajustarán usando únicamente datos de entrenamiento, con un esquema de validación justificado.
+## Rúbrica y continuidad
 
-## Trabajo con Git
+La rúbrica exige PDF en Canvas, publicación del producto y al menos dos comentarios fundamentados a otros grupos. Hay un intento y la fecha se consulta en Canvas. La nómina confirmada tiene cuatro integrantes y cumple el tamaño grupal de 3–4 indicado en el enunciado. No se confirmó un máximo de páginas para F1; no se importan condiciones de otra evaluación.
 
-El estudiante ejecuta todos los comandos Git desde Git Bash. La asistencia mantiene GitHub en modo de lectura. Antes de cada commit se revisa la lista de archivos; el dataset original, las credenciales, el entorno y los temporales quedan excluidos.
+`docs/auditoria_requisitos.md` y `evidence/01_formativa1/auditoria_final.md` distinguen requisitos, recomendaciones, evidencia y pendientes. `docs/continuidad.md` conserva estimandos y resultados reutilizables. No se estima calificación mientras faltan evidencias.
 
-El repositorio se clonó estando vacío. El primer commit de la base, su publicación y la creación de la rama `formativa1-benjamin` siguen pendientes de ejecución y verificación por el estudiante.
+El archivo completo ya fue explorado: este antecedente se declarará en las fases de modelamiento. Imputación, escalamiento, selección y cualquier ajuste predictivo deberán aprenderse dentro del entrenamiento, con validación temporal o geográfica justificada en la evaluación correspondiente.
 
-## Fuentes
+## Git y fuentes
 
-- Rúbricas oficiales: `RUBRICAS(2).xlsx`; las referencias de hoja y filas se conservan en `docs/auditoria_requisitos.md`.
-- Primera sesión: `Sesion01_MCDI501_06102026.pdf`.
-- Repositorio docente: https://github.com/jpmaidana/MCDI501-202682
-- Plantilla de Formativa 1: `04-plantillas/word/plantilla_formativa1_eda_inferencia.docx` del repositorio docente.
-- Documentación de entornos virtuales: https://docs.python.org/3.12/library/venv.html
-- Formato de dependencias de pip: https://pip.pypa.io/en/stable/reference/requirements-file-format/
-- Registro de kernels: https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+Todos los comandos Git los ejecuta el estudiante desde Git Bash. La asistencia mantiene GitHub en modo de lectura. Antes de cada commit se revisan la lista y el contenido; no se incluyen datos originales, entorno, credenciales ni temporales.
 
-Los ejemplos docentes se usan como referencia metodológica; los resultados del proyecto deben calcularse con `weatherAUS.csv`.
+Fuentes principales: `RUBRICAS(2).xlsx` (Formativa 1, B3 y filas 42–70), `Sesion01_MCDI501_06102026.pdf`, plantillas y apuntes de https://github.com/jpmaidana/MCDI501-202682. La bibliografía verificable de Rattle, Bureau of Meteorology y SciPy figura en el informe y notebook.

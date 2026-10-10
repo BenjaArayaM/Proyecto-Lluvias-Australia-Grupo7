@@ -1,0 +1,291 @@
+{
+  "fecha_revision": "2026-10-10",
+  "ejecucion_windows_fecha_utc": "2026-10-10T18:02:15.855957+00:00",
+  "procedencia": "Ejecución realizada por el estudiante en Windows; registro JSON y salida final compartidos en la conversación. Tres archivos de resultados adjuntados para comparación independiente en Work.",
+  "ejecucion_completa_windows": "Acreditada por la evidencia aportada; no ejecutada remotamente por la asistencia",
+  "dataset_sha256": "573fd715cd69fcacc4df32024d823b450ae3edaae7e8ff2eeb623adbed424014",
+  "csv_original_sin_modificaciones": true,
+  "kernel_ejecuta_desde_venv_del_proyecto": true,
+  "codigo_fuente_identico": true,
+  "python_work": "3.12.14",
+  "python_windows": "3.12.0",
+  "versiones_bibliotecas_coinciden": true,
+  "tablas_identicas_tras_ajustar_saltos_de_linea": [
+    {
+      "archivo": "results/01_formativa1/tables/diccionario_variables.csv",
+      "sha256_windows": "c18ea6e61e4e8b57c56ffbaab5c5e49bf0cae1a0b2ab47fea85981e325c649dd",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/faltantes.csv",
+      "sha256_windows": "802764de444766061c250c4505437cd371b946d1eddb27379748b80147ecfe42",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/cobertura_localidad.csv",
+      "sha256_windows": "b5fb5ad5596abce27453e7aa0e8904b864623975af09859385a74bafdb5dfb72",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/faltantes_localidad.csv",
+      "sha256_windows": "bb52b30f45b20fde7bc2019429fc85542d518cbd8a6335840131ac7399fb545d",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/calidad.csv",
+      "sha256_windows": "7dba56ab638b440dc948d5d8cc27d70a87e08e87968847c1f7b500864c15afa5",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/objetivo.csv",
+      "sha256_windows": "9d1b647e92bf67fd3f788971e86097ac0522e03e9ca3e82219a87f1acc987f8f",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/frecuencias.csv",
+      "sha256_windows": "69f9984560ba5c72e2f7094dafa2e7e9053a0f60e4b0b4c68fcebee414ec4af5",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/descriptivos.csv",
+      "sha256_windows": "809883409de4cfaceda656b4fdec5f5d5f6d9dc3f5e4a33e995a22741ccf9d06",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/bivariado.csv",
+      "sha256_windows": "d79e9d78e6d2eb5bf28b6e3d7f65f1e2862e054d8f4415164bd2b6725dd8a36a",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/correlacion_objetivo.csv",
+      "sha256_windows": "39c0678418c1220cc8873af308acd4826ca5fb17f362fc7b1c8c1b25485eb669",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/matriz_correlacion.csv",
+      "sha256_windows": "752e6fb2e3b639d9c323a445e4a5ecf35af17012ca523efb91284dddb37118bc",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/n_pares_correlacion.csv",
+      "sha256_windows": "a19a01a310c746a8d47deeaf340c1aa58b00842f95e620e30a823372d62c6335",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/mensual_localidad.csv",
+      "sha256_windows": "4238d1dfdf8c2080660a43ede11580034c5a0aa550bff079aac25a3346c7e08e",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/estacional.csv",
+      "sha256_windows": "354701a83e97e7cb09e2831fc22bae4dfe053c800a0bd1145a8c524c4d4486f6",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/cobertura_anual.csv",
+      "sha256_windows": "ad8206a05ca1a08bd34e86b5f3e44256c3d8bde3e2d3b5731f851a767f71a9cf",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/medias_localidad.csv",
+      "sha256_windows": "c10e870ac88e97717dc62d57e0cf44e9da434a6a9b3869e5136d1bf551b0b7f5",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/diferencias_localidad.csv",
+      "sha256_windows": "3b82be76013f36d85f84161129950a6150a713aa871f5c3d3cb1a83f6fe3337c",
+      "metodo": "hash de la referencia Work con saltos de línea CRLF"
+    }
+  ],
+  "comparacion_archivos_adjuntos": {
+    "criterio_numerico": "rtol=1e-12, atol=0; enteros, etiquetas, claves y nulos exactos",
+    "archivos": {
+      "dependencia_lag1.csv": {
+        "sha256": "a732bfa97e06e8f6c3c85e64f1d01bcf957219f993a6049323b998e90293554b",
+        "hash_coincide_con_registro_windows": true,
+        "filas": 49,
+        "columnas": [
+          "Location",
+          "n_pares_consecutivos",
+          "correlacion_lag1_humedad"
+        ]
+      },
+      "intervalos_localidades.csv": {
+        "sha256": "28fa7ad6c91c622bc68add3e3811083d575dac20c039bd31187e549aee3ba845",
+        "hash_coincide_con_registro_windows": true,
+        "filas": 3,
+        "columnas": [
+          "variable",
+          "unidad",
+          "n_registros_validos",
+          "media_agrupada_registros",
+          "n_localidades",
+          "media_localidades",
+          "sd_localidades",
+          "error_estandar",
+          "gl",
+          "nivel",
+          "t_critico",
+          "ic_inferior",
+          "ic_superior",
+          "shapiro_w",
+          "shapiro_p",
+          "localidades_fuera_tukey"
+        ]
+      },
+      "resultados.json": {
+        "sha256": "8a1eb2adfd4a195e44ca557d969dc493703e8807322e64bc4d4bdd86792b2149",
+        "hash_coincide_con_registro_windows": true,
+        "estructura_json_comparada": true
+      }
+    },
+    "diferencias_numericas": [
+      {
+        "ruta": "dependencia_lag1.csv[3].correlacion_lag1_humedad",
+        "work": 0.673263658251203,
+        "windows": 0.673263658251204,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 1.4841150415842365e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[6].correlacion_lag1_humedad",
+        "work": 0.665784716431403,
+        "windows": 0.665784716431401,
+        "diferencia_absoluta": 1.9984014443252818e-15,
+        "diferencia_relativa": 3.00157302353933e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[7].correlacion_lag1_humedad",
+        "work": 0.496117371468134,
+        "windows": 0.496117371468133,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 2.0140409903522604e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[8].correlacion_lag1_humedad",
+        "work": 0.572098793569379,
+        "windows": 0.572098793569378,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 1.7465527517171156e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[26].correlacion_lag1_humedad",
+        "work": 0.43348366129317,
+        "windows": 0.433483661293171,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 2.3050481745536138e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[27].correlacion_lag1_humedad",
+        "work": 0.457902008311122,
+        "windows": 0.457902008311123,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 2.182127844007469e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[28].correlacion_lag1_humedad",
+        "work": 0.626342246944639,
+        "windows": 0.626342246944638,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 1.5952951074861121e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[31].correlacion_lag1_humedad",
+        "work": 0.481808600479567,
+        "windows": 0.481808600479568,
+        "diferencia_absoluta": 1.0547118733938987e-15,
+        "diferencia_relativa": 2.189068174258599e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[34].correlacion_lag1_humedad",
+        "work": 0.496653979279918,
+        "windows": 0.496653979279919,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 2.0118649277940883e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[35].correlacion_lag1_humedad",
+        "work": 0.328275079099855,
+        "windows": 0.328275079099854,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 3.0437909722007964e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[42].correlacion_lag1_humedad",
+        "work": 0.677265276038349,
+        "windows": 0.677265276038351,
+        "diferencia_absoluta": 1.9984014443252818e-15,
+        "diferencia_relativa": 2.950692313674915e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[45].correlacion_lag1_humedad",
+        "work": 0.402776819114461,
+        "windows": 0.40277681911446,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 2.4807801113268345e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[46].correlacion_lag1_humedad",
+        "work": 0.445792477930863,
+        "windows": 0.445792477930862,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 2.2414032798409056e-15
+      },
+      {
+        "ruta": "dependencia_lag1.csv[48].correlacion_lag1_humedad",
+        "work": 0.608965834721371,
+        "windows": 0.608965834721372,
+        "diferencia_absoluta": 9.992007221626409e-16,
+        "diferencia_relativa": 1.6408157324947762e-15
+      },
+      {
+        "ruta": "intervalos_localidades.csv[2].shapiro_p",
+        "work": 0.0623118635542937,
+        "windows": 0.0623118635542944,
+        "diferencia_absoluta": 6.938893903907228e-16,
+        "diferencia_relativa": 1.1135750895752202e-14
+      },
+      {
+        "ruta": "resultados.json.intervalos[2].shapiro_w",
+        "work": 0.955574727997765,
+        "windows": 0.9555747279977651,
+        "diferencia_absoluta": 1.1102230246251565e-16,
+        "diferencia_relativa": 1.1618379935093398e-16
+      },
+      {
+        "ruta": "resultados.json.intervalos[2].shapiro_p",
+        "work": 0.062311863554293745,
+        "windows": 0.062311863554294446,
+        "diferencia_absoluta": 7.008282842946301e-16,
+        "diferencia_relativa": 1.1247108404709715e-14
+      },
+      {
+        "ruta": "resultados.json.prueba.shapiro_w",
+        "work": 0.9883515532422488,
+        "windows": 0.9883515532422484,
+        "diferencia_absoluta": 3.3306690738754696e-16,
+        "diferencia_relativa": 3.3699234477340976e-16
+      },
+      {
+        "ruta": "resultados.json.prueba.shapiro_p",
+        "work": 0.9058729343962565,
+        "windows": 0.9058729343962464,
+        "diferencia_absoluta": 1.0103029524088925e-14,
+        "diferencia_relativa": 1.1152810886023835e-14
+      }
+    ],
+    "errores": [],
+    "equivalencia_numerica": true
+  },
+  "diferencia_absoluta_maxima": 1.0103029524088925e-14,
+  "diferencia_relativa_maxima": 1.1247108404709715e-14,
+  "equivalencia_numerica_19_tablas_y_resumen": true,
+  "cifras_publicadas_en_informe_conservadas": true,
+  "graficos_windows": "Ocho hashes registrados por la ejecución Windows; sus imágenes no se adjuntaron ni se compararon visualmente. Las ocho figuras de referencia Work sí fueron inspeccionadas.",
+  "limites": [
+    "La ejecución correcta no demuestra independencia espacial ni representatividad nacional.",
+    "La participación en foro y la entrega en Canvas no tienen evidencia en esta revisión.",
+    "La nómina del informe está confirmada; la edición de nombres en el notebook local se comprueba por separado.",
+    "El registro de ejecución conserva las huellas del momento de ejecución; cambios posteriores deben documentarse."
+  ]
+}

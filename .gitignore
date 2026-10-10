@@ -33,3 +33,16 @@ Thumbs.db
 desktop.ini
 
 # Se conservan notebooks, resultados, informes y evidencias pertinentes.
+
+# Auxiliares de compilación LaTeX (se conservan .tex, PDF y figuras)
+*.aux
+*.log
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg
+*.bbl
+*.lof
+*.lot
