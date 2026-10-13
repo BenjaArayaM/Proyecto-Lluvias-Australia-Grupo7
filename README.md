@@ -101,7 +101,7 @@ El análisis de la Sumativa 1 se desarrolla en la rama `sumativa1-jorge`, tomand
 
 - `notebooks/02_sumativa1_analisis.ipynb`: notebook de análisis.
 - `results/02_sumativa1/figures/`: cinco figuras.
-- `results/02_sumativa1/tables/`: nueve tablas CSV.
+- `results/02_sumativa1/tables/`: diez tablas CSV.
 - `docs/entorno_sumativa1_jorge.md`: documentación del entorno.
 
 ### Análisis realizados
@@ -133,7 +133,7 @@ El dataset original debe ubicarse en `data/raw/weatherAUS.csv`. No se incorpora 
 
 Para reproducir el análisis, instalar las dependencias del proyecto, abrir el notebook, seleccionar un kernel compatible y ejecutar todas las celdas desde el inicio.
 
-Se comprobó la generación de cinco figuras y nueve tablas. La independencia espacial y temporal continúa siendo una limitación para la interpretación inferencial.
+Se comprobó la generación de cinco figuras y diez tablas. La independencia espacial y temporal continúa siendo una limitación para la interpretación inferencial.
 
 ### Estado
 

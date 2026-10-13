@@ -25,7 +25,7 @@ Las dependencias generales se encuentran en
 requirements.txt, en la raíz del repositorio.
 
 El notebook se ejecutó de principio a fin en JupyterLab.
-Se comprobaron 5 figuras y 9 tablas de resultados.
+Se comprobaron 5 figuras y 10 tablas de resultados.
 
 Este entorno pertenece originalmente a MCDI500.
 Su uso para MCDI501 es provisional.
