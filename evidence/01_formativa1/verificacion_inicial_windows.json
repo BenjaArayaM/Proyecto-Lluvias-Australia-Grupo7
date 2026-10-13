@@ -1,0 +1,12 @@
+{
+  "fecha_observacion_local": "2026-10-10",
+  "fuente": "captura aportada por el estudiante: image(20261010-175909).png",
+  "captura_sha256": "70a3a026f89510ec1c92dd82bfd936fbfc4ab9a2e8cb3deea16b6274a5bf59c3",
+  "kernel_visible": "Python (Grupo 7 - MCDI501)",
+  "python_primera_celda": "3.12.0",
+  "interprete_en_venv_del_proyecto": true,
+  "comprobacion_kernel_y_rutas": "CORRECTA",
+  "primera_celda_verificada": true,
+  "ejecucion_completa_windows_verificada": false,
+  "limitacion": "La captura muestra la primera celda y parte de la segunda. No muestra la salida final ni ejecucion_windows.json."
+}

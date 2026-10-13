@@ -1,0 +1,24 @@
+﻿variable,dtype_csv,tipo_estadistico,unidad,definicion,papel_y_disponibilidad,n_validos,n_faltantes
+Date,str,Temporal,Fecha,Fecha del registro,Orden temporal; no es una medida continua meteorológica,145460,0
+Location,str,Cualitativa nominal,Localidad,Nombre de la localidad de observación,Agrupación geográfica,145460,0
+MinTemp,float64,Cuantitativa continua,°C,Temperatura mínima,Descripción; disponibilidad depende del corte de predicción,143975,1485
+MaxTemp,float64,Cuantitativa continua,°C,Temperatura máxima,Descripción; disponibilidad depende del corte de predicción,144199,1261
+Rainfall,float64,Cuantitativa continua,mm,Precipitación registrada,Acumulación meteorológica; comprobar ventana temporal,142199,3261
+Evaporation,float64,Cuantitativa continua,mm,Evaporación de tanque Clase A,Acumulación hasta las 9 am según Rattle,82670,62790
+Sunshine,float64,Cuantitativa continua,h,Horas de sol intenso,Total diario; no se supone disponible a las 3 pm,75625,69835
+WindGustDir,str,Cualitativa nominal circular,16 direcciones,Dirección de la ráfaga más intensa,Dirección circular; el máximo diario no se supone disponible a las 3 pm,135134,10326
+WindGustSpeed,float64,Cuantitativa continua,km/h,Velocidad de la ráfaga máxima,Máximo hasta medianoche según Rattle,135197,10263
+WindDir9am,str,Cualitativa nominal circular,16 direcciones,Dirección del viento a las 9 am,Medición de la mañana,134894,10566
+WindDir3pm,str,Cualitativa nominal circular,16 direcciones,Dirección del viento a las 3 pm,Medición de la tarde,141232,4228
+WindSpeed9am,float64,Cuantitativa continua,km/h,Velocidad del viento a las 9 am,Medición de la mañana,143693,1767
+WindSpeed3pm,float64,Cuantitativa continua,km/h,Velocidad del viento a las 3 pm,Medición de la tarde,142398,3062
+Humidity9am,float64,Cuantitativa continua,%,Humedad relativa a las 9 am,Rango físico de 0 a 100,142806,2654
+Humidity3pm,float64,Cuantitativa continua,%,Humedad relativa a las 3 pm,Variable principal de la comparación exploratoria,140953,4507
+Pressure9am,float64,Cuantitativa continua,hPa,Presión al nivel del mar a las 9 am,Medición de la mañana,130395,15065
+Pressure3pm,float64,Cuantitativa continua,hPa,Presión al nivel del mar a las 3 pm,Medición de la tarde,130432,15028
+Cloud9am,float64,Cuantitativa discreta codificada,Octas y código,Nubosidad a las 9 am,0 a 8 octas; revisar significado del código 9,89572,55888
+Cloud3pm,float64,Cuantitativa discreta codificada,Octas y código,Nubosidad a las 3 pm,0 a 8 octas; revisar significado del código 9,86102,59358
+Temp9am,float64,Cuantitativa continua,°C,Temperatura a las 9 am,Medición de la mañana,143693,1767
+Temp3pm,float64,Cuantitativa continua,°C,Temperatura a las 3 pm,Medición de la tarde,141851,3609
+RainToday,str,Cualitativa nominal binaria,No / Yes,Lluvia en el día del registro,Etiqueta observada; contrastada con Rainfall > 1 mm,142199,3261
+RainTomorrow,str,Cualitativa nominal binaria,No / Yes,Lluvia al día siguiente,Objetivo; nunca un predictor del mismo día,142193,3267

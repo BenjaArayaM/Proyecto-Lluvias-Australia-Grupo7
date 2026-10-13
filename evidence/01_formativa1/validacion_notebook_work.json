@@ -1,0 +1,11 @@
+{
+  "archivo": "notebooks/01_formativa1_eda_inferencia.ipynb",
+  "entorno": "Work Linux",
+  "kernel_real": "ipykernel.inprocess.InProcessKernel",
+  "kernel_entregable": "grupo7_mcdi501",
+  "celdas_codigo_ejecutadas": 19,
+  "celdas_con_error": 0,
+  "duracion_segundos": 7.836,
+  "secuencia_completa": true,
+  "limitacion_transporte": "Los sockets TCP e IPC están bloqueados en Work; ejecución real en memoria. JupyterLab Windows pendiente."
+}

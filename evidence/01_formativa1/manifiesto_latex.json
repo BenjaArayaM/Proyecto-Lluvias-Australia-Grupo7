@@ -1,0 +1,113 @@
+{
+  "evaluacion": "Formativa 1",
+  "version_formato": "F1-1.2",
+  "version_analisis": "F1-1.0",
+  "fecha_preparacion_utc": "2026-10-10T19:14:35.251094+00:00",
+  "tipo_paquete": "Actualización del formato LaTeX para proyecto ya ejecutado",
+  "pdf_paginas": 13,
+  "cambios_estadisticos": false,
+  "excluidos": [
+    "dataset",
+    "notebook",
+    "src",
+    "results",
+    ".venv",
+    ".git",
+    "lock Windows",
+    "entorno.json",
+    "preparacion_entorno.md",
+    "ejecucion_windows.json",
+    "auxiliares de compilación",
+    "Word anterior sin cambios"
+  ],
+  "figuras": "La fuente del proyecto reutiliza results/01_formativa1/figures; el ZIP autónomo para Overleaf incluye cinco PNG de la referencia Work.",
+  "validacion": "Compilación proyecto y ZIP autónomo con pdfLaTeX, equivalencia de contenido y revisión de las 13 páginas en Work.",
+  "incorporacion_local": "Pendiente de evidencia del estudiante; no se ha realizado ningún comando Git.",
+  "archivos": [
+    {
+      "ruta": ".gitignore",
+      "bytes": 673,
+      "sha256": "9b9480e1cfb5e5673578c7cbef6f61fa30270c340c4c8143b1b69c16c391658e"
+    },
+    {
+      "ruta": "README.md",
+      "bytes": 9116,
+      "sha256": "c900b9bd2fcd633e378bbed48d6daf2573aa6b94fcb36d340b45fec01c94c917"
+    },
+    {
+      "ruta": "docs/actualizacion_integrantes.md",
+      "bytes": 2294,
+      "sha256": "f1e5ea3973d8419a7aedcb4fd987c49ac6117d9e754423fcf2dffeaf3c8a4ccd"
+    },
+    {
+      "ruta": "docs/auditoria_requisitos.md",
+      "bytes": 7469,
+      "sha256": "b4615f62106521b47a2bb0d63971309d086a4eeb5b2039215c6c107452fe29de"
+    },
+    {
+      "ruta": "docs/continuidad.md",
+      "bytes": 9060,
+      "sha256": "4666513e141c6219bdbae7bb138624efcd028462f7badcd329052dd1d792076e"
+    },
+    {
+      "ruta": "docs/decisiones_metodologicas.md",
+      "bytes": 7865,
+      "sha256": "92f4a639abd752d0862c6fba0947e87ba1fae272c0a24ab9f6be497211fb26fa"
+    },
+    {
+      "ruta": "docs/instalacion_formativa1.md",
+      "bytes": 5006,
+      "sha256": "e861f00bf6510d4c46507aff78f378a367f4e18e5aaa71ef8fe6a32ef3a7d685"
+    },
+    {
+      "ruta": "docs/edicion_informe_latex.md",
+      "bytes": 6285,
+      "sha256": "08aec1d083b5e7392e46d3aab343c22c37bfc871bc48694b3ff33185c755bc5e"
+    },
+    {
+      "ruta": "evidence/01_formativa1/auditoria_final.md",
+      "bytes": 6626,
+      "sha256": "a38049afb1720e12633918437713f3d806ec9a7bcaa4a70502a9b90e6054222c"
+    },
+    {
+      "ruta": "evidence/01_formativa1/confirmacion_integrantes.md",
+      "bytes": 724,
+      "sha256": "1ce65214584afb0ac0dd78c11b87597dcce4cdebc839117e710c69861a6d9f81"
+    },
+    {
+      "ruta": "evidence/01_formativa1/validacion_work.md",
+      "bytes": 2849,
+      "sha256": "84ed15c01b4401064ffc59526e1395916664454701a5ff11730f7981d7433e83"
+    },
+    {
+      "ruta": "evidence/01_formativa1/validacion_latex.json",
+      "bytes": 5752,
+      "sha256": "c624eeabe635db62bfd8dff984d837d89825fc4656f436ce7cc50a5a30a5aee8"
+    },
+    {
+      "ruta": "evidence/01_formativa1/validacion_latex.md",
+      "bytes": 2734,
+      "sha256": "01ec86401fb4859500ae6e48bb89f6b6b85d22e424eab432f7e6a123a7e91438"
+    },
+    {
+      "ruta": "reports/01_formativa1/guia_comprension.md",
+      "bytes": 3682,
+      "sha256": "a1d47b5ccd77ef1ded8a8a566cfe647caf817423fbba8290086def34d4b67ff5"
+    },
+    {
+      "ruta": "reports/01_formativa1/informe_formativa1_grupo7.tex",
+      "bytes": 30310,
+      "sha256": "35cb651450580d1f1f6c6acc92a4e0371f69e58588fc26a631dffcd471aa342a"
+    },
+    {
+      "ruta": "reports/01_formativa1/informe_formativa1_grupo7.pdf",
+      "bytes": 848283,
+      "sha256": "4f15be9a0f64e5c07dbe9438ef4f156cefd8209997d8808bbd8e55e208dfadc4"
+    },
+    {
+      "ruta": "reports/01_formativa1/logo_unab.png",
+      "bytes": 70095,
+      "sha256": "a1733258b04a99a1bfb956b788a325628c32d06c80fedf69c2716f6704851a94"
+    }
+  ]
+}

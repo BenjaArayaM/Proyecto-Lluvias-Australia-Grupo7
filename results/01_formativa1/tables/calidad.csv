@@ -1,0 +1,19 @@
+﻿comprobacion,n,alcance
+Duplicados exactos,0,Duplicados de las 23 columnas
+Duplicados localidad fecha,0,Clave de observación
+Fechas inválidas,0,Interpretación YYYY-MM-DD
+Mínima mayor que máxima,0,Solo pares observados
+Humedad fuera de 0 a 100,0,Solo valores observados
+Precipitación negativa,0,Valor físico negativo
+Evaporación negativa,0,Valor físico negativo
+Sol fuera de 0 a 24 horas,0,Cota física general
+Velocidad de viento negativa,0,Valor físico negativo
+Cloud9am código 9,2,Posible código de niebla; no se elimina
+Cloud3pm código 9,1,Posible código de niebla; no se elimina
+Saltos de más de un día,143,No interpolar fechas ausentes
+Direcciones imprevistas WindGustDir,0,Categorías de la rosa de 16 direcciones
+Direcciones imprevistas WindDir9am,0,Categorías de la rosa de 16 direcciones
+Direcciones imprevistas WindDir3pm,0,Categorías de la rosa de 16 direcciones
+RainToday frente a Rainfall > 1,0,Pares contrastados: 142199
+Objetivo frente a RainToday siguiente,0,Días consecutivos contrastados: 142017
+Objetivo frente a Rainfall siguiente > 1,0,Días consecutivos contrastados: 142017
