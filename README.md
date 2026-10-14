@@ -21,7 +21,7 @@ El ZIP de la Formativa 1 no redistribuye el dataset. Cada integrante debe obtene
 | Identificador | Evaluación | Ponderación | Estado |
 |---|---|---:|---|
 | 01_formativa1 | Formativa 1 — Informe 1 | 0 % | Análisis ejecutado en Work y reproducido en Windows; resultados conciliados y nómina confirmada. Canvas pendiente. |
-| 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Pendiente de autorización y desarrollo. |
+| 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Análisis estadístico desarrollado en la rama sumativa1-jorge; informe y entrega pendientes. |
 | 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Pendiente de autorización y desarrollo. |
 | 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Pendiente de autorización y desarrollo. |
 | 05_sumativa3 | Sumativa 3 — Cierre y comunicación | 60 % | Pendiente de autorización y desarrollo. |
@@ -91,3 +91,54 @@ El archivo completo ya fue explorado: este antecedente se declarará en las fase
 Todos los comandos Git los ejecuta el estudiante desde Git Bash. La asistencia mantiene GitHub en modo de lectura. Antes de cada commit se revisan la lista y el contenido; no se incluyen datos originales, entorno, credenciales ni temporales.
 
 Fuentes principales: `RUBRICAS(2).xlsx` (Formativa 1, B3 y filas 42–70), `Sesion01_MCDI501_06102026.pdf`, plantillas y apuntes de https://github.com/jpmaidana/MCDI501-202682. La bibliografía verificable de Rattle, Bureau of Meteorology y SciPy figura en el informe y notebook.
+
+
+## Sumativa 1 — Avance de análisis (Jorge)
+
+El análisis de la Sumativa 1 se desarrolla en la rama `sumativa1-jorge`, tomando como base la metodología y los resultados de la Formativa 1.
+
+### Archivos principales
+
+- `notebooks/02_sumativa1_analisis.ipynb`: notebook de análisis.
+- `results/02_sumativa1/figures/`: cinco figuras.
+- `results/02_sumativa1/tables/`: once tablas CSV.
+- `docs/entorno_sumativa1_jorge.md`: documentación del entorno.
+
+### Análisis realizados
+
+- Carga y verificación del dataset Weather Australia.
+- Estadística descriptiva, asimetría, curtosis y datos faltantes.
+- Visualizaciones y correlaciones de Spearman.
+- Intervalos de confianza para medias y proporciones.
+- Prueba t sobre diferencias de humedad por localidad.
+- Prueba chi-cuadrado entre RainToday y RainTomorrow.
+- Verificación de supuestos estadísticos.
+- Dependencia temporal de la humedad.
+- Análisis de sensibilidad por localidad.
+
+### Resultados principales
+
+- Dataset: 145.460 registros y 49 localidades.
+- Proporción de lluvia posterior: 22,42 %.
+- Diferencia media de humedad por localidad: 20,08 puntos porcentuales.
+- Chi-cuadrado de Pearson: 13.801,29.
+- V de Cramér: 0,3131.
+- Diferencia media en sensibilidad por localidad: 29,11 puntos porcentuales.
+
+### Entorno y reproducibilidad
+
+El notebook fue ejecutado en Windows con Python 3.13.0, utilizando temporalmente el kernel MCDI500 Grupo 7.
+
+El dataset original debe ubicarse en `data/raw/weatherAUS.csv`. No se incorpora al repositorio.
+
+Para reproducir el análisis, instalar las dependencias del proyecto, abrir el notebook, seleccionar un kernel compatible y ejecutar todas las celdas desde el inicio.
+
+Se comprobó la generación de cinco figuras y once tablas. La independencia espacial y temporal continúa siendo una limitación para la interpretación inferencial.
+
+### Estado
+
+- Análisis estadístico: desarrollado.
+- Validación básica: completada.
+- Informe técnico: pendiente.
+- Entrega de Sumativa 1: pendiente.
+

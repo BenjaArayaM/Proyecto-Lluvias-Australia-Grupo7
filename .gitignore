@@ -46,3 +46,8 @@ desktop.ini
 *.bbl
 *.lof
 *.lot
+
+
+# Archivos temporales de JupyterLab
+.jupyter/
+
