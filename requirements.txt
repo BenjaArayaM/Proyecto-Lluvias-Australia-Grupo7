@@ -2,7 +2,12 @@
 # Los mínimos del núcleo, estadística y visualización proceden del repositorio docente.
 # Instalación, pip check e importaciones comprobados en Windows el 2026-10-10.
 # Versiones exactas observadas: requirements-lock-windows.txt.
-# La ejecución del notebook de la Formativa 1 sigue pendiente.
+
+# Formativa 1: ejecución integral aún no verificada.
+# Sumativa 1: ejecutada en Python 3.13.0.
+# Entorno S1: docs/entorno_sumativa1_jorge.md.
+# Las versiones del lock corresponden al entorno de F1.
+
 
 # Núcleo científico
 numpy>=1.26
