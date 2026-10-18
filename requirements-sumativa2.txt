@@ -1,0 +1,6 @@
+# Complemento de S2. No reemplaza el registro histórico de Windows de F1.
+-r requirements.txt
+# Los scripts de Patricio utilizan rng= en scipy.stats.bootstrap.
+scipy>=1.15
+nbformat>=5.9
+nbclient>=0.10

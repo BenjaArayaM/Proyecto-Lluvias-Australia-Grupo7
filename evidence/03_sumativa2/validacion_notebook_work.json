@@ -1,0 +1,29 @@
+{
+  "fecha_utc": "2026-10-18T21:55:10.706886+00:00",
+  "metodo": "Kernel real ipykernel.inprocess, sin sockets TCP",
+  "notebook": "notebooks/03_sumativa2_validacion_remuestreo.ipynb",
+  "sha256": "a9fb4af140cbe3e181b372de49933ad68624dd2b20e045e6d9565d71884bbeef",
+  "celdas_totales": 25,
+  "celdas_codigo": 13,
+  "celdas_codigo_ejecutadas": 13,
+  "errores": 0,
+  "secuencia_ejecucion": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "recalculo_completo_desde_csv": true,
+  "usa_cache_para_sustituir_calculos": false,
+  "ejecucion_windows_acreditada": false,
+  "limitacion_entorno": "El arranque mediante nbclient/TCP no está permitido; se ejecutaron las mismas celdas con un kernel real en memoria."
+}

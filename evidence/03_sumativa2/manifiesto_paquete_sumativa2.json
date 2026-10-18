@@ -1,0 +1,289 @@
+{
+  "base_patricio": "1484dd055fb99779932b85f0e87ac541400b893f",
+  "tipo": "Actualización sobre la rama de Patricio; no es un clon completo",
+  "dataset_incluido": false,
+  "entorno_virtual_incluido": false,
+  "publicacion_remota_realizada_por_asistencia": false,
+  "archivos": [
+    {
+      "ruta": "README.md",
+      "bytes": 13066,
+      "sha256": "16112d1cab49f8b38d279ea14514e7c9eb9f330beed5d5b1072cce614fd9778b"
+    },
+    {
+      "ruta": "S1/README.md",
+      "bytes": 651,
+      "sha256": "06f59262c1b1d0a0b5f1a5dccf3a25ee961ffbfb8c4529f7992f7e9f684ac49d"
+    },
+    {
+      "ruta": "S2/README.md",
+      "bytes": 1126,
+      "sha256": "103c98131916ff565077f7708cd72f2eb06ec066fbb36769c47b132cb7f6ba7c"
+    },
+    {
+      "ruta": "docs/continuidad.md",
+      "bytes": 9623,
+      "sha256": "40c4fe0e27555defc6bdd7f85ef2792e24473ea9b405959c8120027d8e3d2e29"
+    },
+    {
+      "ruta": "docs/continuidad_sumativa2.md",
+      "bytes": 5755,
+      "sha256": "e54f407319e8779f379f4b59597d62b99ac7d5e84fc92afec93373ee179e437f"
+    },
+    {
+      "ruta": "docs/reproduccion_sumativa2.md",
+      "bytes": 6879,
+      "sha256": "d1cc90d7e12a0311c44d56373d2a6c991a644fadb0454dabdf61be5252ebdfae"
+    },
+    {
+      "ruta": "evidence/03_sumativa2/auditoria_final_sumativa2.md",
+      "bytes": 8251,
+      "sha256": "7ccb01419d88e72e031e4ed37581048076ded9d04af01dccd58a4aa8aa95e350"
+    },
+    {
+      "ruta": "evidence/03_sumativa2/ejecucion_sumativa2_work.json",
+      "bytes": 6090,
+      "sha256": "3061423b9f27ec0be6d4d8d01af9822cf840bd682683c647e22d14e727e5b786"
+    },
+    {
+      "ruta": "evidence/03_sumativa2/validacion_informe_work.json",
+      "bytes": 992,
+      "sha256": "6f9d54fb6ee17335398dcb82147cff8bbc53180e1693b9edd4903a06180dd928"
+    },
+    {
+      "ruta": "evidence/03_sumativa2/validacion_notebook_work.json",
+      "bytes": 760,
+      "sha256": "5a26c00ad26a4a1a82fb4f2e590fc1924b5ae857157341946369693101f6f0b7"
+    },
+    {
+      "ruta": "evidence/03_sumativa2/validacion_portada_unab.json",
+      "bytes": 3532,
+      "sha256": "67650ee4a956b56fc05468736771208c8af02c78feb51816f56307660d31e7bb"
+    },
+    {
+      "ruta": "evidence/03_sumativa2/verificacion_reproduccion_work.json",
+      "bytes": 1717,
+      "sha256": "e5aa24c2a6a63dba3ebaf6834d9ef9f021a5bf620fe8b56a3a60e68efd80d794"
+    },
+    {
+      "ruta": "notebooks/03_sumativa2_validacion_remuestreo.ipynb",
+      "bytes": 845396,
+      "sha256": "a9fb4af140cbe3e181b372de49933ad68624dd2b20e045e6d9565d71884bbeef"
+    },
+    {
+      "ruta": "reports/03_sumativa2/datos_sumativa2.tex",
+      "bytes": 2938,
+      "sha256": "7c95877398e45fba4200540f7307a323c0d9e17cdab85146dd3d573d4671674b"
+    },
+    {
+      "ruta": "reports/03_sumativa2/informe_sumativa2_grupo7.pdf",
+      "bytes": 775967,
+      "sha256": "9815b7aeb2fffafd6335352da1113a3c26f7ae918774fc0a5a93a85e52c27702"
+    },
+    {
+      "ruta": "reports/03_sumativa2/informe_sumativa2_grupo7.tex",
+      "bytes": 18397,
+      "sha256": "8555a4f2335028f065601dd8a87319e971458b09403ef4db3d7789af44e5aea4"
+    },
+    {
+      "ruta": "reports/03_sumativa2/logo_unab.jpeg",
+      "bytes": 20398,
+      "sha256": "17757d77fc7eb13c98460c52ed248db86d7244de070ad630378fc0a9497ae6b4"
+    },
+    {
+      "ruta": "reports/03_sumativa2/portada_unab.tex",
+      "bytes": 2206,
+      "sha256": "7122359c203b697e38760c485f1791e2546c262973d6a3daf4056cd55d2f7758"
+    },
+    {
+      "ruta": "requirements-sumativa2.txt",
+      "bytes": 202,
+      "sha256": "bd306b2b42df9bee51eac1838b691faf3e51a2af493e559205f68cef0eb45bdc"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/bootstrap_ic_s2_distribuciones.png",
+      "bytes": 214364,
+      "sha256": "ec065c91a8dd4fd4159a759c10702e1eeb33b7e7ca4c6039ff305ad78ea19837"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/distribuciones_bootstrap_correlaciones.png",
+      "bytes": 208300,
+      "sha256": "efb229988b31c4997ddbc166d0547e3beb3385720c9cab067ac18550d29f8554"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/intervalos_confianza_correlaciones.png",
+      "bytes": 63189,
+      "sha256": "156650ef978e38735ebe5df0b5fca1907bf83589cfa93aed24ec50d28965ab24"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/jackknife_influencia_localidades.png",
+      "bytes": 73314,
+      "sha256": "c25e0382d376f22409a175b4713416dea01952f35d813616260d95ef1cec5aa5"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/monte_carlo_convergencia.png",
+      "bytes": 71639,
+      "sha256": "4409088a05690532e8d1d7e9c358f99200e7310f68b2e4491a8ab21fe24da9ae"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/monte_carlo_distribucion.png",
+      "bytes": 64558,
+      "sha256": "da7b56c946c2820dfa67d8be38a7efd9c100c1ce96e21dfaefca25bb29892f0c"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/permutacion_humedad.png",
+      "bytes": 75408,
+      "sha256": "2a403491e0a24f43899edddc98ebb1619aeb70b00a6ff65182279141fbc55c61"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/s2_bootstrap_medias.png",
+      "bytes": 94522,
+      "sha256": "5fb9086442c46cec4626cce3b8c4119ed22847d69a18244e56eaddf3f375c39f"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/s2_correlaciones_distribuciones.png",
+      "bytes": 82541,
+      "sha256": "ae1ceb5df3afdb64e1be6cbae48268ff608b50210bc2c1b9b146f1e16d716b32"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/s2_montecarlo.png",
+      "bytes": 152835,
+      "sha256": "90c4b0ad144e43677f702c09ab9d0181e40dd7b50eae8bc3c100b5ee64e185e5"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/s2_permutacion_diagnostico.png",
+      "bytes": 124402,
+      "sha256": "6d1eac537ca3332d317094cfcbcc74c6e9225c6896e872c943c1fde004aaed27"
+    },
+    {
+      "ruta": "results/03_sumativa2/figures/s2_robustez.png",
+      "bytes": 103727,
+      "sha256": "c607a1e1d10e276026b005068430d06893e977dc8e62d6e8a643feb2174ff65a"
+    },
+    {
+      "ruta": "results/03_sumativa2/resultados_validados_s2.json",
+      "bytes": 20046,
+      "sha256": "0365591a5b26c40a341d80a2c210b628500856da1862359b4baf0bec2c3d5d0b"
+    },
+    {
+      "ruta": "results/03_sumativa2/resumen_puntos_4_6.txt",
+      "bytes": 2115,
+      "sha256": "b9c7531efc0a848392196e60a810cece9fc646096e023f5c91682cc81725d018"
+    },
+    {
+      "ruta": "results/03_sumativa2/resumen_validacion_s2.txt",
+      "bytes": 2115,
+      "sha256": "b9c7531efc0a848392196e60a810cece9fc646096e023f5c91682cc81725d018"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/bootstrap_ic_s2_distribuciones.csv",
+      "bytes": 982846,
+      "sha256": "f9e00cbba6e3d9121f88eaccdf89c263deb33f1e9e91a97a5e0ead09e21c9f2e"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/bootstrap_ic_s2_resumen.csv",
+      "bytes": 1307,
+      "sha256": "712c7c76532b54075efb0bf44862ad18a102315169cd8641042bab5551a899f2"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/cercas_tukey_diagnostico.csv",
+      "bytes": 606,
+      "sha256": "23782129b91483b0aa6e76bb5f396790b6c721cb767ca8263ce7d1eb8e1b7d6b"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/diagnostico_convergencia_mc.csv",
+      "bytes": 412,
+      "sha256": "9638a17292b39c00b0c42369c8810597a29cda11d21ecf9e5b851033e1aefbde"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/diagnostico_supuestos_localidades.csv",
+      "bytes": 331,
+      "sha256": "bcbf77f0ba215b982b1344d8f360c46b7a902ac9328eadf4810280910dd416b5"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/diferencias_humedad_por_localidad.csv",
+      "bytes": 1430,
+      "sha256": "6e012b4abd84bc7aa8470769d168b84b9ef4ca8c04133b22d941966862b2df22"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/distribucion_permutacion.csv",
+      "bytes": 240590,
+      "sha256": "93b1fd93c366249b46c4928ffcd76e0d16012212d7a42024eca9d8664d6150fc"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/distribuciones_correlaciones.csv",
+      "bytes": 1308102,
+      "sha256": "0172c85b4e87278ffe37dc23f8e5ad6ebff3628a1f4eb368078beb280dc9f82f"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/estabilidad_correlaciones_bootstrap.csv",
+      "bytes": 1091,
+      "sha256": "3250fc13f895fd3fe1711208f87390907cb1904f55028c327c1a905f9106e4e3"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/jackknife_diferencia_humedad.csv",
+      "bytes": 3456,
+      "sha256": "ffb0880562be27011dd7ee3e594f51d154dff5c51958cbb48d9c9f5787e7df42"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/monte_carlo_convergencia.csv",
+      "bytes": 533,
+      "sha256": "834f92920205e99082dcf1e2e7c203ed2bbfac51a8d1d442b24af741851e2516"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/monte_carlo_resumen.csv",
+      "bytes": 480,
+      "sha256": "80394175f908168ea48c3eed07cdcc329bb6ddb191cdc9cdf6de3a670ae14cac"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/prueba_permutacion_humedad.csv",
+      "bytes": 489,
+      "sha256": "6dd05f8922ba7970d613c540bdf9495073e41fade03c53e40b73d9d9b9ca4912"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/robustez_correlaciones.csv",
+      "bytes": 586,
+      "sha256": "7f56da420be554950e07e40b895bd5e4662b83814e26f4900ef37a6853190f1c"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/robustez_correlaciones_interpretada.csv",
+      "bytes": 918,
+      "sha256": "aec632de90fa50d584316be9e8c1dee5275023a26abe73e66f087f8107b4b995"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/robustez_diferencia_humedad.csv",
+      "bytes": 417,
+      "sha256": "5e4da448d6de78d8ea6b2f31bd9916b63f0757ac6e594dc16d5309573adaed1b"
+    },
+    {
+      "ruta": "results/03_sumativa2/tables/sintesis_resultados_para_s3.csv",
+      "bytes": 4715,
+      "sha256": "f49d5638333e6b84c053dae4915a5c1f0210e97fde41bed557890d7258457b8e"
+    },
+    {
+      "ruta": "src/analisis_s2_puntos_4_6.py",
+      "bytes": 11288,
+      "sha256": "0779de8a9c40d14533cea2bb5d41c389d360ab3067d56707a9cdb9ed2420c3ba"
+    },
+    {
+      "ruta": "src/cierre_sumativa2.py",
+      "bytes": 30344,
+      "sha256": "1bb9103ad748c0ad98213d9171175d2574a95d95b2c9e7d21d4624856a0d2301"
+    },
+    {
+      "ruta": "src/generar_informe_sumativa2.py",
+      "bytes": 7937,
+      "sha256": "8826a4b1a6578065acc8c017ca7c8200769672c4bb0131f14583115ca385db68"
+    },
+    {
+      "ruta": "src/validacion_bootstrap_ic_s2.py",
+      "bytes": 8267,
+      "sha256": "02d91c1d79e259f134c6c91bec9ceb92d8b8695e46b0bccfe2e2eaa9001b4bd1"
+    },
+    {
+      "ruta": "src/validacion_s2.py",
+      "bytes": 15093,
+      "sha256": "3df337fb69a8b0644ea76810e069aace2bffa77fa862ac23c2c2e14c043ccb45"
+    }
+  ]
+}

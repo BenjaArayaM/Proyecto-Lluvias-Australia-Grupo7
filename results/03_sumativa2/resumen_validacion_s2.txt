@@ -1,12 +1,14 @@
-SUMATIVA 2: RESUMEN DE VALIDACIÓN
-==================================================
+SUMATIVA 2: SÍNTESIS VIGENTE
 
-PUNTO 2: PERMUTACIÓN
-   variable        grupo_yes        grupo_no unidad_analisis  n_localidades  n_permutaciones  media_diferencias_pp  ic95_t_inferior  ic95_t_superior  estadistico_t  grados_libertad  p_parametrico_t  extremos_permutacion  p_permutacion  alpha decision_parametrica decision_permutacion  semilla
-Humidity3pm RainTomorrow=Yes RainTomorrow=No        Location             49            10000             20.076901        18.471589        21.682214      25.146084               48     2.747108e-29                     0         0.0001   0.05          Rechazar H0          Rechazar H0 20261018
+Media local: Humidity3pm: Estimación concordante entre métodos bajo modelo de localidades comparables. Sin representatividad nacional ni independencia espacial comprobada; medias históricas observadas.
+Media local: MaxTemp: Estimación concordante entre métodos bajo modelo de localidades comparables. Sin representatividad nacional ni independencia espacial comprobada; medias históricas observadas.
+Media local: MinTemp: Estimación concordante entre métodos bajo modelo de localidades comparables. Sin representatividad nacional ni independencia espacial comprobada; medias históricas observadas.
+Diferencia local de humedad Yes-No: Asociación descriptiva consistente; estable al retirar una localidad. La prueba de signos aleatorios requiere simetría bajo H0 e independencia; no es efecto causal ni cambio de probabilidad.
+Spearman: MaxTemp / Temp3pm: Signo estable y magnitud poco sensible al filtro aplicado; posible redundancia. Asociación agrupada; tamaños y cobertura por par distintos; IC condicional al remuestreo de localidades.
+Spearman: Humidity3pm / Sunshine: Signo estable en 30 localidades; filtro no elimina casos y no prueba resistencia a extremos. Asociación agrupada; tamaños y cobertura por par distintos; IC condicional al remuestreo de localidades.
+Spearman: Humidity3pm / Rainfall: Signo positivo estable; magnitud sensible al rango de precipitación. Asociación agrupada; tamaños y cobertura por par distintos; IC condicional al remuestreo de localidades.
+Dependencia temporal: Dependencia diaria apreciable. Conservar localidades completas retiene sus registros; no simula futuros temporales ni elimina dependencia espacial.
+Desbalance RainTomorrow: La exactitud aislada puede ocultar errores en lluvia. Archivo completo ya explorado; evitar presentar la prueba futura como totalmente ajena a decisiones exploratorias previas.
+Faltantes Sunshine: La composición de casos observados limita generalización. No se comprobó mecanismo MCAR/MAR/MNAR.
 
-PUNTO 3: ESTABILIDAD DE CORRELACIONES
- variable_x variable_y  n_pares_original  n_localidades  rho_spearman_s1  n_bootstrap_solicitado  n_bootstrap_valido  ic95_inferior  ic95_superior  amplitud_ic95  desviacion_bootstrap  ic95_incluye_cero                       clasificacion                                                         metodo  semilla
-    MaxTemp    Temp3pm            141589             49         0.984476                   10000               10000       0.981228       0.986821       0.005592              0.001422              False Robusta; IC estrecho y excluye cero Bootstrap por conglomerados de localidad; Spearman recalculado 20261018
-Humidity3pm   Sunshine             74497             30        -0.620349                   10000               10000      -0.659534      -0.580313       0.079221              0.020167              False Robusta; IC estrecho y excluye cero Bootstrap por conglomerados de localidad; Spearman recalculado 20261018
-Humidity3pm   Rainfall            138569             49         0.443635                   10000               10000       0.410718       0.473916       0.063198              0.016248              False Robusta; IC estrecho y excluye cero Bootstrap por conglomerados de localidad; Spearman recalculado 20261018
+Resultados completos: resultados_validados_s2.json y tables/sintesis_resultados_para_s3.csv.

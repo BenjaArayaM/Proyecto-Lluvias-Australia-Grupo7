@@ -1,0 +1,107 @@
+{
+  "fecha_utc": "2026-10-18T21:55:09.916636+00:00",
+  "referencia": "informe_sumativa1_grupo7.pdf, portada",
+  "referencia_sha256": "a0bf9f5ff95a1253be644ae3272b4c781b88a0371950c57b4d724b95c3bc77c2",
+  "portada_editable": "reports/03_sumativa2/portada_unab.tex",
+  "estructura_conservada": [
+    "Logotipo",
+    "Universidad",
+    "Magíster",
+    "Código y nombre del curso",
+    "Evaluación",
+    "Subtítulo",
+    "Título del proyecto",
+    "Tipo de informe/grupo/ponderación",
+    "Integrantes en cuatro líneas",
+    "Dataset",
+    "Docente",
+    "Fecha",
+    "Repositorio"
+  ],
+  "logotipo_extraido_sin_modificar": true,
+  "logo_sha256": "17757d77fc7eb13c98460c52ed248db86d7244de070ad630378fc0a9497ae6b4",
+  "posicion_logo_fuente_bp": [
+    234.95999145507812,
+    74.87998962402344,
+    360.239990234375,
+    178.79998779296875
+  ],
+  "posicion_logo_nuevo_bp": [
+    234.95799255371094,
+    74.88127899169922,
+    360.23406982421875,
+    178.79803466796875
+  ],
+  "alineacion_vertical_comparada": [
+    {
+      "texto": "UNIVERSIDAD ANDRÉS BELLO",
+      "linea_base_fuente_bp": 203.40000915527344,
+      "linea_base_nueva_bp": 203.39801025390625,
+      "diferencia_vertical_bp": 0.0019989013671875
+    },
+    {
+      "texto": "Magíster en Ciencia de Datos e Inteligencia Artificial",
+      "linea_base_fuente_bp": 223.32000732421875,
+      "linea_base_nueva_bp": 223.3179931640625,
+      "diferencia_vertical_bp": 0.00201416015625
+    },
+    {
+      "texto": "MCDI501",
+      "linea_base_fuente_bp": 251.27999877929688,
+      "linea_base_nueva_bp": 251.2769775390625,
+      "diferencia_vertical_bp": 0.003021240234375
+    },
+    {
+      "texto": "Integrantes",
+      "linea_base_fuente_bp": 451.91998291015625,
+      "linea_base_nueva_bp": 451.9149475097656,
+      "diferencia_vertical_bp": 0.005035400390625
+    },
+    {
+      "texto": "Benjamín Araya",
+      "linea_base_fuente_bp": 470.1600036621094,
+      "linea_base_nueva_bp": 470.1549377441406,
+      "diferencia_vertical_bp": 0.00506591796875
+    },
+    {
+      "texto": "Alan Cañete",
+      "linea_base_fuente_bp": 483.4800109863281,
+      "linea_base_nueva_bp": 483.4749450683594,
+      "diferencia_vertical_bp": 0.00506591796875
+    },
+    {
+      "texto": "Patricio Cortez",
+      "linea_base_fuente_bp": 496.8000183105469,
+      "linea_base_nueva_bp": 496.7939453125,
+      "diferencia_vertical_bp": 0.006072998046875
+    },
+    {
+      "texto": "Jorge Guaico",
+      "linea_base_fuente_bp": 510.0,
+      "linea_base_nueva_bp": 509.99395751953125,
+      "diferencia_vertical_bp": 0.00604248046875
+    },
+    {
+      "texto": "Docente: Jean Paul Maidana",
+      "linea_base_fuente_bp": 554.6400146484375,
+      "linea_base_nueva_bp": 554.6339721679688,
+      "diferencia_vertical_bp": 0.00604248046875
+    },
+    {
+      "texto": "Repositorio y rama del análisis",
+      "linea_base_fuente_bp": 594.1199951171875,
+      "linea_base_nueva_bp": 594.1129760742188,
+      "diferencia_vertical_bp": 0.00701904296875
+    }
+  ],
+  "tipografia": "Times compatible, Nimbus Roman; referencia Times New Roman",
+  "portada_sin_encabezado_pie_ni_numero_visible": true,
+  "paginas_totales_incluida_portada": 7,
+  "contenido_reorganizado": "Portada en página 1; desarrollo estadístico en seis páginas, sin cambio de resultados.",
+  "analisis_conservado": {
+    "notebooks/03_sumativa2_validacion_remuestreo.ipynb": true,
+    "results/03_sumativa2/resultados_validados_s2.json": true
+  },
+  "modificaciones_a_github": 0,
+  "referencia_sumativa1_modificada": false
+}

@@ -1,0 +1,2 @@
+iteraciones,media_objetivo_pp,media_montecarlo_pp,sd_medias_simuladas_pp,sd_teorica_media_pp,mcse_media_simulada_pp,diferencia_media_simulada_objetivo_pp,diferencia_en_unidades_mcse,tipo_intervalo_simulado
+10000,20.07690136198893,20.07286770230225,0.7941697269621633,0.7984106483236016,0.007941697269621633,-0.004033659686680124,-0.5079090211748024,Intervalo central de medias hipotéticas; no IC del parámetro

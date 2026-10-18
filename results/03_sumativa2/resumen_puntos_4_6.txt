@@ -1,43 +1,14 @@
-SUMATIVA 2 — PUNTOS 4, 5 Y 6
-======================================================================
+SUMATIVA 2: SÍNTESIS VIGENTE
 
-PUNTO 4 — MONTE CARLO
-                                                                      escenario                                                    distribucion  n_localidades_S1  media_diferencias_S1_pp  sd_diferencias_entre_localidades_pp  localidades_por_muestra  iteraciones  media_simulada_pp  sd_medias_simuladas_pp   p2_5_pp  p97_5_pp  semilla
-Media de diferencias locales en muestras hipotéticas de localidades comparables Normal(mu_hat, sd_hat), estimados de las diferencias locales S1                49                20.076901                             5.588875                       49        10000          20.072868                 0.79417 18.503248 21.617736 20261018
+Media local: Humidity3pm: Estimación concordante entre métodos bajo modelo de localidades comparables. Sin representatividad nacional ni independencia espacial comprobada; medias históricas observadas.
+Media local: MaxTemp: Estimación concordante entre métodos bajo modelo de localidades comparables. Sin representatividad nacional ni independencia espacial comprobada; medias históricas observadas.
+Media local: MinTemp: Estimación concordante entre métodos bajo modelo de localidades comparables. Sin representatividad nacional ni independencia espacial comprobada; medias históricas observadas.
+Diferencia local de humedad Yes-No: Asociación descriptiva consistente; estable al retirar una localidad. La prueba de signos aleatorios requiere simetría bajo H0 e independencia; no es efecto causal ni cambio de probabilidad.
+Spearman: MaxTemp / Temp3pm: Signo estable y magnitud poco sensible al filtro aplicado; posible redundancia. Asociación agrupada; tamaños y cobertura por par distintos; IC condicional al remuestreo de localidades.
+Spearman: Humidity3pm / Sunshine: Signo estable en 30 localidades; filtro no elimina casos y no prueba resistencia a extremos. Asociación agrupada; tamaños y cobertura por par distintos; IC condicional al remuestreo de localidades.
+Spearman: Humidity3pm / Rainfall: Signo positivo estable; magnitud sensible al rango de precipitación. Asociación agrupada; tamaños y cobertura por par distintos; IC condicional al remuestreo de localidades.
+Dependencia temporal: Dependencia diaria apreciable. Conservar localidades completas retiene sus registros; no simula futuros temporales ni elimina dependencia espacial.
+Desbalance RainTomorrow: La exactitud aislada puede ocultar errores en lluvia. Archivo completo ya explorado; evitar presentar la prueba futura como totalmente ajena a decisiones exploratorias previas.
+Faltantes Sunshine: La composición de casos observados limita generalización. No se comprobó mecanismo MCAR/MAR/MNAR.
 
-CONVERGENCIA
- iteraciones  media_acumulada      p2_5     p97_5  ancho_intervalo
-         100        20.210042 18.744134 21.581195         2.837061
-         500        20.097192 18.551377 21.613707         3.062330
-        1000        20.054946 18.534629 21.623042         3.088413
-        2500        20.073571 18.527226 21.610721         3.083495
-        5000        20.074285 18.534687 21.617547         3.082860
-       10000        20.072868 18.503248 21.617736         3.114488
-
-PUNTO 5 — ROBUSTEZ DE DIFERENCIA DE HUMEDAD
- n_localidades  media_diferencia_pp  ic95_t_inferior  ic95_t_superior  ic95_bootstrap_inferior  ic95_bootstrap_superior  media_jackknife_min  media_jackknife_max  diferencias_locales_positivas  max_cambio_absoluto_jackknife_pp  bootstrap_replicas  semilla
-            49            20.076901        18.471589        21.682214                18.517198                21.616702            19.800686            20.358364                             49                          0.281463               10000 20261018
-
-PUNTO 5 — ROBUSTEZ DE CORRELACIONES
- variable_x variable_y  n_completo  spearman_completo  kendall_tau_b_completo  n_dentro_cercas_tukey  porcentaje_excluido_solo_sensibilidad  spearman_sensibilidad_tukey  cambio_spearman  signo_spearman_kendall_coincide
-    MaxTemp    Temp3pm      141589           0.984476                0.911737                 140807                               0.552303                     0.984217        -0.000259                             True
-Humidity3pm   Sunshine       74497          -0.620349               -0.449171                  74497                               0.000000                    -0.620349         0.000000                             True
-Humidity3pm   Rainfall      138569           0.443635                0.340296                 113779                              17.890004                     0.307406        -0.136229                             True
-
-PUNTO 6 — SÍNTESIS PARA SUMATIVA 3
-                                     resultado                                              estimacion                                                                       evidencia_robustez                                                                conclusion                                                                                          cautela                                                                                      recomendacion_s3
-Diferencia de Humidity3pm Yes-No por localidad                                                20.08 pp IC bootstrap [18.52, 21.62]; rango jackknife [19.80, 20.36]; 49/49 localidades positivas          Asociación descriptiva consistente en las localidades observadas No implica causalidad ni cambio de probabilidad; puede persistir dependencia espacial y temporal                              Fijar hora de emisión y usar solo predictores disponibles en ese momento
-                Correlación MaxTemp vs Temp3pm                     Spearman=0.984; Kendall tau-b=0.912                                         Spearman sensibilidad Tukey=0.984; cambio=-0.000        Comparar signo y magnitud entre métodos antes de considerar su uso           La exclusión Tukey es solo diagnóstico; no recomienda eliminar extremos meteorológicos                   Validar estabilidad por tiempo y localidad y comprobar disponibilidad del predictor
-           Correlación Humidity3pm vs Sunshine                   Spearman=-0.620; Kendall tau-b=-0.449                                         Spearman sensibilidad Tukey=-0.620; cambio=0.000        Comparar signo y magnitud entre métodos antes de considerar su uso           La exclusión Tukey es solo diagnóstico; no recomienda eliminar extremos meteorológicos                   Validar estabilidad por tiempo y localidad y comprobar disponibilidad del predictor
-           Correlación Humidity3pm vs Rainfall                     Spearman=0.444; Kendall tau-b=0.340                                         Spearman sensibilidad Tukey=0.307; cambio=-0.136        Comparar signo y magnitud entre métodos antes de considerar su uso           La exclusión Tukey es solo diagnóstico; no recomienda eliminar extremos meteorológicos                   Validar estabilidad por tiempo y localidad y comprobar disponibilidad del predictor
-                          Dependencia temporal Mediana de correlación lag-1 Humidity3pm = 0.5023 en S1                      Las filas diarias no deben suponerse independientes automáticamente              La dependencia temporal afecta la incertidumbre y validación                         El bootstrap por localidad no conserva explícitamente dependencia diaria Validación temporal o por bloques de fecha/localidad; ajustar preprocesamiento solo con entrenamiento
-                       Desbalance RainTomorrow     Yes ≈ 22.42%; No ≈ 77.58% entre etiquetas conocidas                            La exactitud sola puede ocultar mal desempeño en la clase Yes                             El desbalance debe considerarse en evaluación                                                          No balancear usando validación o prueba                                Reportar recall, precisión, F1, PR-AUC y matriz de confusión por clase
-                               Datos faltantes        Sunshine ≈ 48.01% faltante; Evaporation ≈ 43.17%                               Cobertura desigual entre variables, localidades y periodos La eliminación global de filas puede cambiar la composición de la muestra                                     Imputar o escalar antes de dividir puede filtrar información                                           Ajustar imputación y escalado solo dentro del entrenamiento
-
-LIMITACIONES
-- Monte Carlo depende de Normal(mu_hat, sd_hat) para diferencias entre localidades comparables.
-- No es un pronóstico meteorológico.
-- Las localidades pueden no ser independientes.
-- El bootstrap por localidad no modela dependencia temporal diaria.
-- Tukey se usa solo como sensibilidad; el análisis principal conserva valores extremos plausibles.
-- Asociación no implica causalidad ni valida por sí sola un predictor.
+Resultados completos: resultados_validados_s2.json y tables/sintesis_resultados_para_s3.csv.

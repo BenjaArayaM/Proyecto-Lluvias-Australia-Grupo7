@@ -1,0 +1,4 @@
+variable_x,variable_y,n_original,limite_inferior_x,limite_superior_x,limite_inferior_y,limite_superior_y,n_excluido_diagnostico,pct_excluido,uso
+MaxTemp,Temp3pm,141589,2.4499999999999975,43.65,1.9000000000000057,41.099999999999994,782,0.5523027918835504,Sensibilidad; no regla de limpieza ni identificación de errores
+Humidity3pm,Sunshine,74497,-6.0,106.0,-3.6499999999999986,19.15,0,0.0,Sensibilidad; no regla de limpieza ni identificación de errores
+Humidity3pm,Rainfall,138569,-6.5,109.5,-1.2000000000000002,2.0,24790,17.89000425780658,Sensibilidad; no regla de limpieza ni identificación de errores

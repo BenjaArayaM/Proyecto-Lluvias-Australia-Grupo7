@@ -1,0 +1,295 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[left=2.25cm,right=2.25cm,top=1.95cm,bottom=2.05cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx,graphicx,xcolor,fancyhdr,enumitem}
+\usepackage{caption,microtype,eso-pic}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\definecolor{azul}{HTML}{233D54}
+\definecolor{gris}{HTML}{565E64}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.43em}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=2pt}
+\captionsetup{font=small,labelfont=bf,skip=5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}MCDI501 \;|\; Sumativa 2: validación y remuestreo}
+\fancyhead[R]{\small\color{gris}Grupo 7}
+\fancyfoot[L]{\footnotesize\color{gris}Universidad Andrés Bello \;|\; Magíster en Ciencia de Datos e IA}
+\fancyfoot[R]{\footnotesize\thepage\,/\,7}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\titulo}[2]{\vspace*{0.1em}{\Large\bfseries\color{azul}#1}\par{\small\color{gris}#2}\par\vspace{0.4em}}
+\newcommand{\subtitulo}[1]{\par\vspace{0.2em}{\bfseries\color{azul}#1}\par}
+\newcommand{\figura}[3]{\begin{center}\includegraphics[width=\linewidth]{../../results/03_sumativa2/figures/#1}\captionof{figure}{#2}\label{#3}\end{center}}
+\newcommand{\fuente}{\vspace{-0.3em}{\footnotesize\color{gris}Fuente: elaboración del Grupo 7 a partir de \texttt{weatherAUS.csv}.}\par}
+\input{datos_sumativa2.tex}
+\begin{document}
+
+\input{portada_unab.tex}
+
+\titulo{1. Bootstrap de tres parámetros}{IC individuales del 95\,\% y comparación con la Sumativa 1}
+Se validan resultados propios de S1 (Araya et al., 2026), según jpmaidana (2026).
+Rain in Australia (jsphyg, s.\,f.) contiene 145.460 filas, 23 columnas y 49 localidades
+(2007-11-01 a 2017-06-25). Se conserva el CSV sin imputación ni eliminación global.
+
+\textbf{Procedimiento.} El estimando $\widehat\theta_X=49^{-1}\sum_\ell\overline X_\ell$
+da igual peso a las medias históricas locales. Se remuestrean 49 medias con reemplazo,
+10.000 veces por variable, y se calculan IC percentil y BCa (SciPy community, s.\,f.-a).
+Se comparan con $\widehat\theta\pm t_{0,975;48}s/\sqrt{49}$ de S1.
+
+\begin{center}
+\captionof{table}{Medias con igual peso por localidad e intervalos del 95\,\%.}
+\label{tab:bootstrap}
+\small\TablaBootstrap
+\end{center}
+\fuente
+\figura{s2_bootstrap_medias.png}{Distribuciones de las medias bootstrap y límites de los tres métodos. Cada panel utiliza su unidad y escala.}{fig:bootstrap}
+
+\subtitulo{Discrepancias cuantificadas}
+El ancho percentil cambia \CambioPercentilHum{}\,\% en humedad,
+\CambioPercentilMax{}\,\% en temperatura máxima y \CambioPercentilMin{}\,\% en mínima
+frente al IC t. Los cambios BCa son \CambioBcaHum{}\,\%, \CambioBcaMax{}\,\% y
+\CambioBcaMin{}\,\%. El extremo superior BCa de humedad se desplaza
+\DesplazaBcaHum{} pp; el inferior de temperatura mínima, \DesplazaBcaMin{}\,$^{\circ}$C.
+La tabla~\ref{tab:bootstrap} y la figura~\ref{fig:bootstrap} muestran concordancia
+de magnitudes e intervalos ampliamente solapados, dentro del modelo empleado.
+
+\subtitulo{Confiabilidad e interpretación}
+Agregar por localidad evita tratar los días como réplicas independientes. Se suponen
+localidades comparables e independencia aproximada entre ellas, sin diseño
+probabilístico nacional ni independencia espacial demostrada. Se condiciona a
+los historiales observados: no se simulan nuevos periodos ni se corrige sesgo por faltantes.
+
+BCa ajusta sesgo y aceleración, pero no subsana selección de estaciones o dependencia.
+Un intervalo más corto no demuestra mejor cobertura. Los IC son individuales, sin
+garantía de cobertura conjunta; no atribuyen probabilidad al parámetro fijo ni
+describen variación entre días. Las semillas percentiles son $20261018+i$ y las BCa
+$20261118+i$, con $i=0,1,2$. Al usar remuestras distintas, parte de las discrepancias
+entre extremos corresponde a variación Monte Carlo.
+
+\clearpage
+\titulo{2. Validación mediante cambios de signo}{Prueba bilateral de la diferencia de humedad por localidad}
+Se usan 138.583 registros válidos para construir 49 diferencias
+$D_\ell=\overline H_{\ell,Yes}-\overline H_{\ell,No}$ de Humidity3pm.
+Se retoma $H_0:E(D_\ell)=0$ frente a $H_1:E(D_\ell)\ne0$, con $\alpha=0,05$.
+Se genera $T_b^*=49^{-1}\sum_\ell s_{b\ell}D_\ell$, donde los signos son
+independientes y equiprobables en $\{-1,+1\}$. El estadístico observado es
+$T=\DMedia{}$ pp. Este procedimiento corresponde al esquema de permutación
+pareada por cambios de signo descrito por SciPy community (s.\,f.-b).
+
+\begin{center}
+\captionof{table}{Comparación de la prueba de S1 y el procedimiento computacional.}
+\label{tab:permutacion}
+\begin{tabularx}{\linewidth}{@{}Xr@{}}\toprule
+Estadístico o resultado & Valor\\\midrule
+Localidades; diferencias positivas & 49; 49 de 49\\
+Diferencia media e IC t 95\,\% (pp) & \DMedia{}; \DIntervaloT\\
+Prueba t; grados de libertad & \TValor{}; 48\\
+Valor $p$ paramétrico & $\PValorT$\\
+Cambios de signo; réplicas tan extremas & 10.000; 0\\
+Valor $p$ Monte Carlo, $(r+1)/(B+1)$ & \PValorSignos\\\bottomrule
+\end{tabularx}
+\end{center}
+\figura{s2_permutacion_diagnostico.png}{Distribución nula simulada y diagnóstico Q-Q de las diferencias centradas. La forma observada no acredita los supuestos de la distribución nula.}{fig:permutacion}
+
+\subtitulo{Supuesto que hace válida la comparación}
+La media nula no basta: bajo $H_0$ se requiere invariancia frente a invertir signos,
+por ejemplo diferencias independientes y simétricas alrededor de cero. La lluvia
+no fue asignada al azar; el intercambio de los grupos no está garantizado por diseño.
+Por ello, el resultado se interpreta como contraste condicional a ese modelo y no
+como una prueba exacta de aleatorización del estudio observacional.
+
+La asimetría muestral es \AsimetriaD{}; Shapiro--Wilk da $W=\ShapiroW{}$ y
+$p=\ShapiroP{}$, sin diferencias locales fuera de las cercas de Tukey. Estos
+diagnósticos son compatibles con la aproximación de forma de S1, pero no demuestran
+simetría bajo la hipótesis nula ni independencia espacial.
+
+\subtitulo{Concordancia y relevancia práctica}
+Ambos enfoques rechazan $H_0$ al 5\,\% bajo sus supuestos. El valor computacional
+alcanza el mínimo resoluble con 10.000 réplicas y corrección $+1$; no equivale al
+valor paramétrico ni debe reportarse como cero. Se conserva t como referencia de S1
+y los cambios de signo como sensibilidad a la forma; ninguno resuelve la dependencia
+espacial. No se justifica preferir un método solo por su valor $p$.
+La humedad es mayor antes de días con lluvia en las 49 localidades observadas;
+\DMedia{} pp de humedad no son un aumento equivalente en probabilidad de lluvia.
+
+\clearpage
+\titulo{3. Estabilidad de correlaciones}{Bootstrap de conglomerados completos y límites de generalización}
+Se seleccionan tres relaciones de la matriz propia de S1. Para cada par se conservan
+casos observados y se extraen localidades con reemplazo; se concatenan sus registros
+y se recalculan los rangos de Spearman en cada una de 10.000 réplicas válidas.
+Los IC se obtienen por percentiles 2,5 y 97,5\,\%.
+
+\begin{center}
+\captionof{table}{Correlaciones agrupadas de S1 y sus IC bootstrap del 95\,\%.}
+\label{tab:correlaciones}
+\small\TablaCorrelaciones
+\end{center}
+\fuente
+\figura{s2_correlaciones_distribuciones.png}{Distribuciones bootstrap con escalas propias. Las líneas señalan el valor de S1 y los extremos del IC; la inclusión de cero se evalúa en la tabla.}{fig:correlaciones}
+
+\subtitulo{Resultados estables y resultados condicionados}
+Los tres IC excluyen cero. La dirección positiva de temperatura máxima--temperatura
+de las 15:00 es muy estable, con amplitud \AnchoCorrTemp{}; la asociación próxima
+a uno sugiere redundancia que deberá comprobarse en el entrenamiento mediante
+diagnóstico de multicolinealidad y comparación de modelos, sin decidirla solo por correlación.
+
+Sunshine tiene \FaltantesSol{}\,\% de faltantes. Humedad--sol conserva signo negativo,
+pero usa 74.497 pares en 30 localidades.
+Su intervalo, de amplitud \AnchoCorrSol{}, no demuestra que la relación sea igual
+en las 19 localidades sin Sunshine observado. Humedad--precipitación conserva signo
+positivo, con amplitud \AnchoCorrLluvia{}; su magnitud responde al filtro de rango
+de la sección~5. Se distingue estabilidad del signo bajo remuestreo de robustez
+general frente a cambios en composición, periodos o extremos.
+
+\subtitulo{Qué dependencia conserva este procedimiento}
+Los días de una localidad permanecen juntos cuando se remuestrea su conglomerado;
+por tanto, no se los remuestrea como unidades independientes. El procedimiento
+condiciona a sus historiales observados, sin generar trayectorias futuras ni corregir
+dependencia entre localidades. En el coeficiente agrupado, las estaciones con más
+registros aportan más filas: este estimando difiere de una media de correlaciones locales.
+
+La exclusión por pares evita una pérdida global de observaciones, pero cambia
+denominadores y composición entre relaciones. Estacionalidad, geografía y patrones
+de faltantes pueden explicar parte de las asociaciones agrupadas. Ninguno de estos
+coeficientes establece causalidad ni acredita la utilidad predictiva de una variable.
+
+\clearpage
+\titulo{4. Simulación Monte Carlo}{Incertidumbre de una media en localidades hipotéticamente comparables}
+\textbf{Escenario.} Se estudia cuánto variaría la diferencia media de humedad si se
+observaran muestras de 49 localidades comparables. Se usa exclusivamente la media
+y desviación de las diferencias de S1:
+\[
+ D^*_{b\ell}\overset{ind}{\sim}N(\widehat\mu_D,\widehat\sigma_D^2),
+ \quad (\widehat\mu_D,\widehat\sigma_D)=(\DMedia{};\,\DSd{})\ \mathrm{pp},
+ \quad \overline D_b^*=\frac{1}{49}\sum_{\ell=1}^{49}D^*_{b\ell}.
+\]
+Se generan 10.000 medias. La normalidad aproxima la distribución entre localidades
+de S1; no modela la serie meteorológica diaria. Es un escenario paramétrico condicionado
+a estimaciones fijas, sin incorporar incertidumbre adicional en esos parámetros.
+
+\begin{center}
+\captionof{table}{Resultados de simulación y referencias analíticas.}
+\label{tab:mc}
+\begin{tabularx}{\linewidth}{@{}Xr@{}}\toprule
+Estadístico & Resultado (pp)\\\midrule
+Media simulada; objetivo S1 & \MediaMC{}; \DMedia{}\\
+Desviación de medias simuladas & \SdMC\\
+Desviación teórica $\widehat\sigma_D/\sqrt{49}$ & \SdTeorica\\
+Percentiles 2,5 y 97,5\,\% de medias simuladas & \IntervaloMC\\
+Error Monte Carlo de la media, $s(\overline D^*)/\sqrt{10.000}$ & \ErrorMC\\
+Media simulada menos objetivo S1 & \DiferenciaMC\\\bottomrule
+\end{tabularx}
+\end{center}
+\figura{s2_montecarlo.png}{Convergencia desde la iteración 100 y distribución de medias hipotéticas. La banda de la izquierda es una referencia puntual del error Monte Carlo, no una banda simultánea.}{fig:mc}
+
+\subtitulo{Convergencia numérica}
+La discrepancia final corresponde a \ErrorUnidadesMC{} errores Monte Carlo, menor
+que uno en valor absoluto. La dispersión simulada es cercana a la referencia analítica.
+Las medias acumuladas con 1.000, 5.000 y 10.000 iteraciones son
+\MediaMCmil{}, \MediaMCcincomil{} y \MediaMC{} pp. Los percentiles se estabilizan
+aproximadamente, aunque conservan variación de simulación; 10.000 iteraciones no
+son por sí solas una demostración de convergencia o adecuación del escenario.
+
+\subtitulo{Interpretación para la decisión}
+El intervalo central de medias hipotéticas queda sobre cero: bajo esta aproximación,
+la diferencia descriptiva persistiría en localidades comparables. Esto respalda estudiar
+la humedad como candidato en una fase posterior. El rango simulado \textbf{no es un IC
+del parámetro desconocido}, una probabilidad de lluvia ni una validación del pronóstico.
+Su coincidencia con la evidencia anterior depende del modelo normal, la independencia
+y la calibración con S1; no constituye información meteorológica independiente.
+
+\clearpage
+\titulo{5. Robustez e influencia}{Separar estabilidad del signo de sensibilidad de la magnitud}
+\textbf{Diferencias locales.} El bootstrap percentil de 10.000 medias da un IC de
+\DIntervaloBootstrap{} pp. Al retirar una localidad cada vez, las medias jackknife
+varían entre \JackMin{} y \JackMax{} pp. Albany cambia la media en \JackAlbany{}
+pp; AliceSprings, \JackAlice{} pp; Cobar, \JackCobar{} pp. El máximo cambio absoluto
+es \JackCambioMax{} pp (\JackCambioRel{}\,\% de la media completa). Son unidades
+locales influyentes, no errores demostrados; ninguna exclusión individual cambia el signo.
+
+\begin{center}
+\captionof{table}{Correlaciones y sensibilidad al filtro de 1,5 IQR en ambas variables.}
+\label{tab:robustez}
+\small\TablaRobustez
+\end{center}
+\fuente
+\figura{s2_robustez.png}{Influencia de localidades sobre la media de diferencias y comparación de Spearman con datos completos y restricción diagnóstica.}{fig:robustez}
+
+\subtitulo{Humedad--precipitación: magnitud sensible}
+Spearman pasa de \RhoLluvia{} a \RhoLluviaFiltro{}: cambio \CambioRhoLluvia{}
+y reducción relativa de magnitud de \ReduccionRhoLluvia{}\,\%. Se excluyen
+\ExcluidosLluvia{} de 138.569 pares (\PorcentajeExcluidoLluvia{}\,\%). La cerca
+superior de Rainfall es \CercaLluvia{} mm: también retira días de lluvia plausibles,
+por lo que modifica el rango y la composición de la muestra. El descenso no demuestra
+datos erróneos ni un efecto causal de los extremos. Se concluye \textbf{signo positivo
+estable bajo bootstrap y magnitud sensible a restringir la precipitación}.
+
+\subtitulo{Otras relaciones y recomendaciones}
+Temperatura máxima--temperatura de las 15:00 cambia muy poco al aplicar el filtro.
+En humedad--sol no se retiran filas; la igualdad del coeficiente no aporta por sí sola
+una prueba de resistencia a extremos. Kendall tau-b coincide en dirección con Spearman,
+pero sus magnitudes no son directamente equivalentes. Se conserva el análisis principal
+con valores plausibles; cualquier transformación futura se decidirá dentro del entrenamiento.
+
+El jackknife evalúa influencia individual entre localidades y el filtro evalúa una
+restricción de rango. No prueban estabilidad ante todos los climas, faltantes o futuros
+periodos. La independencia espacial y la invariancia de signos siguen siendo supuestos
+no demostrados; deberán considerarse al diseñar la validación predictiva.
+
+\clearpage
+\titulo{6. Síntesis validada para Sumativa 3}{Evidencia conservada y decisiones que deberán comprobarse}
+\begin{center}
+\captionof{table}{Resultados reutilizables y acciones posteriores. Los IC y coeficientes completos están en las tablas anteriores y el archivo de resultados.}
+\label{tab:sintesis}
+\small
+\begin{tabularx}{\linewidth}{@{}p{3.1cm}XX@{}}\toprule
+Resultado & Evidencia y límite & Acción para S3\\\midrule
+Tres medias locales & IC t, percentil y BCa concordantes; inferencia condicional. & Conservar estimando y unidades; no imputar con medias calculadas en toda la base.\\
+Diferencia de humedad & \DMedia{} pp; IC bootstrap \DIntervaloBootstrap. Influencia máxima: Albany, \JackCambioMax{} pp. & Evaluar humedad disponible a la hora de emisión; comprobar estabilidad temporal y geográfica.\\
+MaxTemp / Temp3pm & $\rho=\RhoTemp$; fuerte asociación y escasa sensibilidad al filtro. & Revisar redundancia y disponibilidad horaria antes de combinar predictores.\\
+Humedad / Sunshine & $\rho=\RhoSol$; IC negativo; cobertura de 30 localidades. & Comparar estrategias con y sin Sunshine, con idéntica partición.\\
+Humedad / Rainfall & $\rho=\RhoLluvia$; filtro: \RhoLluviaFiltro. Signo estable, magnitud sensible. & Conservar precipitación plausible; justificar transformaciones dentro del entrenamiento.\\
+Calidad y dependencia & Sunshine ausente en 19 localidades; lluvia \PorcentajeLluvia{}\,\%; lag-1 \LagMediana. & Partición temporal, preprocesamiento dentro de entrenamiento y métricas por clase.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+\subtitulo{Recomendaciones operativas para la fase siguiente}
+\begin{itemize}
+\item Fijar hora y horizonte del pronóstico; comprobar qué medidas están disponibles entonces.
+\item Separar por fechas completas, evitando que un mismo día se distribuya entre entrenamiento y prueba; evaluar localidades si se busca transferir el modelo.
+\item Ajustar imputación, escalado, selección y umbral solo con entrenamiento y su validación. El archivo completo ya fue explorado en fases previas; se declarará ese antecedente.
+\item Informar matriz de confusión, precision, recall, F1 y ROC-AUC según la rúbrica de modelamiento; PR-AUC puede complementar. No optimizar decisiones con la prueba final.
+\end{itemize}
+
+\textbf{Trazabilidad y continuidad.} Entre 142.193 etiquetas conocidas, 31.877 son
+\texttt{Yes}. El notebook concilia S1, conserva semillas y verifica el CSV por SHA-256
+(prefijo \texttt{573fd715cd69fcac}). El código base es de Patricio, commit \texttt{1484dd0}.
+\path{results/03_sumativa2/resultados_validados_s2.json} y su tabla de síntesis guardan
+IC, supuestos e influencia; \path{docs/continuidad_sumativa2.md} registra decisiones.
+La evidencia diferencia Work/Windows. Estos insumos preparan S3; no la desarrollan.
+
+\subtitulo{Referencias}
+{\footnotesize\setlength{\parskip}{0.32em}
+Araya, B., Cañete, A., Cortez, P., \& Guaico, J. (2026). \textit{Sumativa 1: informe técnico de avance y notebook} [Informe académico y código]. GitHub.
+\url{https://github.com/BenjaArayaM/Proyecto-Lluvias-Australia-Grupo7/tree/134859256a519e0ffde2827319d73a603598e0ea}.
+
+jpmaidana. (2026). \textit{MCDI501: plantilla Sumativa 2, validación, simulación y remuestreo} [Material docente]. GitHub.
+\url{https://github.com/jpmaidana/MCDI501-202682}.
+
+jsphyg. (s.\,f.). \textit{Rain in Australia} [Conjunto de datos]. Kaggle.
+\url{https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package}.
+
+SciPy community. (s.\,f.-a). \textit{scipy.stats.bootstrap}. SciPy reference guide.
+\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html}.
+
+SciPy community. (s.\,f.-b). \textit{scipy.stats.permutation\_test}. SciPy reference guide.
+\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html}.
+}
+\end{document}

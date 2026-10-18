@@ -1,0 +1,67 @@
+{
+  "comparacion_numerica_con_version_patricio": [
+    {
+      "archivo": "bootstrap_ic_s2_distribuciones.csv",
+      "filas": 30000,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "bootstrap_ic_s2_resumen.csv",
+      "filas": 3,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "diferencias_humedad_por_localidad.csv",
+      "filas": 49,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "estabilidad_correlaciones_bootstrap.csv",
+      "filas": 3,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "jackknife_diferencia_humedad.csv",
+      "filas": 49,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "monte_carlo_convergencia.csv",
+      "filas": 6,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "monte_carlo_resumen.csv",
+      "filas": 1,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "prueba_permutacion_humedad.csv",
+      "filas": 1,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "robustez_correlaciones.csv",
+      "filas": 3,
+      "max_diferencia_absoluta": 0.0
+    },
+    {
+      "archivo": "robustez_diferencia_humedad.csv",
+      "filas": 1,
+      "max_diferencia_absoluta": 0.0
+    }
+  ],
+  "scripts_originales_identicos": {
+    "analisis_s2_puntos_4_6.py": true,
+    "validacion_bootstrap_ic_s2.py": true,
+    "validacion_s2.py": true
+  },
+  "sintesis_reemplazada_por_version_de_10_entradas": true,
+  "cambios_textuales_deliberados": [
+    "Clasificación de estabilidad de signo separada de sensibilidad",
+    "Síntesis y resúmenes integrados"
+  ],
+  "dataset_original_intacto": true,
+  "comandos_git_ejecutados": 0,
+  "escrituras_github": 0
+}
