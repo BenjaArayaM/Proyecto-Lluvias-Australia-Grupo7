@@ -1,0 +1,19 @@
+{
+  "fecha_utc": "2026-10-18T21:55:16.185308+00:00",
+  "archivo": "reports/03_sumativa2/informe_sumativa2_grupo7.pdf",
+  "sha256": "9815b7aeb2fffafd6335352da1113a3c26f7ae918774fc0a5a93a85e52c27702",
+  "paginas_totales": 7,
+  "limite_paginas_totales": 7,
+  "identificacion_y_referencias_incluidas_en_limite": true,
+  "compilador": "pdfLaTeX, TeX Live 2023",
+  "pasadas_compilacion": 2,
+  "overfull_hbox_o_vbox": false,
+  "referencias_indefinidas": false,
+  "portada_referencia": "Sumativa 1, PDF aportado por el estudiante; ver validacion_portada_unab.json",
+  "inspeccion_visual": "Siete páginas renderizadas e inspeccionadas, incluida portada UNAB con estructura de S1 y seis páginas de desarrollo.",
+  "fuente_editable": "reports/03_sumativa2/informe_sumativa2_grupo7.tex",
+  "fuente_numerica": "results/03_sumativa2/resultados_validados_s2.json",
+  "zip_autonomo_compilado": true,
+  "texto_y_paginas_coinciden_con_informe_del_proyecto": true,
+  "compilacion_windows_acreditada": false
+}

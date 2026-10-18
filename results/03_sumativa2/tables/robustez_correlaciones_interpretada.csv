@@ -1,0 +1,4 @@
+﻿variable_x,variable_y,n_completo,spearman_completo,kendall_tau_b_completo,n_dentro_cercas_tukey,porcentaje_excluido_solo_sensibilidad,spearman_sensibilidad_tukey,cambio_spearman,signo_spearman_kendall_coincide,conclusion_integrada,cambio_relativo_magnitud_pct
+MaxTemp,Temp3pm,141589,0.9844756228564376,0.9117366087584364,140807,0.5523027918835521,0.9842167366739456,-0.0002588861824919,True,Signo estable y magnitud poco sensible al filtro aplicado; posible redundancia,-0.026296860631336294
+Humidity3pm,Sunshine,74497,-0.620348618296266,-0.4491710357095355,74497,0.0,-0.620348618296266,0.0,True,Signo estable en 30 localidades; filtro no elimina casos y no prueba resistencia a extremos,0.0
+Humidity3pm,Rainfall,138569,0.4436352109823416,0.3402959821504469,113779,17.89000425780658,0.3074063804952813,-0.1362288304870603,True,Signo positivo estable; magnitud sensible al rango de precipitación,-30.70739813131802

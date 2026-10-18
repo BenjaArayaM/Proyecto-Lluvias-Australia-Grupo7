@@ -1,0 +1,2 @@
+n_localidades,asimetria_diferencias,shapiro_W,shapiro_p,diferencias_fuera_tukey,independencia_espacial_verificada,intercambiabilidad_signos_verificada_por_diseno,alcance
+49,-0.07570180326056969,0.9883515532422484,0.9058729343962464,0,False,False,Diagnóstico de forma; no prueba independencia ni simetría de la distribución nula

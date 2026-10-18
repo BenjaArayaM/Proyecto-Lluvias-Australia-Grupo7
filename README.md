@@ -20,9 +20,9 @@ El ZIP de la Formativa 1 no redistribuye el dataset. Cada integrante debe obtene
 
 | Identificador | Evaluación | Ponderación | Estado |
 |---|---|---:|---|
-| 01_formativa1 | Formativa 1 — Informe 1 | 0 % | Análisis ejecutado en Work y reproducido en Windows; resultados conciliados y nómina confirmada. Canvas pendiente. |
-| 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Análisis estadístico desarrollado en la rama sumativa1-jorge; informe y entrega pendientes. |
-| 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Pendiente de autorización y desarrollo. |
+| 01_formativa1 | Formativa 1 — Informe 1 | 0 % | Entregada; retroalimentación del profesor recibida. |
+| 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Entregada e integrada en main; retroalimentación del profesor recibida. |
+| 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Análisis, notebook, informe LaTeX/PDF y síntesis preparados; ejecución verificada en Work y Windows con cifras principales conciliadas. Revisión grupal y entrega pendientes. |
 | 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Pendiente de autorización y desarrollo. |
 | 05_sumativa3 | Sumativa 3 — Cierre y comunicación | 60 % | Pendiente de autorización y desarrollo. |
 
@@ -50,15 +50,15 @@ La preparación de las cinco carpetas permite continuidad; no significa que se h
 - Módulo `src/formativa1.py`.
 - 19 tablas CSV, ocho figuras y `results/01_formativa1/resultados.json`.
 - Informe editable en LaTeX y PDF compilado de 13 páginas (portada e índice incluidos) en `reports/01_formativa1/`. El Word anterior se conserva como referencia.
-- Borrador de foro y guía para dos comentarios; todavía no publicados.
+- Material del foro y guía de comentarios conservados como antecedentes de la evaluación entregada.
 - Matriz completa de siete criterios: máximo 99 puntos, según la rúbrica oficial.
-- Evidencias diferenciadas Work/Windows, comparación de resultados y ficha de continuidad; no se declaran entregas realizadas.
+- Evidencias diferenciadas Work/Windows, comparación de resultados y ficha de continuidad. La entrega y retroalimentación fueron informadas por el estudiante el 18 de octubre de 2026.
 
 El análisis incluye ficha de variables, calidad, descripción, relaciones bivariadas, cobertura, faltantes, tres IC individuales y una prueba básica. La inferencia usa **49 resúmenes por localidad**, con igual peso, y un modelo exploratorio condicionado a independencia aproximada entre localidades. No se ha validado independencia espacial ni representatividad nacional. No se imputa, elimina globalmente ni modela la variable objetivo.
 
 ## Entornos y ejecución comprobada
 
-En Windows se verificaron Python 3.12.0, `.venv`, importaciones, `pip check`, versiones exactas, kernel `grupo7_mcdi501`, apertura de JupyterLab y arranque de un kernel. El estudiante comprobó además el CSV, el commit inicial **d5142a1** y la creación local de la rama **formativa1-benjamin**. No hay evidencia de una publicación remota del proyecto.
+En Windows se verificaron Python 3.12.0, `.venv`, importaciones, `pip check`, versiones exactas, kernel `grupo7_mcdi501`, apertura de JupyterLab y arranque de un kernel. El estudiante comprobó además el CSV, el commit inicial **d5142a1** y la creación local de la rama **formativa1-benjamin**. La publicación de F1 y la integración posterior de S1 se verificaron en GitHub el 18 de octubre de 2026; las evidencias iniciales se conservan como registro histórico.
 
 Las 19 celdas de análisis se ejecutaron en Work con Python 3.12.14, un kernel real ipykernel en memoria y las mismas versiones de NumPy (2.5.3), pandas (3.0.6), SciPy (1.18.1) y matplotlib (3.11.2) registradas en Windows. Se verificaron identidad del CSV, integridad de datos, conteos, medias, intervalos y prueba. Los sockets de kernel están bloqueados en Work. El estudiante acreditó posteriormente la ejecución completa en JupyterLab Windows con su registro del 10 de octubre de 2026 a las 18:02 UTC y la salida final correcta. Se conciliaron las 19 tablas y resultados.json: 17 tablas coinciden tras adaptar los saltos de línea y las demás diferencias numéricas son del orden de 1e-14, sin cambiar las cifras publicadas.
 
@@ -139,6 +139,31 @@ Se comprobó la generación de cinco figuras y once tablas. La independencia esp
 
 - Análisis estadístico: desarrollado.
 - Validación básica: completada.
-- Informe técnico: pendiente.
-- Entrega de Sumativa 1: pendiente.
+- Informe técnico: publicado en `reports/02_sumativa1/informe_sumativa1_grupo7.pdf`.
+- Entrega de Sumativa 1: informada y retroalimentada por el profesor.
 
+
+## Sumativa 2 - Validación, simulación y remuestreo
+
+Base de Patricio: `1484dd055fb99779932b85f0e87ac541400b893f`. Se conservan sus tres
+scripts originales y se añade `src/cierre_sumativa2.py` para completar interpretación,
+controles, visualización y continuidad. Los índices [S1](S1/README.md) y
+[S2](S2/README.md) enlazan los entregables sin duplicarlos.
+
+- Notebook: `notebooks/03_sumativa2_validacion_remuestreo.ipynb`.
+- Informe PDF y LaTeX editable: `reports/03_sumativa2/`. Máximo siete páginas totales.
+- Archivo reutilizable: `results/03_sumativa2/resultados_validados_s2.json`.
+- Síntesis con intervalos y localidades influyentes: `results/03_sumativa2/tables/sintesis_resultados_para_s3.csv`.
+- Decisiones y límites: `docs/continuidad_sumativa2.md`.
+- Instrucciones de reproducción y edición: `docs/reproduccion_sumativa2.md`.
+- Dependencias adicionales: `requirements-sumativa2.txt`, incluido SciPy >= 1.15.
+- Evidencia: `evidence/03_sumativa2/`, con archivos separados por entorno.
+
+Se ejecutan 10.000 remuestras por parámetro y método, 10.000 cambios de signo,
+10.000 remuestras por correlación y 10.000 iteraciones Monte Carlo. Se mantienen
+los estimandos de S1 y el CSV original. Los IC son condicionales a los supuestos;
+los rangos simulados no son pronósticos. La correlación humedad/lluvia conserva
+signo positivo y tiene magnitud sensible a restringir el rango de precipitación.
+
+La reproducción Windows de S2 está verificada; consultar `evidence/03_sumativa2/validacion_windows.md`. La revisión grupal y la entrega en Canvas siguen pendientes de evidencia.
+La asistencia no ejecuta Git ni publica cambios; Benjamín revisa y realiza esas operaciones.

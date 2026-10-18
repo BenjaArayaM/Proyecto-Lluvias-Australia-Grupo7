@@ -1,3 +1,5 @@
+> Estado actual: F1 y S1 entregadas y retroalimentadas; S2 preparada con evidencia Work. Las fichas originales de F1 se conservan como registro histórico. La ficha vigente de S2 está en `continuidad_sumativa2.md`.
+
 # Fichas de continuidad — MCDI501 — Grupo 7
 
 Actualización: 10 de octubre de 2026. Las cifras corresponden al CSV y a la ejecución Work documentada, conciliada con la reproducción Windows aportada por el estudiante. Los registros de ambos entornos se conservan. La evidencia de Canvas sigue pendiente.
@@ -95,11 +97,11 @@ No se inicia ninguna de esas fases en este paquete.
 
 ## 02_sumativa1 — Sumativa 1 — Informe técnico de avance
 
-**Estado:** pendiente de autorización, auditoría específica y desarrollo. Sin resultados generados. Al iniciar, revisar la ficha de F1, los vacíos pendientes y la rúbrica correspondiente. Rutas reservadas: `results/02_sumativa1/`, `reports/02_sumativa1/` y `evidence/02_sumativa1/`.
+**Actualización del 18 de octubre de 2026:** trabajo de Jorge entregado y retroalimentado por el profesor, integrado en main. S2 concilia sus tres medias e IC con `results/02_sumativa1/tables/intervalos_medias_localidades.csv`, sus correlaciones con `matriz_correlaciones_spearman.csv` y recalcula la diferencia de humedad con la misma definición. Consultar la ficha de continuidad S2 para resultados validados y limitaciones actuales.
 
 ## 03_sumativa2 — Sumativa 2 — Informe 3
 
-**Estado:** pendiente de autorización, auditoría específica y desarrollo. Sin resultados generados. Al iniciar, revisar la ficha de F1, los vacíos pendientes y la rúbrica correspondiente. Rutas reservadas: `results/03_sumativa2/`, `reports/03_sumativa2/` y `evidence/03_sumativa2/`.
+**Actualización del 18 de octubre de 2026:** desarrollo autorizado y cierre preparado sobre el código de Patricio. La ficha vigente y completa está en [continuidad_sumativa2.md](continuidad_sumativa2.md). Incluye tres parámetros con IC clásicos, percentil y BCa; contraste mediante cambios de signo; tres correlaciones con IC; Monte Carlo; jackknife; sensibilidad al rango de lluvia y decisiones para S3. La reproducción Windows fue verificada el 18 de octubre de 2026: 13 celdas sin errores, diez controles correctos y cifras principales coincidentes con Work. Consultar `evidence/03_sumativa2/validacion_windows.md`. La entrega en Canvas sigue pendiente de evidencia.
 
 ## 04_formativa2 — Formativa 2 — Informe 4
 
