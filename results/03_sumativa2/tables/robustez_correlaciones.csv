@@ -1,0 +1,4 @@
+variable_x,variable_y,n_completo,spearman_completo,kendall_tau_b_completo,n_dentro_cercas_tukey,porcentaje_excluido_solo_sensibilidad,spearman_sensibilidad_tukey,cambio_spearman,signo_spearman_kendall_coincide
+MaxTemp,Temp3pm,141589,0.9844756228564375,0.9117366087584363,140807,0.5523027918835521,0.9842167366739456,-0.0002588861824919242,True
+Humidity3pm,Sunshine,74497,-0.620348618296266,-0.4491710357095355,74497,0.0,-0.620348618296266,0.0,True
+Humidity3pm,Rainfall,138569,0.44363521098234165,0.34029598215044693,113779,17.89000425780658,0.3074063804952813,-0.13622883048706036,True
