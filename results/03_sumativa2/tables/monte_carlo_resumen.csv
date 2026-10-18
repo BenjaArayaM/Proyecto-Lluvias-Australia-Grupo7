@@ -1,0 +1,2 @@
+escenario,distribucion,n_localidades_S1,media_diferencias_S1_pp,sd_diferencias_entre_localidades_pp,localidades_por_muestra,iteraciones,media_simulada_pp,sd_medias_simuladas_pp,p2_5_pp,p97_5_pp,semilla
+Media de diferencias locales en muestras hipotéticas de localidades comparables,"Normal(mu_hat, sd_hat), estimados de las diferencias locales S1",49,20.076901361988934,5.588874538265212,49,10000,20.07286770230225,0.7941697269621633,18.50324780116461,21.61773578202632,20261018

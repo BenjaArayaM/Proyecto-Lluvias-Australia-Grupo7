@@ -1,0 +1,2 @@
+n_localidades,media_diferencia_pp,ic95_t_inferior,ic95_t_superior,ic95_bootstrap_inferior,ic95_bootstrap_superior,media_jackknife_min,media_jackknife_max,diferencias_locales_positivas,max_cambio_absoluto_jackknife_pp,bootstrap_replicas,semilla
+49,20.076901361988934,18.471589161612204,21.682213562365664,18.51719801893218,21.616701628376717,19.800685555334173,20.358364075626667,49,0.28146271363773323,10000,20261018
