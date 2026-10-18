@@ -1,0 +1,2 @@
+variable,grupo_yes,grupo_no,unidad_analisis,n_localidades,n_permutaciones,media_diferencias_pp,ic95_t_inferior,ic95_t_superior,estadistico_t,grados_libertad,p_parametrico_t,extremos_permutacion,p_permutacion,alpha,decision_parametrica,decision_permutacion,semilla
+Humidity3pm,RainTomorrow=Yes,RainTomorrow=No,Location,49,10000,20.076901361988934,18.471589161612204,21.682213562365664,25.14608416626681,48,2.747107556482988e-29,0,9.999000099990002e-05,0.05,Rechazar H0,Rechazar H0,20261018
