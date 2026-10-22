@@ -1,0 +1,4 @@
+modelo,predictores,n_predictores,AIC_sin_ponderar
+A · Variables justificadas,"Humidity3pm, Rainfall, Sunshine, MaxTemp, RainToday",5,78869.54106676226
+B · Stepwise AIC,"Humidity3pm, RainToday, Pressure3pm, Sunshine, Rainfall, MaxTemp",6,74855.34148135384
+C · Reducido,"Humidity3pm, Rainfall, RainToday",3,82332.14565578409
