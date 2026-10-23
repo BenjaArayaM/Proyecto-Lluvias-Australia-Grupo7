@@ -23,7 +23,7 @@ El ZIP de la Formativa 1 no redistribuye el dataset. Cada integrante debe obtene
 | 01_formativa1 | Formativa 1 — Informe 1 | 0 % | Entregada; retroalimentación del profesor recibida. |
 | 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Entregada e integrada en main; retroalimentación del profesor recibida. |
 | 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Análisis, notebook, informe LaTeX/PDF y síntesis preparados; ejecución verificada en Work y Windows con cifras principales conciliadas. Revisión grupal y entrega pendientes. |
-| 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Pendiente de autorización y desarrollo. |
+| 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Notebook y resultados verificados en la rama formativa2-jorge; revisión grupal y entrega pendientes. |
 | 05_sumativa3 | Sumativa 3 — Cierre y comunicación | 60 % | Pendiente de autorización y desarrollo. |
 
 La preparación de las cinco carpetas permite continuidad; no significa que se hayan iniciado las otras evaluaciones.

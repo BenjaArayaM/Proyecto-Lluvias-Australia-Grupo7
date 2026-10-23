@@ -1,0 +1,18 @@
+{
+  "semilla": 2026,
+  "train": 0.7,
+  "test": 0.3,
+  "estratificada": true,
+  "prevalencia_yes": 0.22418121848473554,
+  "modelo_bootstrap": "B · Stepwise AIC",
+  "variables_bootstrap": [
+    "Humidity3pm",
+    "RainToday",
+    "Pressure3pm",
+    "Sunshine",
+    "Rainfall",
+    "MaxTemp"
+  ],
+  "bootstrap_solicitadas": 100,
+  "bootstrap_completadas": 100
+}

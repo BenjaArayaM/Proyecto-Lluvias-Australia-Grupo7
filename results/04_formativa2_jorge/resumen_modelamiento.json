@@ -1,0 +1,20 @@
+{
+  "sha256_dataset": "573fd715cd69fcacc4df32024d823b450ae3edaae7e8ff2eeb623adbed424014",
+  "semilla": 42,
+  "predictores": [
+    "Humidity3pm",
+    "Sunshine",
+    "Rainfall",
+    "MaxTemp"
+  ],
+  "clase_positiva": "RainTomorrow = Yes (1)",
+  "n_entrenamiento": 99535,
+  "n_prueba": 42658,
+  "particion_estratificada": true,
+  "imputacion": "Mediana ajustada exclusivamente en entrenamiento",
+  "estandarizacion": "StandardScaler ajustado en entrenamiento",
+  "modelo": "Logit con intercepto, sin regularizacion ni ponderacion",
+  "umbral": 0.5,
+  "convergencia": true,
+  "roc_auc_test": 0.8163887744249981
+}
