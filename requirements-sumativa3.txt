@@ -1,0 +1,15 @@
+# MCDI501 — Grupo 7 — Sumativa 3 — Python 3.12
+# Complementa requirements.txt. No reemplaza el lock histórico de Windows.
+# Versiones realmente ejecutadas: evidence/05_sumativa3/ejecucion_sumativa3_work.json
+numpy>=1.26
+pandas>=2.1
+scipy>=1.15
+statsmodels>=0.14.4
+scikit-learn>=1.4
+matplotlib>=3.8
+threadpoolctl>=3.1
+nbformat>=5.10
+nbclient>=0.10
+ipykernel>=6.29
+nbconvert>=7.16
+jupyterlab>=4.0

@@ -1,0 +1,26 @@
+{
+  "criterio": "Mayor AUC OOF; diferencia <=0.002 favorece menos predictores",
+  "modelo": "M2_stepwise_AIC",
+  "estrategia": "regresion",
+  "predictores_finales": [
+    "Humidity3pm",
+    "WindGustSpeed",
+    "Pressure3pm",
+    "Sunshine",
+    "log1p_Rainfall",
+    "Cloud3pm",
+    "MaxTemp",
+    "Humidity9am"
+  ],
+  "umbral_final": 0.603429598311056,
+  "umbrales_por_modelo": {
+    "M1_dominio": 0.5638033762226534,
+    "M2_stepwise_AIC": 0.603429598311056,
+    "M3_reducido_BIC": 0.5775696697590811
+  },
+  "ninguna_metrica_de_prueba_utilizada": true,
+  "pesos_clase_train": {
+    "No": 0.6444814234469898,
+    "Yes": 2.2303262525768575
+  }
+}

@@ -1,0 +1,2097 @@
+{
+  "evaluacion": "Sumativa 3, Fase 4",
+  "grupo": 7,
+  "integrantes": [
+    "Benjamín Araya",
+    "Alan Cañete",
+    "Patricio Cortez",
+    "Jorge Guaico"
+  ],
+  "rubrica_maximo": 108,
+  "puntajes_criterios": [
+    21,
+    30,
+    30,
+    9,
+    9,
+    9
+  ],
+  "fuentes_proyecto": {
+    "S1": "134859256a519e0ffde2827319d73a603598e0ea",
+    "S2": "e802fc457e97a9b42d28b45f9f11a61df865b446",
+    "base": "28e3a8a0805e11fd1b93beb273db7ca4060aa557"
+  },
+  "semillas_y_replicas": {
+    "semilla_particion": 42,
+    "semilla_imputacion": 50101,
+    "semilla_cv": 50102,
+    "semilla_bootstrap": 50103,
+    "semilla_mc": 50104,
+    "bootstrap_replicas": 2000,
+    "folds": 5,
+    "montecarlo_iteraciones": 10000
+  },
+  "dataset": {
+    "sha256": "573fd715cd69fcacc4df32024d823b450ae3edaae7e8ff2eeb623adbed424014",
+    "filas_originales": 145460,
+    "columnas": 23,
+    "respuestas_conocidas": 142193,
+    "respuestas_ausentes_excluidas": 3267,
+    "localidades": 49,
+    "n_train": 99535,
+    "n_test": 42658,
+    "porcentaje_lluvia": 22.418121848473554,
+    "Sunshine_faltantes_todos_pct": 48.00976213391998,
+    "Sunshine_faltantes_respuesta_conocida_pct": 47.692924405561456,
+    "localidades_sin_Sunshine": 19
+  },
+  "referencia_F2_reproducida": {
+    "n": 42658,
+    "umbral": 0.5,
+    "accuracy": 0.8288480472595996,
+    "precision": 0.711243929772133,
+    "recall": 0.3982014012339224,
+    "f1": 0.5105584232754575,
+    "auc": 0.8163887744249981,
+    "pr_auc": 0.6198268649102332,
+    "tn": 31549,
+    "fp": 1546,
+    "fn": 5755,
+    "tp": 3808
+  },
+  "imputacion": {
+    "estrategia_principal": "regresion",
+    "regla": "Reducción RMSE Sunshine >=5% en validación interna de donantes; si no, mediana",
+    "reduccion_RMSE_Sunshine": 0.41761062913913083,
+    "diagnosticos_16_regresiones": [
+      {
+        "variable": "MinTemp",
+        "predictores": "Temp9am; Evaporation; Pressure3pm",
+        "n_ajuste_completos": 56512,
+        "n_validacion_interna": 11303,
+        "r2_ajuste": 0.8238434383728896,
+        "r2_validacion": 0.8271942451051588,
+        "rmse_regresion": 2.6890485216658684,
+        "rmse_mediana": 6.479453571713088,
+        "mae_regresion": 2.1449839972959337,
+        "shapiro_p_muestra_5000": 3.5135665454444535e-34,
+        "breusch_pagan_p": 2.0911048481499625e-268,
+        "vif_max": 1.732127049873209,
+        "rango_predicho_min": -3.8995328294418474,
+        "rango_predicho_max": 30.43907406058145
+      },
+      {
+        "variable": "MaxTemp",
+        "predictores": "Temp3pm; MinTemp; Evaporation",
+        "n_ajuste_completos": 56017,
+        "n_validacion_interna": 11204,
+        "r2_ajuste": 0.9733726964158387,
+        "r2_validacion": 0.9729586117445631,
+        "rmse_regresion": 1.1567050850254095,
+        "rmse_mediana": 7.055424483163959,
+        "mae_regresion": 0.7718916962131847,
+        "shapiro_p_muestra_5000": 1.0430106488161347e-57,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 2.4325773035520393,
+        "rango_predicho_min": 7.148175893896617,
+        "rango_predicho_max": 47.50313452849344
+      },
+      {
+        "variable": "Rainfall",
+        "predictores": "Humidity3pm; Humidity9am; Sunshine",
+        "n_ajuste_completos": 51140,
+        "n_validacion_interna": 10228,
+        "r2_ajuste": 0.07530690978701815,
+        "r2_validacion": 0.08063485303515039,
+        "rmse_regresion": 8.50315247394847,
+        "rmse_mediana": 9.181434034762166,
+        "mae_regresion": 3.371815809726156,
+        "shapiro_p_muestra_5000": 3.428167490195861e-85,
+        "breusch_pagan_p": 3.632873344049924e-97,
+        "vif_max": 2.3926219673172926,
+        "rango_predicho_min": 0.0,
+        "rango_predicho_max": 8.499913194805808
+      },
+      {
+        "variable": "Evaporation",
+        "predictores": "MaxTemp; MinTemp; Humidity9am",
+        "n_ajuste_completos": 56479,
+        "n_validacion_interna": 11296,
+        "r2_ajuste": 0.42203553671735583,
+        "r2_validacion": 0.4167467526089833,
+        "rmse_regresion": 3.2656101314137005,
+        "rmse_mediana": 4.332336700783059,
+        "mae_regresion": 1.9065108719232817,
+        "shapiro_p_muestra_5000": 8.01949069628736e-76,
+        "breusch_pagan_p": 1.50786902023333e-38,
+        "vif_max": 3.1118294163083395,
+        "rango_predicho_min": 0.0,
+        "rango_predicho_max": 15.82489290410431
+      },
+      {
+        "variable": "Sunshine",
+        "predictores": "Humidity3pm; Cloud3pm; Cloud9am",
+        "n_ajuste_completos": 44903,
+        "n_validacion_interna": 8981,
+        "r2_ajuste": 0.6480366282433949,
+        "r2_validacion": 0.6445194415400539,
+        "rmse_regresion": 2.2256643854364704,
+        "rmse_mediana": 3.821608869932782,
+        "mae_regresion": 1.7930209760041182,
+        "shapiro_p_muestra_5000": 2.324640345267814e-09,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.756961806881894,
+        "rango_predicho_min": 1.6051257930408065,
+        "rango_predicho_max": 14.17729340762127
+      },
+      {
+        "variable": "WindGustSpeed",
+        "predictores": "WindSpeed3pm; WindSpeed9am; Pressure9am",
+        "n_ajuste_completos": 85703,
+        "n_validacion_interna": 17141,
+        "r2_ajuste": 0.617051251353236,
+        "r2_validacion": 0.6168135312773755,
+        "rmse_regresion": 8.271369426973582,
+        "rmse_mediana": 13.409392092034974,
+        "mae_regresion": 6.137408965715871,
+        "shapiro_p_muestra_5000": 7.573395357111685e-44,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.4212607850711667,
+        "rango_predicho_min": 10.370274648048088,
+        "rango_predicho_max": 92.72039509282651
+      },
+      {
+        "variable": "WindSpeed9am",
+        "predictores": "WindGustSpeed; WindSpeed3pm; Humidity9am",
+        "n_ajuste_completos": 91836,
+        "n_validacion_interna": 18368,
+        "r2_ajuste": 0.4078870829312742,
+        "r2_validacion": 0.4044376631554566,
+        "rmse_regresion": 6.693930202177624,
+        "rmse_mediana": 8.744880906746,
+        "mae_regresion": 5.288888856930918,
+        "shapiro_p_muestra_5000": 9.427775944968184e-06,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.9551837246425912,
+        "rango_predicho_min": 0.0,
+        "rango_predicho_max": 44.245056943425254
+      },
+      {
+        "variable": "WindSpeed3pm",
+        "predictores": "WindGustSpeed; WindSpeed9am; Pressure9am",
+        "n_ajuste_completos": 85703,
+        "n_validacion_interna": 17141,
+        "r2_ajuste": 0.49169086742010504,
+        "r2_validacion": 0.481557961757194,
+        "rmse_regresion": 6.146957753443761,
+        "rmse_mediana": 8.537125039375177,
+        "mae_regresion": 4.747237144423592,
+        "shapiro_p_muestra_5000": 8.862138772508791e-14,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.8865183379819117,
+        "rango_predicho_min": 4.737876034762902,
+        "rango_predicho_max": 67.0298263257139
+      },
+      {
+        "variable": "Humidity9am",
+        "predictores": "Humidity3pm; Evaporation; Sunshine",
+        "n_ajuste_completos": 48718,
+        "n_validacion_interna": 9744,
+        "r2_ajuste": 0.5481394809208755,
+        "r2_validacion": 0.5433379074207665,
+        "rmse_regresion": 12.597168110593977,
+        "rmse_mediana": 18.650771917093625,
+        "mae_regresion": 9.850337687355479,
+        "shapiro_p_muestra_5000": 1.2386656103379378e-08,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.7540748212457231,
+        "rango_predicho_min": 0.0,
+        "rango_predicho_max": 100.0
+      },
+      {
+        "variable": "Humidity3pm",
+        "predictores": "Sunshine; Rainfall; Humidity9am",
+        "n_ajuste_completos": 51140,
+        "n_validacion_interna": 10228,
+        "r2_ajuste": 0.5849802498710039,
+        "r2_validacion": 0.5875656033026229,
+        "rmse_regresion": 13.129230743339075,
+        "rmse_mediana": 20.452320622614323,
+        "mae_regresion": 10.574025263141168,
+        "shapiro_p_muestra_5000": 1.3656168809838635e-07,
+        "breusch_pagan_p": 1.4561163859231637e-17,
+        "vif_max": 1.3470188642609195,
+        "rango_predicho_min": 6.272392904393698,
+        "rango_predicho_max": 100.0
+      },
+      {
+        "variable": "Pressure9am",
+        "predictores": "Pressure3pm; MinTemp; WindGustSpeed",
+        "n_ajuste_completos": 85689,
+        "n_validacion_interna": 17138,
+        "r2_ajuste": 0.9294508049495736,
+        "r2_validacion": 0.9293367496893397,
+        "rmse_regresion": 1.873021175835598,
+        "rmse_mediana": 7.046056701630735,
+        "mae_regresion": 1.4257853692435922,
+        "shapiro_p_muestra_5000": 4.048199584285124e-24,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.4889139846283455,
+        "rango_predicho_min": 986.3755943537656,
+        "rango_predicho_max": 1041.757682873511
+      },
+      {
+        "variable": "Pressure3pm",
+        "predictores": "Pressure9am; Temp9am; WindGustSpeed",
+        "n_ajuste_completos": 85666,
+        "n_validacion_interna": 17134,
+        "r2_ajuste": 0.93078717693595,
+        "r2_validacion": 0.9324981941652564,
+        "rmse_regresion": 1.8396703341168856,
+        "rmse_mediana": 7.0808113642633534,
+        "mae_regresion": 1.3874315314296988,
+        "shapiro_p_muestra_5000": 3.867635536419543e-25,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 1.5093379651022705,
+        "rango_predicho_min": 981.2113544419741,
+        "rango_predicho_max": 1037.4766432337083
+      },
+      {
+        "variable": "Cloud9am",
+        "predictores": "Sunshine; Cloud3pm; Humidity3pm",
+        "n_ajuste_completos": 44903,
+        "n_validacion_interna": 8981,
+        "r2_ajuste": 0.5048649863440562,
+        "r2_validacion": 0.4948784489173321,
+        "rmse_regresion": 1.9917237090625401,
+        "rmse_mediana": 2.884461865559897,
+        "mae_regresion": 1.5929422172997765,
+        "shapiro_p_muestra_5000": 1.2256946184315724e-08,
+        "breusch_pagan_p": 2.4154735644702038e-254,
+        "vif_max": 2.4633965602199717,
+        "rango_predicho_min": 0.49437588882431216,
+        "rango_predicho_max": 8.488233162803487
+      },
+      {
+        "variable": "Cloud3pm",
+        "predictores": "Sunshine; Cloud9am; Humidity3pm",
+        "n_ajuste_completos": 44903,
+        "n_validacion_interna": 8981,
+        "r2_ajuste": 0.5358970161331618,
+        "r2_validacion": 0.5412843882258103,
+        "rmse_regresion": 1.8011722751360009,
+        "rmse_mediana": 2.736060316404777,
+        "mae_regresion": 1.444184687380763,
+        "shapiro_p_muestra_5000": 5.7559296981088435e-11,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 2.316750214786112,
+        "rango_predicho_min": 0.8284117545477954,
+        "rango_predicho_max": 8.384030858674349
+      },
+      {
+        "variable": "Temp9am",
+        "predictores": "MinTemp; MaxTemp; Evaporation",
+        "n_ajuste_completos": 56732,
+        "n_validacion_interna": 11347,
+        "r2_ajuste": 0.925979774068794,
+        "r2_validacion": 0.9280461244901709,
+        "rmse_regresion": 1.7765892304342115,
+        "rmse_mediana": 6.648968561981742,
+        "mae_regresion": 1.3754567896676795,
+        "shapiro_p_muestra_5000": 7.128158554894065e-09,
+        "breusch_pagan_p": 0.0,
+        "vif_max": 2.692958107779296,
+        "rango_predicho_min": 1.4608791716815848,
+        "rango_predicho_max": 37.0051534610674
+      },
+      {
+        "variable": "Temp3pm",
+        "predictores": "MaxTemp; MinTemp; Evaporation",
+        "n_ajuste_completos": 56017,
+        "n_validacion_interna": 11204,
+        "r2_ajuste": 0.9706112598661732,
+        "r2_validacion": 0.9712048783786965,
+        "rmse_regresion": 1.1719035463630905,
+        "rmse_mediana": 6.929420343560549,
+        "mae_regresion": 0.7747718162554328,
+        "shapiro_p_muestra_5000": 3.101883449157304e-64,
+        "breusch_pagan_p": 1.1808087605166498e-135,
+        "vif_max": 2.6848524862299685,
+        "rango_predicho_min": 3.267327860678794,
+        "rango_predicho_max": 44.47779978050709
+      }
+    ],
+    "modelos": {
+      "MinTemp": {
+        "predictors": [
+          "Temp9am",
+          "Evaporation",
+          "Pressure3pm"
+        ],
+        "center": [
+          17.74739170441676,
+          5.492157417893545,
+          1014.9963331150907
+        ],
+        "scale": [
+          6.576465221576914,
+          4.220267693255894,
+          6.998189983320525
+        ],
+        "beta": [
+          13.045912372593428,
+          5.781143161793434,
+          -0.25977046118566366,
+          -0.3281797197713154
+        ],
+        "donors": 56512
+      },
+      "MaxTemp": {
+        "predictors": [
+          "Temp3pm",
+          "MinTemp",
+          "Evaporation"
+        ],
+        "center": [
+          22.35569023689237,
+          12.964567899030651,
+          5.476799900030349
+        ],
+        "scale": [
+          6.903807108792103,
+          6.3881582813438715,
+          4.22373440533316
+        ],
+        "beta": [
+          23.844868522055805,
+          6.455780983531576,
+          0.47266802355473375,
+          0.23934739762844154
+        ],
+        "donors": 56017
+      },
+      "Rainfall": {
+        "predictors": [
+          "Humidity3pm",
+          "Humidity9am",
+          "Sunshine"
+        ],
+        "center": [
+          50.34053578412202,
+          66.81765741102855,
+          7.642776691435275
+        ],
+        "scale": [
+          20.367466298112824,
+          18.884569321390323,
+          3.7801798777686986
+        ],
+        "beta": [
+          2.3805220962064917,
+          1.1273634741814185,
+          0.8515933402047551,
+          -0.8924205372556205
+        ],
+        "donors": 51140
+      },
+      "Evaporation": {
+        "predictors": [
+          "MaxTemp",
+          "MinTemp",
+          "Humidity9am"
+        ],
+        "center": [
+          23.93580268772464,
+          13.055284264948034,
+          66.77620000354113
+        ],
+        "scale": [
+          7.07150032501638,
+          6.396595534675804,
+          18.940912823315607
+        ],
+        "beta": [
+          5.495837390888648,
+          1.2151555317689886,
+          0.773420621767112,
+          -1.3649186847999264
+        ],
+        "donors": 56479
+      },
+      "Sunshine": {
+        "predictors": [
+          "Humidity3pm",
+          "Cloud3pm",
+          "Cloud9am"
+        ],
+        "center": [
+          50.480034741554014,
+          4.355766875264459,
+          4.282586909560608
+        ],
+        "scale": [
+          20.300229602078574,
+          2.6543089651342493,
+          2.806259426613706
+        ],
+        "beta": [
+          7.634616840745608,
+          -1.0501352682171121,
+          -1.4106101359457388,
+          -1.1591352701682238
+        ],
+        "donors": 44903
+      },
+      "WindGustSpeed": {
+        "predictors": [
+          "WindSpeed3pm",
+          "WindSpeed9am",
+          "Pressure9am"
+        ],
+        "center": [
+          19.05503891345694,
+          14.332753812585324,
+          1017.6337397757372
+        ],
+        "scale": [
+          8.662661635330739,
+          8.78018962722998,
+          7.099407549444771
+        ],
+        "beta": [
+          40.07527157742431,
+          6.161353679984629,
+          4.170344560520043,
+          -3.3738546898638
+        ],
+        "donors": 85703
+      },
+      "WindSpeed9am": {
+        "predictors": [
+          "WindGustSpeed",
+          "WindSpeed3pm",
+          "Humidity9am"
+        ],
+        "center": [
+          39.950868940284856,
+          18.76036630515266,
+          68.56735920554031
+        ],
+        "scale": [
+          13.552184502332226,
+          8.675542112087431,
+          19.279892503129027
+        ],
+        "beta": [
+          14.177370530075352,
+          3.8509787000682048,
+          1.711291535162894,
+          -1.296975593741329
+        ],
+        "donors": 91836
+      },
+      "WindSpeed3pm": {
+        "predictors": [
+          "WindGustSpeed",
+          "WindSpeed9am",
+          "Pressure9am"
+        ],
+        "center": [
+          40.07527157742436,
+          14.332753812585324,
+          1017.6337397757372
+        ],
+        "scale": [
+          13.473834269548899,
+          8.78018962722998,
+          7.099407549444771
+        ],
+        "beta": [
+          19.05503891345694,
+          5.258035901517786,
+          1.3121932575806832,
+          0.14950982975832033
+        ],
+        "donors": 85703
+      },
+      "Humidity9am": {
+        "predictors": [
+          "Humidity3pm",
+          "Evaporation",
+          "Sunshine"
+        ],
+        "center": [
+          50.64518247875529,
+          5.320175294552321,
+          7.609218358717516
+        ],
+        "scale": [
+          20.308164387567732,
+          3.704333059102938,
+          3.775923709655913
+        ],
+        "beta": [
+          67.04250995525268,
+          9.599500441750193,
+          -5.963652971333129,
+          -0.9636129167604247
+        ],
+        "donors": 48718
+      },
+      "Humidity3pm": {
+        "predictors": [
+          "Sunshine",
+          "Rainfall",
+          "Humidity9am"
+        ],
+        "center": [
+          7.642776691435275,
+          2.380522096206492,
+          66.81765741102855
+        ],
+        "scale": [
+          3.7801798777686986,
+          9.01772908108359,
+          18.884569321390323
+        ],
+        "beta": [
+          50.34053578412202,
+          -7.6714714638701,
+          1.1428123756179145,
+          9.919283986646846
+        ],
+        "donors": 51140
+      },
+      "Pressure9am": {
+        "predictors": [
+          "Pressure3pm",
+          "MinTemp",
+          "WindGustSpeed"
+        ],
+        "center": [
+          1015.2253918239213,
+          12.41675944403599,
+          40.07174783227719
+        ],
+        "scale": [
+          7.032685183041516,
+          6.392422709138959,
+          13.479293727226045
+        ],
+        "beta": [
+          1017.6380877358822,
+          6.585384003858987,
+          -0.05958640008505623,
+          -0.5203006870434712
+        ],
+        "donors": 85689
+      },
+      "Pressure3pm": {
+        "predictors": [
+          "Pressure9am",
+          "Temp9am",
+          "WindGustSpeed"
+        ],
+        "center": [
+          1017.6363983377302,
+          17.228729017346435,
+          40.07909789181239
+        ],
+        "scale": [
+          7.097895262447033,
+          6.48980288145881,
+          13.47803103839619
+        ],
+        "beta": [
+          1015.2235939579296,
+          6.628981295797803,
+          -0.5470901665453101,
+          0.22079096536294168
+        ],
+        "donors": 85666
+      },
+      "Cloud9am": {
+        "predictors": [
+          "Sunshine",
+          "Cloud3pm",
+          "Humidity3pm"
+        ],
+        "center": [
+          7.634616840745608,
+          4.355766875264459,
+          50.480034741554014
+        ],
+        "scale": [
+          3.7701861404844115,
+          2.6543089651342493,
+          20.300229602078574
+        ],
+        "beta": [
+          4.282586909560608,
+          -1.2137390211882726,
+          0.7057304190235334,
+          0.31051595593540654
+        ],
+        "donors": 44903
+      },
+      "Cloud3pm": {
+        "predictors": [
+          "Sunshine",
+          "Cloud9am",
+          "Humidity3pm"
+        ],
+        "center": [
+          7.634616840745608,
+          4.282586909560608,
+          50.480034741554014
+        ],
+        "scale": [
+          3.7701861404844115,
+          2.806259426613706,
+          20.300229602078574
+        ],
+        "beta": [
+          4.355766875264459,
+          -1.309521317427908,
+          0.6256813585182421,
+          0.22165338539185123
+        ],
+        "donors": 44903
+      },
+      "Temp9am": {
+        "predictors": [
+          "MinTemp",
+          "MaxTemp",
+          "Evaporation"
+        ],
+        "center": [
+          13.034335119509272,
+          23.921180286258195,
+          5.493081506028344
+        ],
+        "scale": [
+          6.407303944016339,
+          7.080053259640514,
+          4.21650349901776
+        ],
+        "beta": [
+          17.73963900444194,
+          3.5720876377926283,
+          3.1675030638031,
+          0.05326267423598286
+        ],
+        "donors": 56732
+      },
+      "Temp3pm": {
+        "predictors": [
+          "MaxTemp",
+          "MinTemp",
+          "Evaporation"
+        ],
+        "center": [
+          23.844868522055805,
+          12.964567899030651,
+          5.476799900030349
+        ],
+        "scale": [
+          7.038538238699451,
+          6.3881582813438715,
+          4.22373440533316
+        ],
+        "beta": [
+          22.355690236892368,
+          6.988898633337813,
+          -0.18466195497933263,
+          -0.08758125526285895
+        ],
+        "donors": 56017
+      }
+    }
+  },
+  "seleccion_entrenamiento": [
+    {
+      "modelo": "M1_dominio",
+      "n_predictores": 4,
+      "predictores": "Humidity3pm; Sunshine; Rainfall; MaxTemp",
+      "AIC_seleccion_no_ponderado": 80289.23546050987,
+      "BIC_seleccion_no_ponderado": 80336.7767836103,
+      "umbral_F1_OOF": 0.5638033762226534,
+      "oof_n": 99535,
+      "oof_umbral": 0.5638033762226534,
+      "oof_accuracy": 0.779052594564726,
+      "oof_precision": 0.5054720957106926,
+      "oof_recall": 0.6664874070090526,
+      "oof_f1": 0.5749188186175971,
+      "oof_auc": 0.8213335409394211,
+      "oof_pr_auc": 0.6108823544805194,
+      "oof_tn": 62671,
+      "oof_fp": 14550,
+      "oof_fn": 7442,
+      "oof_tp": 14872
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "n_predictores": 8,
+      "predictores": "Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am",
+      "AIC_seleccion_no_ponderado": 72746.50795562613,
+      "BIC_seleccion_no_ponderado": 72832.08233720693,
+      "umbral_F1_OOF": 0.603429598311056,
+      "oof_n": 99535,
+      "oof_umbral": 0.603429598311056,
+      "oof_accuracy": 0.8156326920178831,
+      "oof_precision": 0.5755403911402539,
+      "oof_recall": 0.6765707627498432,
+      "oof_f1": 0.6219796065506231,
+      "oof_auc": 0.8604350534345704,
+      "oof_pr_auc": 0.6767592025901126,
+      "oof_tn": 66087,
+      "oof_fp": 11134,
+      "oof_fn": 7217,
+      "oof_tp": 15097
+    },
+    {
+      "modelo": "M3_reducido_BIC",
+      "n_predictores": 3,
+      "predictores": "Humidity3pm; Sunshine; Rainfall",
+      "AIC_seleccion_no_ponderado": 80848.30231364782,
+      "BIC_seleccion_no_ponderado": 80886.33537212816,
+      "umbral_F1_OOF": 0.5775696697590811,
+      "oof_n": 99535,
+      "oof_umbral": 0.5775696697590811,
+      "oof_accuracy": 0.7832822625207213,
+      "oof_precision": 0.5131639559193508,
+      "oof_recall": 0.6490095903916824,
+      "oof_f1": 0.5731473236370832,
+      "oof_auc": 0.8179813300930794,
+      "oof_pr_auc": 0.6077043134755974,
+      "oof_tn": 63482,
+      "oof_fp": 13739,
+      "oof_fn": 7832,
+      "oof_tp": 14482
+    }
+  ],
+  "modelo_final": {
+    "nombre": "M2_stepwise_AIC",
+    "predictores": [
+      "Humidity3pm",
+      "WindGustSpeed",
+      "Pressure3pm",
+      "Sunshine",
+      "log1p_Rainfall",
+      "Cloud3pm",
+      "MaxTemp",
+      "Humidity9am"
+    ],
+    "estrategia": "regresion",
+    "umbral": 0.603429598311056,
+    "parametros_estandarizados": {
+      "const": -0.5786470395304719,
+      "Humidity3pm": 0.9021115084317818,
+      "WindGustSpeed": 0.46748046493431,
+      "Pressure3pm": -0.48638898244215445,
+      "Sunshine": -0.4782827632662874,
+      "log1p_Rainfall": 0.25804529420438266,
+      "Cloud3pm": 0.19319083519559518,
+      "MaxTemp": 0.09471214105890077,
+      "Humidity9am": 0.10111715153697506
+    },
+    "medias_referencia": {
+      "Humidity3pm": 51.48931134089051,
+      "WindGustSpeed": 39.78110591747458,
+      "Pressure3pm": 1015.2687799257155,
+      "Sunshine": 7.273790830821389,
+      "log1p_Rainfall": 0.49129994462422405,
+      "Cloud3pm": 4.406803950125647,
+      "MaxTemp": 23.227670972159217,
+      "Humidity9am": 68.83506090206424
+    },
+    "DE_referencia": {
+      "Humidity3pm": 20.60490550100968,
+      "WindGustSpeed": 13.419246022888407,
+      "Pressure3pm": 6.689402281092719,
+      "Sunshine": 3.074241504212162,
+      "log1p_Rainfall": 0.9041584402451602,
+      "Cloud3pm": 2.1577198056901756,
+      "MaxTemp": 7.122409553396338,
+      "Humidity9am": 18.988882271790683
+    },
+    "pesos_clase": {
+      "No": 0.6444814234469898,
+      "Yes": 2.2303262525768575
+    },
+    "criterio": "AUC OOF máxima, con margen 0.002 de parsimonia; umbral F1 OOF",
+    "score": "Logit ponderado por clase; no calibrado como probabilidad operacional"
+  },
+  "coeficientes_modelo_final": [
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "const",
+      "coeficiente": -0.5786470395304719,
+      "error_estandar_convencional": 0.008848432562077093,
+      "ic_wald_beta_inf": -0.5959896486717745,
+      "ic_wald_beta_sup": -0.5613044303891693,
+      "odds_ratio": 0.5606563996010525,
+      "ic_wald_OR_inf": 0.5510169827194661,
+      "ic_wald_OR_sup": 0.5704644471432738,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 69.52325299928617,
+      "DE_referencia": null
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Humidity3pm",
+      "coeficiente": 0.9021115084317818,
+      "error_estandar_convencional": 0.012918559682107542,
+      "ic_wald_beta_inf": 0.8767915967227198,
+      "ic_wald_beta_sup": 0.9274314201408438,
+      "odds_ratio": 2.4648020707568943,
+      "ic_wald_OR_inf": 2.403176963359744,
+      "ic_wald_OR_sup": 2.528007442079511,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.043781395085144975,
+      "DE_referencia": 20.60490550100968
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "WindGustSpeed",
+      "coeficiente": 0.46748046493431,
+      "error_estandar_convencional": 0.009231506713293036,
+      "ic_wald_beta_inf": 0.4493870442532159,
+      "ic_wald_beta_sup": 0.4855738856154041,
+      "odds_ratio": 1.595968025907369,
+      "ic_wald_OR_inf": 1.5673511740821426,
+      "ic_wald_OR_sup": 1.6251073670265896,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.03483656713178643,
+      "DE_referencia": 13.419246022888407
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Pressure3pm",
+      "coeficiente": -0.48638898244215445,
+      "error_estandar_convencional": 0.009894267489919412,
+      "ic_wald_beta_inf": -0.505781390375802,
+      "ic_wald_beta_sup": -0.4669965745085069,
+      "odds_ratio": 0.6148425978171583,
+      "ic_wald_OR_inf": 0.6030341861721572,
+      "ic_wald_OR_sup": 0.6268822377884719,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": -0.0727103800913439,
+      "DE_referencia": 6.689402281092719
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Sunshine",
+      "coeficiente": -0.4782827632662874,
+      "error_estandar_convencional": 0.013908255935222807,
+      "ic_wald_beta_inf": -0.5055424439870895,
+      "ic_wald_beta_sup": -0.45102308254548523,
+      "odds_ratio": 0.619846902265026,
+      "ic_wald_OR_inf": 0.6031782962298166,
+      "ic_wald_OR_sup": 0.6369761389775885,
+      "p_convencional": 3.758134022897022e-259,
+      "coeficiente_unidad_original_o_log1p": -0.15557748557195972,
+      "DE_referencia": 3.074241504212162
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "log1p_Rainfall",
+      "coeficiente": 0.25804529420438266,
+      "error_estandar_convencional": 0.008693275676932552,
+      "ic_wald_beta_inf": 0.2410067869699168,
+      "ic_wald_beta_sup": 0.27508380143884853,
+      "odds_ratio": 1.2943974459989591,
+      "ic_wald_OR_inf": 1.2725296718995223,
+      "ic_wald_OR_sup": 1.3166410066553804,
+      "p_convencional": 1.2606604982432036e-193,
+      "coeficiente_unidad_original_o_log1p": 0.28539831374511565,
+      "DE_referencia": 0.9041584402451602
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Cloud3pm",
+      "coeficiente": 0.19319083519559518,
+      "error_estandar_convencional": 0.012303194092799185,
+      "ic_wald_beta_inf": 0.16907701787890284,
+      "ic_wald_beta_sup": 0.21730465251228753,
+      "odds_ratio": 1.213114276331086,
+      "ic_wald_OR_inf": 1.1842113408574801,
+      "ic_wald_OR_sup": 1.2427226430483977,
+      "p_convencional": 1.4541043074539111e-55,
+      "coeficiente_unidad_original_o_log1p": 0.08953471840325464,
+      "DE_referencia": 2.1577198056901756
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "MaxTemp",
+      "coeficiente": 0.09471214105890077,
+      "error_estandar_convencional": 0.010780260004653446,
+      "ic_wald_beta_inf": 0.07358321970580242,
+      "ic_wald_beta_sup": 0.11584106241199912,
+      "odds_ratio": 1.0993423540485139,
+      "ic_wald_OR_inf": 1.0763581071498407,
+      "ic_wald_OR_sup": 1.122817400061339,
+      "p_convencional": 1.5539242869420478e-18,
+      "coeficiente_unidad_original_o_log1p": 0.01329776676682922,
+      "DE_referencia": 7.122409553396338
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Humidity9am",
+      "coeficiente": 0.10111715153697506,
+      "error_estandar_convencional": 0.01234105140165067,
+      "ic_wald_beta_inf": 0.0769291352583822,
+      "ic_wald_beta_sup": 0.12530516781556794,
+      "odds_ratio": 1.1064062513641595,
+      "ic_wald_OR_inf": 1.0799655422017402,
+      "ic_wald_OR_sup": 1.1334943062739127,
+      "p_convencional": 2.53609848016743e-16,
+      "coeficiente_unidad_original_o_log1p": 0.005325071275374206,
+      "DE_referencia": 18.988882271790683
+    }
+  ],
+  "metricas_tres_modelos": [
+    {
+      "modelo": "M1_dominio",
+      "conjunto": "train",
+      "regla_umbral": "F1_OOF",
+      "n": 99535,
+      "umbral": 0.5638033762226534,
+      "accuracy": 0.7790224544130205,
+      "precision": 0.5054205607476635,
+      "recall": 0.6664874070090526,
+      "f1": 0.5748854829045787,
+      "auc": 0.8214178608906127,
+      "pr_auc": 0.6111185928628443,
+      "tn": 62668,
+      "fp": 14553,
+      "fn": 7442,
+      "tp": 14872
+    },
+    {
+      "modelo": "M1_dominio",
+      "conjunto": "train",
+      "regla_umbral": "referencia_0.5",
+      "n": 99535,
+      "umbral": 0.5,
+      "accuracy": 0.7484302004320088,
+      "precision": 0.46134210675591353,
+      "recall": 0.7289593976875505,
+      "f1": 0.5650663516987424,
+      "auc": 0.8214178608906127,
+      "pr_auc": 0.6111185928628443,
+      "tn": 58229,
+      "fp": 18992,
+      "fn": 6048,
+      "tp": 16266
+    },
+    {
+      "modelo": "M1_dominio",
+      "conjunto": "test",
+      "regla_umbral": "F1_OOF",
+      "n": 42658,
+      "umbral": 0.5638033762226534,
+      "accuracy": 0.7806273149233438,
+      "precision": 0.5081718887028621,
+      "recall": 0.6665272404057304,
+      "f1": 0.576676015561386,
+      "auc": 0.8239758564228852,
+      "pr_auc": 0.6225610285746396,
+      "tn": 26926,
+      "fp": 6169,
+      "fn": 3189,
+      "tp": 6374
+    },
+    {
+      "modelo": "M1_dominio",
+      "conjunto": "test",
+      "regla_umbral": "referencia_0.5",
+      "n": 42658,
+      "umbral": 0.5,
+      "accuracy": 0.7493084532795724,
+      "precision": 0.4625273341726857,
+      "recall": 0.7298964760012548,
+      "f1": 0.5662367161515373,
+      "auc": 0.8239758564228852,
+      "pr_auc": 0.6225610285746396,
+      "tn": 24984,
+      "fp": 8111,
+      "fn": 2583,
+      "tp": 6980
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "conjunto": "train",
+      "regla_umbral": "F1_OOF",
+      "n": 99535,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.8154920379765912,
+      "precision": 0.5752391113820828,
+      "recall": 0.6765259478354396,
+      "f1": 0.6217847066334411,
+      "auc": 0.8605509305812535,
+      "pr_auc": 0.6769046642643975,
+      "tn": 66074,
+      "fp": 11147,
+      "fn": 7218,
+      "tp": 15096
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "conjunto": "train",
+      "regla_umbral": "referencia_0.5",
+      "n": 99535,
+      "umbral": 0.5,
+      "accuracy": 0.7840458130305923,
+      "precision": 0.5122984052617353,
+      "recall": 0.7644528098951331,
+      "f1": 0.6134757512003021,
+      "auc": 0.8605509305812535,
+      "pr_auc": 0.6769046642643975,
+      "tn": 60982,
+      "fp": 16239,
+      "fn": 5256,
+      "tp": 17058
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "conjunto": "test",
+      "regla_umbral": "F1_OOF",
+      "n": 42658,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.8179239533030147,
+      "precision": 0.5797513321492007,
+      "recall": 0.682630973543867,
+      "f1": 0.6269989914997839,
+      "auc": 0.8619334695019615,
+      "pr_auc": 0.6872080776723006,
+      "tn": 28363,
+      "fp": 4732,
+      "fn": 3035,
+      "tp": 6528
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "conjunto": "test",
+      "regla_umbral": "referencia_0.5",
+      "n": 42658,
+      "umbral": 0.5,
+      "accuracy": 0.7835810398987294,
+      "precision": 0.5115790946617225,
+      "recall": 0.7646136149743804,
+      "f1": 0.6130114017437961,
+      "auc": 0.8619334695019615,
+      "pr_auc": 0.6872080776723006,
+      "tn": 26114,
+      "fp": 6981,
+      "fn": 2251,
+      "tp": 7312
+    },
+    {
+      "modelo": "M3_reducido_BIC",
+      "conjunto": "train",
+      "regla_umbral": "F1_OOF",
+      "n": 99535,
+      "umbral": 0.5775696697590811,
+      "accuracy": 0.7832018887828402,
+      "precision": 0.5130037861363717,
+      "recall": 0.6497266290221385,
+      "f1": 0.5733267424616906,
+      "auc": 0.8180762085729769,
+      "pr_auc": 0.6078526285955398,
+      "tn": 63458,
+      "fp": 13763,
+      "fn": 7816,
+      "tp": 14498
+    },
+    {
+      "modelo": "M3_reducido_BIC",
+      "conjunto": "train",
+      "regla_umbral": "referencia_0.5",
+      "n": 99535,
+      "umbral": 0.5,
+      "accuracy": 0.7439393178278997,
+      "precision": 0.4557251695364608,
+      "recall": 0.7318275522093752,
+      "f1": 0.561679880303369,
+      "auc": 0.8180762085729769,
+      "pr_auc": 0.6078526285955398,
+      "tn": 57718,
+      "fp": 19503,
+      "fn": 5984,
+      "tp": 16330
+    },
+    {
+      "modelo": "M3_reducido_BIC",
+      "conjunto": "test",
+      "regla_umbral": "F1_OOF",
+      "n": 42658,
+      "umbral": 0.5775696697590811,
+      "accuracy": 0.7857142857142857,
+      "precision": 0.517618570474282,
+      "recall": 0.648227543657848,
+      "f1": 0.5756070383954687,
+      "auc": 0.8207523735101248,
+      "pr_auc": 0.6191248341428951,
+      "tn": 27318,
+      "fp": 5777,
+      "fn": 3364,
+      "tp": 6199
+    },
+    {
+      "modelo": "M3_reducido_BIC",
+      "conjunto": "test",
+      "regla_umbral": "referencia_0.5",
+      "n": 42658,
+      "umbral": 0.5,
+      "accuracy": 0.7453701533123915,
+      "precision": 0.45764590805347244,
+      "recall": 0.7338701244379379,
+      "f1": 0.5637400594425255,
+      "auc": 0.8207523735101248,
+      "pr_auc": 0.6191248341428951,
+      "tn": 24778,
+      "fp": 8317,
+      "fn": 2545,
+      "tp": 7018
+    }
+  ],
+  "bootstrap": {
+    "validas": 2000,
+    "intentos": 2000,
+    "fallos": [],
+    "unidad": "Localidad: 49 conglomerados de entrenamiento",
+    "condicional_a": "Especificación logística y predictores de imputación seleccionados; no repite stepwise",
+    "reajusta": "Regresiones de imputación, medianas auxiliares, escala y pesos de clase",
+    "intervalos": [
+      {
+        "termino": "const",
+        "beta_referencia": -0.5786470395304719,
+        "ic_Wald_beta_inf": -0.5959896486717745,
+        "ic_Wald_beta_sup": -0.5613044303891693,
+        "ic_percentil_beta_inf": -0.74281402159629,
+        "ic_percentil_beta_sup": -0.4208354371946691,
+        "ic_BCa_beta_inf": -0.7389470222038013,
+        "ic_BCa_beta_sup": -0.41806100108130967,
+        "OR": 0.5606563996010525,
+        "ic_percentil_OR_inf": 0.4757731939533236,
+        "ic_percentil_OR_sup": 0.656498127693961,
+        "ic_BCa_OR_inf": 0.4776165704761452,
+        "ic_BCa_OR_sup": 0.6583220688419013,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.08048858374419117,
+        "aceleracion_BCa": 0.0014053182370261676,
+        "z0_BCa": 0.013786892263084142,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "Humidity3pm",
+        "beta_referencia": 0.9021115084317818,
+        "ic_Wald_beta_inf": 0.8767915967227198,
+        "ic_Wald_beta_sup": 0.9274314201408438,
+        "ic_percentil_beta_inf": 0.8037396536702501,
+        "ic_percentil_beta_sup": 1.0248300682650981,
+        "ic_BCa_beta_inf": 0.7964416272331674,
+        "ic_BCa_beta_sup": 1.0195859629619983,
+        "OR": 2.4648020707568943,
+        "ic_percentil_OR_inf": 2.2338792623167034,
+        "ic_percentil_OR_sup": 2.7866218848378117,
+        "ic_BCa_OR_inf": 2.217635697481766,
+        "ic_BCa_OR_sup": 2.7720467962853923,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.0573193047095099,
+        "aceleracion_BCa": 0.002361843051284489,
+        "z0_BCa": -0.06396260838426929,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "WindGustSpeed",
+        "beta_referencia": 0.46748046493431,
+        "ic_Wald_beta_inf": 0.4493870442532159,
+        "ic_Wald_beta_sup": 0.4855738856154041,
+        "ic_percentil_beta_inf": 0.3994918889055713,
+        "ic_percentil_beta_sup": 0.5473202970574484,
+        "ic_BCa_beta_inf": 0.39195394522044424,
+        "ic_BCa_beta_sup": 0.5363912977567534,
+        "OR": 1.595968025907369,
+        "ic_percentil_OR_inf": 1.4910668775061695,
+        "ic_percentil_OR_sup": 1.7286146321787317,
+        "ic_BCa_OR_inf": 1.479869554766715,
+        "ic_BCa_OR_sup": 1.7098254644919482,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.03749450211704447,
+        "aceleracion_BCa": -0.014983405094315737,
+        "z0_BCa": -0.10799456940915406,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "Pressure3pm",
+        "beta_referencia": -0.48638898244215445,
+        "ic_Wald_beta_inf": -0.505781390375802,
+        "ic_Wald_beta_sup": -0.4669965745085069,
+        "ic_percentil_beta_inf": -0.6023202672706084,
+        "ic_percentil_beta_sup": -0.3877388849459033,
+        "ic_BCa_beta_inf": -0.5968143137481494,
+        "ic_BCa_beta_sup": -0.3800211720800389,
+        "OR": 0.6148425978171583,
+        "ic_percentil_OR_inf": 0.5475397225773473,
+        "ic_percentil_OR_sup": 0.6785895100692687,
+        "ic_BCa_OR_inf": 0.550562765571579,
+        "ic_BCa_OR_sup": 0.6838469305971363,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.05447285589055137,
+        "aceleracion_BCa": 0.012667267620466206,
+        "z0_BCa": 0.033845942621651186,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "Sunshine",
+        "beta_referencia": -0.4782827632662874,
+        "ic_Wald_beta_inf": -0.5055424439870895,
+        "ic_Wald_beta_sup": -0.45102308254548523,
+        "ic_percentil_beta_inf": -0.5503546887518083,
+        "ic_percentil_beta_sup": -0.4011971884789279,
+        "ic_BCa_beta_inf": -0.548969289266129,
+        "ic_BCa_beta_sup": -0.39940553801057344,
+        "OR": 0.619846902265026,
+        "ic_percentil_OR_inf": 0.5767452090594254,
+        "ic_percentil_OR_sup": 0.6695180267792297,
+        "ic_BCa_OR_inf": 0.5775447853138024,
+        "ic_BCa_OR_sup": 0.670718644287775,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.03707007337394622,
+        "aceleracion_BCa": 0.006599311451679812,
+        "z0_BCa": 0.006266611701750335,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "log1p_Rainfall",
+        "beta_referencia": 0.25804529420438266,
+        "ic_Wald_beta_inf": 0.2410067869699168,
+        "ic_Wald_beta_sup": 0.27508380143884853,
+        "ic_percentil_beta_inf": 0.1936049504209384,
+        "ic_percentil_beta_sup": 0.3075750775202681,
+        "ic_BCa_beta_inf": 0.20044042122424183,
+        "ic_BCa_beta_sup": 0.31672877372784697,
+        "OR": 1.2943974459989591,
+        "ic_percentil_OR_inf": 1.213616749456701,
+        "ic_percentil_OR_sup": 1.3601229193248419,
+        "ic_BCa_OR_inf": 1.221940808333872,
+        "ic_BCa_OR_sup": 1.3726302280532217,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.029905708231693556,
+        "aceleracion_BCa": 0.02417515380074025,
+        "z0_BCa": 0.0903614371292588,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "Cloud3pm",
+        "beta_referencia": 0.19319083519559518,
+        "ic_Wald_beta_inf": 0.16907701787890284,
+        "ic_Wald_beta_sup": 0.21730465251228753,
+        "ic_percentil_beta_inf": 0.11700043061847548,
+        "ic_percentil_beta_sup": 0.2601837445697077,
+        "ic_BCa_beta_inf": 0.11503887819348368,
+        "ic_BCa_beta_sup": 0.2597563688345284,
+        "OR": 1.213114276331086,
+        "ic_percentil_OR_inf": 1.1241199137572362,
+        "ic_percentil_OR_sup": 1.2971684124213483,
+        "ic_BCa_OR_inf": 1.1219170548323831,
+        "ic_BCa_OR_sup": 1.2966141525644816,
+        "frecuencia_signo_conservado": 1.0,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.03640368178716583,
+        "aceleracion_BCa": -0.003308880045978784,
+        "z0_BCa": -0.0025066308995717666,
+        "clasificacion": "Signo estable, condicional al modelo"
+      },
+      {
+        "termino": "MaxTemp",
+        "beta_referencia": 0.09471214105890077,
+        "ic_Wald_beta_inf": 0.07358321970580242,
+        "ic_Wald_beta_sup": 0.11584106241199912,
+        "ic_percentil_beta_inf": -0.03419628919992885,
+        "ic_percentil_beta_sup": 0.2123748941856074,
+        "ic_BCa_beta_inf": -0.027528175137660402,
+        "ic_BCa_beta_sup": 0.21463822182915454,
+        "OR": 1.0993423540485139,
+        "ic_percentil_OR_inf": 0.9663817957097033,
+        "ic_percentil_OR_sup": 1.236611396611631,
+        "ic_BCa_OR_inf": 0.9728472720614957,
+        "ic_BCa_OR_sup": 1.2394134231257907,
+        "frecuencia_signo_conservado": 0.926,
+        "ic_percentil_incluye_cero": true,
+        "ic_BCa_incluye_cero": true,
+        "DE_bootstrap": 0.06181776252810827,
+        "aceleracion_BCa": 0.007002178580448677,
+        "z0_BCa": 0.013786892263084142,
+        "clasificacion": "Signo inestable: intervalo incluye cero"
+      },
+      {
+        "termino": "Humidity9am",
+        "beta_referencia": 0.10111715153697506,
+        "ic_Wald_beta_inf": 0.0769291352583822,
+        "ic_Wald_beta_sup": 0.12530516781556794,
+        "ic_percentil_beta_inf": 0.010764726410687991,
+        "ic_percentil_beta_sup": 0.1931132722384601,
+        "ic_BCa_beta_inf": 0.006201001130585913,
+        "ic_BCa_beta_sup": 0.187038254465457,
+        "OR": 1.1064062513641595,
+        "ic_percentil_OR_inf": 1.0108228745402998,
+        "ic_percentil_OR_sup": 1.213020187249432,
+        "ic_BCa_OR_inf": 1.0062202671403593,
+        "ic_BCa_OR_sup": 1.205673406559426,
+        "frecuencia_signo_conservado": 0.985,
+        "ic_percentil_incluye_cero": false,
+        "ic_BCa_incluye_cero": false,
+        "DE_bootstrap": 0.046801325645032525,
+        "aceleracion_BCa": -0.016758730702911246,
+        "z0_BCa": -0.02381521960940948,
+        "clasificacion": "Signo estable, condicional al modelo"
+      }
+    ],
+    "jackknife_top3": [
+      {
+        "localidad_omitida": "MountGinini",
+        "n_train": 97461,
+        "max_cambio_absoluto_beta_referencia": 0.028032568845311412,
+        "cambio_const": 0.012094035629479638,
+        "cambio_Humidity3pm": 0.01656767068686693,
+        "cambio_WindGustSpeed": 0.014188322095567918,
+        "cambio_Pressure3pm": -0.00921201777291547,
+        "cambio_Sunshine": 0.0055709482859853665,
+        "cambio_log1p_Rainfall": -0.015757785445124878,
+        "cambio_Cloud3pm": -0.009592089499799561,
+        "cambio_MaxTemp": -0.028032568845311412,
+        "cambio_Humidity9am": 0.015104439099219241
+      },
+      {
+        "localidad_omitida": "Wollongong",
+        "n_train": 97393,
+        "max_cambio_absoluto_beta_referencia": 0.02330393612711401,
+        "cambio_const": 0.016930582026651653,
+        "cambio_Humidity3pm": 0.02330393612711401,
+        "cambio_WindGustSpeed": 0.010547255257074617,
+        "cambio_Pressure3pm": -0.007905978904384825,
+        "cambio_Sunshine": -0.011260213285508469,
+        "cambio_log1p_Rainfall": -0.006133532220535698,
+        "cambio_Cloud3pm": -0.010331439877516613,
+        "cambio_MaxTemp": 0.004575741058567173,
+        "cambio_Humidity9am": -0.012727052020292423
+      },
+      {
+        "localidad_omitida": "Ballarat",
+        "n_train": 97395,
+        "max_cambio_absoluto_beta_referencia": 0.022312935006881154,
+        "cambio_const": 0.011056258868555435,
+        "cambio_Humidity3pm": -0.007461032265630885,
+        "cambio_WindGustSpeed": 0.005898503136550659,
+        "cambio_Pressure3pm": 0.005791893721606656,
+        "cambio_Sunshine": 0.005610920257629326,
+        "cambio_log1p_Rainfall": -0.003911079614832391,
+        "cambio_Cloud3pm": 0.0171668260330754,
+        "cambio_MaxTemp": -0.00929617843230035,
+        "cambio_Humidity9am": 0.022312935006881154
+      }
+    ]
+  },
+  "diagnosticos": {
+    "VIF": [
+      {
+        "predictor": "Humidity3pm",
+        "VIF": 2.5614133437815907
+      },
+      {
+        "predictor": "WindGustSpeed",
+        "VIF": 1.3245350886531015
+      },
+      {
+        "predictor": "Pressure3pm",
+        "VIF": 1.5224264297793288
+      },
+      {
+        "predictor": "Sunshine",
+        "VIF": 3.0542490759042433
+      },
+      {
+        "predictor": "log1p_Rainfall",
+        "VIF": 1.3149622091011364
+      },
+      {
+        "predictor": "Cloud3pm",
+        "VIF": 2.222079336829835
+      },
+      {
+        "predictor": "MaxTemp",
+        "VIF": 1.856444036276584
+      },
+      {
+        "predictor": "Humidity9am",
+        "VIF": 2.1833304704010703
+      }
+    ],
+    "linealidad_logit": [
+      {
+        "predictor": "Humidity3pm",
+        "desplazamiento_train": 1.000000000000007,
+        "LR_componente_no_lineal": 142.5807790769759,
+        "p_exploratorio_iid": 7.259262036033686e-33,
+        "reduccion_deviance_relativa": 0.0015404819574315104,
+        "p_Bonferroni": 5.08148342522358e-32
+      },
+      {
+        "predictor": "WindGustSpeed",
+        "desplazamiento_train": 0.0,
+        "LR_componente_no_lineal": 0.6997299520880915,
+        "p_exploratorio_iid": 0.40287444913212755,
+        "reduccion_deviance_relativa": 7.560074879968054e-06,
+        "p_Bonferroni": 1.0
+      },
+      {
+        "predictor": "Pressure3pm",
+        "desplazamiento_train": 0.0,
+        "LR_componente_no_lineal": 0.8836040774040157,
+        "p_exploratorio_iid": 0.3472164481934049,
+        "reduccion_deviance_relativa": 9.546701508896484e-06,
+        "p_Bonferroni": 1.0
+      },
+      {
+        "predictor": "Sunshine",
+        "desplazamiento_train": 1.0,
+        "LR_componente_no_lineal": 117.49469788077113,
+        "p_exploratorio_iid": 2.236972772917071e-27,
+        "reduccion_deviance_relativa": 0.0012694450356557359,
+        "p_Bonferroni": 1.5658809410419496e-26
+      },
+      {
+        "predictor": "log1p_Rainfall",
+        "desplazamiento_train": 1.0,
+        "LR_componente_no_lineal": 122.20056271580688,
+        "p_exploratorio_iid": 2.0864328207795597e-28,
+        "reduccion_deviance_relativa": 0.0013202884937951408,
+        "p_Bonferroni": 1.4605029745456917e-27
+      },
+      {
+        "predictor": "MaxTemp",
+        "desplazamiento_train": 5.100000000000001,
+        "LR_componente_no_lineal": 3.5960135024943156,
+        "p_exploratorio_iid": 0.057918302107098876,
+        "reduccion_deviance_relativa": 3.8852319051236866e-05,
+        "p_Bonferroni": 0.40542811474969215
+      },
+      {
+        "predictor": "Humidity9am",
+        "desplazamiento_train": 1.0,
+        "LR_componente_no_lineal": 6.657798175350763,
+        "p_exploratorio_iid": 0.00987228228629092,
+        "reduccion_deviance_relativa": 7.193268287453528e-05,
+        "p_Bonferroni": 0.06910597600403644
+      }
+    ],
+    "influencia": {
+      "n_Cook_mayor_4_sobre_n": 6417,
+      "umbral_descriptivo": 4.018686894057367e-05,
+      "max_Cook_D": 0.0004365378357551398,
+      "max_leverage": 0.0017244839678052081,
+      "observaciones_eliminadas_por_este_diagnostico": 0,
+      "normalidad_residuos_logisticos_requerida": false
+    }
+  },
+  "impacto_imputacion": [
+    {
+      "estrategia": "eliminacion",
+      "poblacion_prueba": "disponible_por_estrategia",
+      "n_train": 42282,
+      "localidades_train": 27,
+      "localidades_test": 27,
+      "cobertura_test": 0.4274462000093769,
+      "n": 18234,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.828287813973895,
+      "precision": 0.5927385892116183,
+      "recall": 0.7098136645962733,
+      "f1": 0.6460146975692481,
+      "auc": 0.8813191184486782,
+      "pr_auc": 0.7218461463720459,
+      "tn": 12246,
+      "fp": 1963,
+      "fn": 1168,
+      "tp": 2857
+    },
+    {
+      "estrategia": "eliminacion",
+      "poblacion_prueba": "casos_comunes",
+      "n_train": 42282,
+      "localidades_train": 27,
+      "localidades_test": 27,
+      "cobertura_test": 0.4274462000093769,
+      "n": 18234,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.828287813973895,
+      "precision": 0.5927385892116183,
+      "recall": 0.7098136645962733,
+      "f1": 0.6460146975692481,
+      "auc": 0.8813191184486782,
+      "pr_auc": 0.7218461463720459,
+      "tn": 12246,
+      "fp": 1963,
+      "fn": 1168,
+      "tp": 2857
+    },
+    {
+      "estrategia": "mediana",
+      "poblacion_prueba": "disponible_por_estrategia",
+      "n_train": 99535,
+      "localidades_train": 49,
+      "localidades_test": 49,
+      "cobertura_test": 1.0,
+      "n": 42658,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.8168456092643819,
+      "precision": 0.5780692362598144,
+      "recall": 0.6775070584544599,
+      "f1": 0.6238505608781474,
+      "auc": 0.8589404301405472,
+      "pr_auc": 0.6827376603108195,
+      "tn": 28366,
+      "fp": 4729,
+      "fn": 3084,
+      "tp": 6479
+    },
+    {
+      "estrategia": "mediana",
+      "poblacion_prueba": "casos_comunes",
+      "n_train": 99535,
+      "localidades_train": 49,
+      "localidades_test": 27,
+      "cobertura_test": 0.4274462000093769,
+      "n": 18234,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.8214324887572666,
+      "precision": 0.5747037108995532,
+      "recall": 0.7349068322981367,
+      "f1": 0.6450065416484955,
+      "auc": 0.880119109181522,
+      "pr_auc": 0.7220998212782033,
+      "tn": 12020,
+      "fp": 2189,
+      "fn": 1067,
+      "tp": 2958
+    },
+    {
+      "estrategia": "regresion",
+      "poblacion_prueba": "disponible_por_estrategia",
+      "n_train": 99535,
+      "localidades_train": 49,
+      "localidades_test": 49,
+      "cobertura_test": 1.0,
+      "n": 42658,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.8179239533030147,
+      "precision": 0.5797513321492007,
+      "recall": 0.682630973543867,
+      "f1": 0.6269989914997839,
+      "auc": 0.8619334695019615,
+      "pr_auc": 0.6872080776723006,
+      "tn": 28363,
+      "fp": 4732,
+      "fn": 3035,
+      "tp": 6528
+    },
+    {
+      "estrategia": "regresion",
+      "poblacion_prueba": "casos_comunes",
+      "n_train": 99535,
+      "localidades_train": 49,
+      "localidades_test": 27,
+      "cobertura_test": 0.4274462000093769,
+      "n": 18234,
+      "umbral": 0.603429598311056,
+      "accuracy": 0.8297685642206867,
+      "precision": 0.5961177207263619,
+      "recall": 0.7095652173913043,
+      "f1": 0.647912885662432,
+      "auc": 0.8808947701330057,
+      "pr_auc": 0.7204443258888811,
+      "tn": 12274,
+      "fp": 1935,
+      "fn": 1169,
+      "tp": 2856
+    }
+  ],
+  "coeficientes_impacto_escala_comun": [
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "const",
+      "coeficiente": -0.6188406934384425,
+      "error_estandar_convencional": 0.014483742166701015,
+      "ic_wald_beta_inf": -0.6472283064465406,
+      "ic_wald_beta_sup": -0.5904530804303444,
+      "odds_ratio": 0.5385684417470975,
+      "ic_wald_OR_inf": 0.5234947347812683,
+      "ic_wald_OR_sup": 0.5540761867778685,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 70.11636060889269,
+      "DE_referencia": null
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "Humidity3pm",
+      "coeficiente": 0.9674931347004526,
+      "error_estandar_convencional": 0.021118002248824017,
+      "ic_wald_beta_inf": 0.9261026108673217,
+      "ic_wald_beta_sup": 1.0088836585335836,
+      "odds_ratio": 2.631339769919105,
+      "ic_wald_OR_inf": 2.524650433253138,
+      "ic_wald_OR_sup": 2.742537696926253,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.04695450482182719,
+      "DE_referencia": 20.60490550100968
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "WindGustSpeed",
+      "coeficiente": 0.5192686950040549,
+      "error_estandar_convencional": 0.014996555590574164,
+      "ic_wald_beta_inf": 0.4898759861543768,
+      "ic_wald_beta_sup": 0.5486614038537331,
+      "odds_ratio": 1.6807980241457998,
+      "ic_wald_OR_inf": 1.6321138026952,
+      "ic_wald_OR_sup": 1.730934444220256,
+      "p_convencional": 1.0313198334676566e-262,
+      "coeficiente_unidad_original_o_log1p": 0.03869581749364825,
+      "DE_referencia": 13.419246022888407
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "Pressure3pm",
+      "coeficiente": -0.492484446690587,
+      "error_estandar_convencional": 0.01606688026435958,
+      "ic_wald_beta_inf": -0.5239749533526492,
+      "ic_wald_beta_sup": -0.46099394002852484,
+      "odds_ratio": 0.6111062457126615,
+      "ic_wald_OR_inf": 0.5921620470957091,
+      "ic_wald_OR_sup": 0.6306564991468697,
+      "p_convencional": 2.4738611137507841e-206,
+      "coeficiente_unidad_original_o_log1p": -0.07362159218359032,
+      "DE_referencia": 6.689402281092719
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "Sunshine",
+      "coeficiente": -0.48767023686421623,
+      "error_estandar_convencional": 0.016540737580492522,
+      "ic_wald_beta_inf": -0.5200894867997098,
+      "ic_wald_beta_sup": -0.4552509869287227,
+      "odds_ratio": 0.6140553324711349,
+      "ic_wald_OR_inf": 0.5944673486093506,
+      "ic_wald_OR_sup": 0.6342887497829934,
+      "p_convencional": 4.758552122170864e-191,
+      "coeficiente_unidad_original_o_log1p": -0.1586310757290982,
+      "DE_referencia": 3.074241504212162
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "log1p_Rainfall",
+      "coeficiente": 0.1913996517610969,
+      "error_estandar_convencional": 0.013990577851191678,
+      "ic_wald_beta_inf": 0.16397862304985744,
+      "ic_wald_beta_sup": 0.21882068047233638,
+      "odds_ratio": 1.2109433110141574,
+      "ic_wald_OR_inf": 1.178189128733256,
+      "ic_wald_OR_sup": 1.24460807414386,
+      "p_convencional": 1.3257419739136995e-42,
+      "coeficiente_unidad_original_o_log1p": 0.2116881768080375,
+      "DE_referencia": 0.9041584402451602
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "Cloud3pm",
+      "coeficiente": 0.24466396412572475,
+      "error_estandar_convencional": 0.01605915551781848,
+      "ic_wald_beta_inf": 0.21318859768867285,
+      "ic_wald_beta_sup": 0.2761393305627767,
+      "odds_ratio": 1.2771920587364007,
+      "ic_wald_OR_inf": 1.2376180411365298,
+      "ic_wald_OR_sup": 1.3180314933041404,
+      "p_convencional": 2.065891459387746e-52,
+      "coeficiente_unidad_original_o_log1p": 0.11339005346315839,
+      "DE_referencia": 2.1577198056901756
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "MaxTemp",
+      "coeficiente": 0.107593972255002,
+      "error_estandar_convencional": 0.01824088734444321,
+      "ic_wald_beta_inf": 0.07184249001384084,
+      "ic_wald_beta_sup": 0.14334545449616315,
+      "odds_ratio": 1.1135955029102975,
+      "ic_wald_OR_inf": 1.0744860884455192,
+      "ic_wald_OR_sup": 1.1541284316636515,
+      "p_convencional": 3.6680899464032995e-09,
+      "coeficiente_unidad_original_o_log1p": 0.015106400642700411,
+      "DE_referencia": 7.122409553396338
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "eliminacion",
+      "termino": "Humidity9am",
+      "coeficiente": 0.06972594258352634,
+      "error_estandar_convencional": 0.020923310249693194,
+      "ic_wald_beta_inf": 0.02871700805676991,
+      "ic_wald_beta_sup": 0.11073487711028276,
+      "odds_ratio": 1.0722142927059226,
+      "ic_wald_OR_inf": 1.0291333168252894,
+      "ic_wald_OR_sup": 1.1170986991552534,
+      "p_convencional": 0.0008608408958722547,
+      "coeficiente_unidad_original_o_log1p": 0.003671935061028269,
+      "DE_referencia": 18.988882271790683
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "const",
+      "coeficiente": -0.5164727800774075,
+      "error_estandar_convencional": 0.00962192363833447,
+      "ic_wald_beta_inf": -0.5353314038705377,
+      "ic_wald_beta_sup": -0.49761415628427735,
+      "odds_ratio": 0.5966212553418749,
+      "ic_wald_OR_inf": 0.5854752292332295,
+      "ic_wald_OR_sup": 0.6079794747113305,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 69.11142751241663,
+      "DE_referencia": null
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "Humidity3pm",
+      "coeficiente": 1.0125557983035676,
+      "error_estandar_convencional": 0.012169139339119651,
+      "ic_wald_beta_inf": 0.9887047234760435,
+      "ic_wald_beta_sup": 1.0364068731310916,
+      "odds_ratio": 2.7526271923547867,
+      "ic_wald_OR_inf": 2.6877508361399194,
+      "ic_wald_OR_sup": 2.819069520213724,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.04914149197403262,
+      "DE_referencia": 20.60490550100968
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "WindGustSpeed",
+      "coeficiente": 0.48814783623195,
+      "error_estandar_convencional": 0.0093993222403196,
+      "ic_wald_beta_inf": 0.46972550316183725,
+      "ic_wald_beta_sup": 0.5065701693020628,
+      "odds_ratio": 1.6292957011060574,
+      "ic_wald_OR_inf": 1.5995550601433208,
+      "ic_wald_OR_sup": 1.6595893119207947,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.03637669623161729,
+      "DE_referencia": 13.419246022888407
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "Pressure3pm",
+      "coeficiente": -0.48867225133912956,
+      "error_estandar_convencional": 0.00977204543563267,
+      "ic_wald_beta_inf": -0.5078251084482586,
+      "ic_wald_beta_sup": -0.4695193942300005,
+      "odds_ratio": 0.6134403483025758,
+      "ic_wald_OR_inf": 0.6018030128217101,
+      "ic_wald_OR_sup": 0.625302720172773,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": -0.07305170638643435,
+      "DE_referencia": 6.689402281092719
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "Sunshine",
+      "coeficiente": -0.3830417402988957,
+      "error_estandar_convencional": 0.01082316995192585,
+      "ic_wald_beta_inf": -0.4042547636032265,
+      "ic_wald_beta_sup": -0.3618287169945649,
+      "odds_ratio": 0.6817844408057203,
+      "ic_wald_OR_inf": 0.6674740515116334,
+      "ic_wald_OR_sup": 0.6964016393926696,
+      "p_convencional": 2.3568420389448173e-274,
+      "coeficiente_unidad_original_o_log1p": -0.12459715340322883,
+      "DE_referencia": 3.074241504212162
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "log1p_Rainfall",
+      "coeficiente": 0.23406724045384109,
+      "error_estandar_convencional": 0.008574240935598285,
+      "ic_wald_beta_inf": 0.21726203702529942,
+      "ic_wald_beta_sup": 0.2508724438823827,
+      "odds_ratio": 1.263729463093636,
+      "ic_wald_OR_inf": 1.242669684946199,
+      "ic_wald_OR_sup": 1.2851461456228186,
+      "p_convencional": 4.372546606793766e-164,
+      "coeficiente_unidad_original_o_log1p": 0.2588785660070533,
+      "DE_referencia": 0.9041584402451602
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "Cloud3pm",
+      "coeficiente": 0.2871165458244241,
+      "error_estandar_convencional": 0.010828355762848253,
+      "ic_wald_beta_inf": 0.26589335851745477,
+      "ic_wald_beta_sup": 0.3083397331313934,
+      "odds_ratio": 1.3325795110035814,
+      "ic_wald_OR_inf": 1.3045959272246652,
+      "ic_wald_OR_sup": 1.361163342679007,
+      "p_convencional": 6.465979526952333e-155,
+      "coeficiente_unidad_original_o_log1p": 0.13306479602553678,
+      "DE_referencia": 2.1577198056901756
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "MaxTemp",
+      "coeficiente": 0.06679104354593583,
+      "error_estandar_convencional": 0.010564289896236163,
+      "ic_wald_beta_inf": 0.04608541582707257,
+      "ic_wald_beta_sup": 0.0874966712647991,
+      "odds_ratio": 1.0690720653257253,
+      "ic_wald_OR_inf": 1.0471638515035204,
+      "ic_wald_OR_sup": 1.091438631326713,
+      "p_convencional": 2.5763000040029267e-10,
+      "coeficiente_unidad_original_o_log1p": 0.009377590974684453,
+      "DE_referencia": 7.122409553396338
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "mediana",
+      "termino": "Humidity9am",
+      "coeficiente": 0.14806715826636313,
+      "error_estandar_convencional": 0.012123292014711472,
+      "ic_wald_beta_inf": 0.12430594254346661,
+      "ic_wald_beta_sup": 0.17182837398925965,
+      "odds_ratio": 1.1595907698538144,
+      "ic_wald_OR_inf": 1.1323622557982147,
+      "ic_wald_OR_sup": 1.1874740142961608,
+      "p_convencional": 2.6349178341147155e-34,
+      "coeficiente_unidad_original_o_log1p": 0.0077975710285132106,
+      "DE_referencia": 18.988882271790683
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "const",
+      "coeficiente": -0.5786470395304719,
+      "error_estandar_convencional": 0.008848432562077093,
+      "ic_wald_beta_inf": -0.5959896486717745,
+      "ic_wald_beta_sup": -0.5613044303891693,
+      "odds_ratio": 0.5606563996010525,
+      "ic_wald_OR_inf": 0.5510169827194661,
+      "ic_wald_OR_sup": 0.5704644471432738,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 69.52325299928617,
+      "DE_referencia": null
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Humidity3pm",
+      "coeficiente": 0.9021115084317818,
+      "error_estandar_convencional": 0.012918559682107542,
+      "ic_wald_beta_inf": 0.8767915967227198,
+      "ic_wald_beta_sup": 0.9274314201408438,
+      "odds_ratio": 2.4648020707568943,
+      "ic_wald_OR_inf": 2.403176963359744,
+      "ic_wald_OR_sup": 2.528007442079511,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.043781395085144975,
+      "DE_referencia": 20.60490550100968
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "WindGustSpeed",
+      "coeficiente": 0.46748046493431,
+      "error_estandar_convencional": 0.009231506713293036,
+      "ic_wald_beta_inf": 0.4493870442532159,
+      "ic_wald_beta_sup": 0.4855738856154041,
+      "odds_ratio": 1.595968025907369,
+      "ic_wald_OR_inf": 1.5673511740821426,
+      "ic_wald_OR_sup": 1.6251073670265896,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": 0.03483656713178643,
+      "DE_referencia": 13.419246022888407
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Pressure3pm",
+      "coeficiente": -0.48638898244215445,
+      "error_estandar_convencional": 0.009894267489919412,
+      "ic_wald_beta_inf": -0.505781390375802,
+      "ic_wald_beta_sup": -0.4669965745085069,
+      "odds_ratio": 0.6148425978171583,
+      "ic_wald_OR_inf": 0.6030341861721572,
+      "ic_wald_OR_sup": 0.6268822377884719,
+      "p_convencional": 0.0,
+      "coeficiente_unidad_original_o_log1p": -0.0727103800913439,
+      "DE_referencia": 6.689402281092719
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Sunshine",
+      "coeficiente": -0.4782827632662874,
+      "error_estandar_convencional": 0.013908255935222807,
+      "ic_wald_beta_inf": -0.5055424439870895,
+      "ic_wald_beta_sup": -0.45102308254548523,
+      "odds_ratio": 0.619846902265026,
+      "ic_wald_OR_inf": 0.6031782962298166,
+      "ic_wald_OR_sup": 0.6369761389775885,
+      "p_convencional": 3.758134022897022e-259,
+      "coeficiente_unidad_original_o_log1p": -0.15557748557195972,
+      "DE_referencia": 3.074241504212162
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "log1p_Rainfall",
+      "coeficiente": 0.25804529420438266,
+      "error_estandar_convencional": 0.008693275676932552,
+      "ic_wald_beta_inf": 0.2410067869699168,
+      "ic_wald_beta_sup": 0.27508380143884853,
+      "odds_ratio": 1.2943974459989591,
+      "ic_wald_OR_inf": 1.2725296718995223,
+      "ic_wald_OR_sup": 1.3166410066553804,
+      "p_convencional": 1.2606604982432036e-193,
+      "coeficiente_unidad_original_o_log1p": 0.28539831374511565,
+      "DE_referencia": 0.9041584402451602
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Cloud3pm",
+      "coeficiente": 0.19319083519559518,
+      "error_estandar_convencional": 0.012303194092799185,
+      "ic_wald_beta_inf": 0.16907701787890284,
+      "ic_wald_beta_sup": 0.21730465251228753,
+      "odds_ratio": 1.213114276331086,
+      "ic_wald_OR_inf": 1.1842113408574801,
+      "ic_wald_OR_sup": 1.2427226430483977,
+      "p_convencional": 1.4541043074539111e-55,
+      "coeficiente_unidad_original_o_log1p": 0.08953471840325464,
+      "DE_referencia": 2.1577198056901756
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "MaxTemp",
+      "coeficiente": 0.09471214105890077,
+      "error_estandar_convencional": 0.010780260004653446,
+      "ic_wald_beta_inf": 0.07358321970580242,
+      "ic_wald_beta_sup": 0.11584106241199912,
+      "odds_ratio": 1.0993423540485139,
+      "ic_wald_OR_inf": 1.0763581071498407,
+      "ic_wald_OR_sup": 1.122817400061339,
+      "p_convencional": 1.5539242869420478e-18,
+      "coeficiente_unidad_original_o_log1p": 0.01329776676682922,
+      "DE_referencia": 7.122409553396338
+    },
+    {
+      "modelo": "M2_stepwise_AIC",
+      "estrategia": "regresion",
+      "termino": "Humidity9am",
+      "coeficiente": 0.10111715153697506,
+      "error_estandar_convencional": 0.01234105140165067,
+      "ic_wald_beta_inf": 0.0769291352583822,
+      "ic_wald_beta_sup": 0.12530516781556794,
+      "odds_ratio": 1.1064062513641595,
+      "ic_wald_OR_inf": 1.0799655422017402,
+      "ic_wald_OR_sup": 1.1334943062739127,
+      "p_convencional": 2.53609848016743e-16,
+      "coeficiente_unidad_original_o_log1p": 0.005325071275374206,
+      "DE_referencia": 18.988882271790683
+    }
+  ],
+  "montecarlo_decision_ampliacion_S3": [
+    {
+      "escenario": "Humedad >=70%",
+      "n_calibracion_train": 18924,
+      "probabilidad_empirica_train": 0.5834390192348341,
+      "dias_escenario": 30,
+      "iteraciones": 10000,
+      "media_dias_lluvia": 17.517,
+      "media_teorica": 17.503170577045022,
+      "DE_dias_lluvia": 2.6950022826948348,
+      "MCSE_media": 0.026950022826948347,
+      "capacidad_dias_riesgo_5pct": 22,
+      "probabilidad_exceder_15_dias": 0.7725,
+      "excedencias_15_observadas": 7725,
+      "probabilidad_exacta_iid_exceder_15": 0.7720577413558514,
+      "cota_superior_MC_95_evento_exceder_15": 0.7793862646904022,
+      "riesgo_operativo_supuesto": 0.05
+    },
+    {
+      "escenario": "Humedad <70%",
+      "n_calibracion_train": 78075,
+      "probabilidad_empirica_train": 0.13565161703490233,
+      "dias_escenario": 30,
+      "iteraciones": 10000,
+      "media_dias_lluvia": 4.0358,
+      "media_teorica": 4.06954851104707,
+      "DE_dias_lluvia": 1.87074004790422,
+      "MCSE_media": 0.0187074004790422,
+      "capacidad_dias_riesgo_5pct": 7,
+      "probabilidad_exceder_15_dias": 0.0,
+      "excedencias_15_observadas": 0,
+      "probabilidad_exacta_iid_exceder_15": 2.844878104711782e-07,
+      "cota_superior_MC_95_evento_exceder_15": 0.0002995283597766119,
+      "riesgo_operativo_supuesto": 0.05
+    }
+  ],
+  "limites": [
+    "Partición aleatoria estratificada exigida: no prueba pronóstico futuro ni localidades nuevas.",
+    "El conjunto completo se exploró en S1/S2 y la prueba fue observada en F2; evaluación comparativa del proyecto.",
+    "Independencia entre localidades y muestreo nacional representativo no demostrados.",
+    "Faltantes por estación: MAR condicionado a covariables es un supuesto; MNAR no descartado.",
+    "Regresión determinista: varianza y correlaciones pueden alterarse; remuestreo no resuelve MNAR.",
+    "Intervalos bootstrap condicionados a especificaciones; excluyen incertidumbre de selección de variables.",
+    "Scores ponderados no calibrados; coeficientes asociativos, sin interpretación causal.",
+    "Monte Carlo: escenario iid con frecuencias fijas de entrenamiento, no pronóstico de 30 fechas reales."
+  ]
+}

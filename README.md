@@ -1,3 +1,19 @@
+<!-- ESTADO_S3_WINDOWS -->
+> **Estado S3 actualizado al 25 de octubre de 2026:** reproducción Windows
+> verificada: 16 celdas en orden, ningún error y 22 controles correctos.
+> Los resultados cotejados coinciden con Work dentro de tolerancia 1e-7.
+> Benjamín confirmó que PDF y PowerPoint abren en su computador.
+> Evidencias: `evidence/05_sumativa3/validacion_windows.json` y
+> `evidence/05_sumativa3/validacion_windows.md`.
+> Permanecen pendientes revisión académica grupal, ensayo/grabación,
+> revisión para commit, publicación y entrega en Canvas.
+>
+> Los registros originales de Work y las menciones de pendientes en los
+> materiales preparados entonces se conservan como antecedentes históricos.
+> Esta actualización acredita reproducción y apertura; no acredita por sí
+> sola revisión visual exhaustiva, participación grupal ni entrega.
+<!-- FIN_ESTADO_S3_WINDOWS -->
+
 # MCDI501 — Lluvias en Australia — Grupo 7
 
 Proyecto acumulativo de Estadística Computacional para la Toma de Decisiones, Magíster en Ciencia de Datos e Inteligencia Artificial, Universidad Andrés Bello.
@@ -22,11 +38,11 @@ El ZIP de la Formativa 1 no redistribuye el dataset. Cada integrante debe obtene
 |---|---|---:|---|
 | 01_formativa1 | Formativa 1 — Informe 1 | 0 % | Entregada; retroalimentación del profesor recibida. |
 | 02_sumativa1 | Sumativa 1 — Informe técnico de avance | 20 % | Entregada e integrada en main; retroalimentación del profesor recibida. |
-| 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Análisis, notebook, informe LaTeX/PDF y síntesis preparados; ejecución verificada en Work y Windows con cifras principales conciliadas. Revisión grupal y entrega pendientes. |
-| 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Notebook y resultados verificados en la rama formativa2-jorge; revisión grupal y entrega pendientes. |
-| 05_sumativa3 | Sumativa 3 — Cierre y comunicación | 60 % | Pendiente de autorización y desarrollo. |
+| 03_sumativa2 | Sumativa 2 — Informe 3 | 20 % | Entregada y retroalimentada por el profesor, según actualización del estudiante; resultados conservados para S3. |
+| 04_formativa2 | Formativa 2 — Informe 4 | 0 % | Entregada y retroalimentada por el profesor; referencia predictiva reproducida en S3. |
+| 05_sumativa3 | Sumativa 3 — Cierre y comunicación | 60 % | Validada en Work y Windows; PDF/PPTX abiertos localmente. Revisión grupal, video, publicación y entrega pendientes. |
 
-La preparación de las cinco carpetas permite continuidad; no significa que se hayan iniciado las otras evaluaciones.
+La preparación y ejecución de S3 fueron autorizadas por el estudiante. Los estados de entrega se distinguen de la existencia de archivos.
 
 ## Organización del proyecto
 
@@ -34,11 +50,11 @@ La preparación de las cinco carpetas permite continuidad; no significa que se h
 |---|---|
 | data/raw/ | CSV original, excluido de Git. |
 | src/formativa1.py | Funciones de lectura, auditoría, análisis y exportación de F1. |
-| notebooks/ | Un notebook por evaluación; F1 ya preparado. |
+| notebooks/ | Un notebook por evaluación; maestro S3 ejecutado en Work. |
 | results/<identificador>/ | Tablas, gráficos y resultados numéricos por fase. |
 | reports/<identificador>/ | Fuentes editables del informe, PDF y materiales de comunicación. |
 | evidence/<identificador>/ | Evidencias diferenciadas de preparación, ejecución y entrega. |
-| presentations/05_sumativa3/ | Presentación final cuando se autorice. |
+| presentations/05_sumativa3/ | PPTX editable, notas, guion de diez minutos y datos de gráficos. |
 | docs/ | Requisitos, decisiones, continuidad e instalación de F1. |
 | requirements.txt | Dependencias directas del proyecto. |
 | requirements-lock-windows.txt | Versiones exactas instaladas en el computador del estudiante. |
@@ -165,5 +181,23 @@ los estimandos de S1 y el CSV original. Los IC son condicionales a los supuestos
 los rangos simulados no son pronósticos. La correlación humedad/lluvia conserva
 signo positivo y tiene magnitud sensible a restringir el rango de precipitación.
 
-La reproducción Windows de S2 está verificada; consultar `evidence/03_sumativa2/validacion_windows.md`. La revisión grupal y la entrega en Canvas siguen pendientes de evidencia.
+La reproducción Windows de S2 está verificada; consultar `evidence/03_sumativa2/validacion_windows.md`. El estudiante informó posteriormente la entrega y compartió la retroalimentación del profesor; S3 conserva sus resultados como antecedentes.
 La asistencia no ejecuta Git ni publica cambios; Benjamín revisa y realiza esas operaciones.
+
+
+## Sumativa 3 — Cierre y comunicación
+
+La actualización se preparó contra main en `28e3a8a0805e11fd1b93beb273db7ca4060aa557`; no crea una rama ni publica cambios. El índice [S3](S3/README.md) enlaza los productos sin duplicarlos.
+
+- Notebook: `notebooks/05_sumativa3_modelamiento_integrado.ipynb`.
+- Código: `src/sumativa3.py`; verificador de ejecución: `src/verificar_entrega_sumativa3.py`.
+- PDF de diez páginas y LaTeX editable con portada UNAB: `reports/05_sumativa3/`.
+- Presentación PPTX de 12 diapositivas, notas y guion para cuatro integrantes: `presentations/05_sumativa3/`.
+- Resultados completos y distribuciones: `results/05_sumativa3/`.
+- Reproducción: `docs/reproduccion_sumativa3.md`; dependencias: `requirements-sumativa3.txt`.
+- Decisiones: `docs/decisiones_sumativa3.md`; ficha de continuidad: `docs/continuidad_sumativa3.md`.
+- Matriz de los seis criterios (108 puntos) y evidencias: `evidence/05_sumativa3/`.
+
+Se reprodujo la referencia F2 y se compararon 16 regresiones de imputación, tres procedimientos logísticos, tres estrategias de faltantes para la especificación final y 2.000 remuestras por localidad. M2 obtiene AUC 0,8619, recall 68,26 %, precision 57,98 % y accuracy 81,79 % en la prueba ya usada en F2. El IC bootstrap de OR para MaxTemp incluye uno. La elección y los umbrales se basan en validación dentro de entrenamiento; los scores ponderados no se presentan como probabilidades calibradas.
+
+El notebook se ejecutó dos veces en un kernel real nuevo de Work: 16 celdas, ningún error, 22 controles correctos y concordancia exacta de los 32 archivos numéricos cotejados. La reproducción Windows de S3 todavía requiere ejecución y evidencia local. La presentación/guion no acredita el video ni la participación; revisión grupal y Canvas siguen pendientes. No se ha ejecutado ninguna operación Git por la asistencia.

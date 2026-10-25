@@ -1,0 +1,16 @@
+﻿modelo,estrategia,fold,n_train,n_validacion,auc,predictores
+M1_dominio,regresion,1,79628,19907,0.821653932005806,Humidity3pm; Sunshine; Rainfall; MaxTemp
+M2_stepwise_AIC,regresion,1,79628,19907,0.86075154402654,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am
+M3_reducido_BIC,regresion,1,79628,19907,0.818201070323856,Humidity3pm; Sunshine; Rainfall
+M1_dominio,regresion,2,79628,19907,0.82704385037457,Humidity3pm; Sunshine; Rainfall; MaxTemp
+M2_stepwise_AIC,regresion,2,79628,19907,0.863734859757714,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am
+M3_reducido_BIC,regresion,2,79628,19907,0.82364492172917,Humidity3pm; Sunshine; Rainfall
+M1_dominio,regresion,3,79628,19907,0.819963881273538,Humidity3pm; Sunshine; Rainfall; MaxTemp
+M2_stepwise_AIC,regresion,3,79628,19907,0.859072942144867,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am
+M3_reducido_BIC,regresion,3,79628,19907,0.816741140122274,Humidity3pm; Sunshine; Rainfall
+M1_dominio,regresion,4,79628,19907,0.824327038924843,Humidity3pm; Sunshine; Rainfall; MaxTemp
+M2_stepwise_AIC,regresion,4,79628,19907,0.861470406507377,Humidity3pm; Pressure3pm; Sunshine; WindGustSpeed; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am
+M3_reducido_BIC,regresion,4,79628,19907,0.821206435451338,Humidity3pm; Sunshine; Rainfall
+M1_dominio,regresion,5,79628,19907,0.813879957645362,Humidity3pm; Sunshine; Rainfall; MaxTemp
+M2_stepwise_AIC,regresion,5,79628,19907,0.857170816503104,Humidity3pm; Pressure3pm; Sunshine; WindGustSpeed; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am
+M3_reducido_BIC,regresion,5,79628,19907,0.810264175041231,Humidity3pm; Sunshine; Rainfall

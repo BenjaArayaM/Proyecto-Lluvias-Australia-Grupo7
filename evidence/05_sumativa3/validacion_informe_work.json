@@ -1,0 +1,37 @@
+{
+  "fecha_utc": "2026-10-24T18:02:24.051636+00:00",
+  "archivo": "reports/05_sumativa3/informe_sumativa3_grupo7.pdf",
+  "sha256": "d01aebeb3c7b004285092184d055250bcf63b9033a779a8eea3bf76624de56a2",
+  "paginas_totales": 10,
+  "maximo_aplicado": 10,
+  "portada_y_referencias_incluidas": true,
+  "compilador": "pdfLaTeX, dos pasadas",
+  "errores_latex": 0,
+  "cajas_overfull": 0,
+  "revision_visual_paginas": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "contenido_proyecto_y_zip_autonomo_identico": true,
+  "nombres_integrantes_comprobados": [
+    "Benjamín Araya",
+    "Alan Cañete",
+    "Patricio Cortez",
+    "Jorge Guaico"
+  ],
+  "cifras_desde_resultados_actuales": true,
+  "archivos_editables": [
+    "informe_sumativa3_grupo7.tex",
+    "datos_sumativa3.tex",
+    "portada_unab.tex"
+  ],
+  "compilacion_Windows_Overleaf_acreditada": false
+}

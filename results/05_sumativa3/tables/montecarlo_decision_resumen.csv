@@ -1,0 +1,3 @@
+﻿escenario,n_calibracion_train,probabilidad_empirica_train,dias_escenario,iteraciones,media_dias_lluvia,media_teorica,DE_dias_lluvia,MCSE_media,capacidad_dias_riesgo_5pct,probabilidad_exceder_15_dias,excedencias_15_observadas,probabilidad_exacta_iid_exceder_15,cota_superior_MC_95_evento_exceder_15,riesgo_operativo_supuesto
+Humedad >=70%,18924,0.583439019234834,30,10000,17.517,17.503170577045,2.69500228269483,0.0269500228269483,22,0.7725,7725,0.772057741355851,0.779386264690402,0.05
+Humedad <70%,78075,0.135651617034902,30,10000,4.0358,4.06954851104707,1.87074004790422,0.0187074004790422,7,0,0,2.84487810471178e-07,0.000299528359776612,0.05

@@ -1,0 +1,145 @@
+\newcommand{\AUCFinal}{0,8619}
+\newcommand{\RecallFinal}{68,26}
+\newcommand{\PrecisionFinal}{57,98}
+\newcommand{\AccuracyFinal}{81,79}
+\newcommand{\FUnoFinal}{0,6270}
+\newcommand{\PRAUCFinal}{0,6872}
+\newcommand{\UmbralFinal}{0,6034}
+\newcommand{\FalsosNegativos}{3\,035}
+\newcommand{\FalsosPositivos}{4\,732}
+\newcommand{\VerdaderosPositivos}{6\,528}
+\newcommand{\CambioRecall}{28,44}
+\newcommand{\CambioAccuracy}{-1,09}
+\newcommand{\PesoYes}{2,2303}
+\newcommand{\PesoNo}{0,6445}
+\newcommand{\MejoraRMSE}{41,76}
+\newcommand{\BootstrapValidas}{2\,000}
+\newcommand{\FaltantesSunModelo}{47,69}
+\newcommand{\MaxVIF}{3,054}
+\newcommand{\CookMarcados}{6\,417}
+\newcommand{\ModeloFinal}{M2 stepwise AIC}
+\newcommand{\VariablesFinales}{\texttt{Humidity3pm}, \texttt{WindGustSpeed}, \texttt{Pressure3pm}, \texttt{Sunshine}, \texttt{log1p\_Rainfall}, \texttt{Cloud3pm}, \texttt{MaxTemp}, \texttt{Humidity9am}}
+\newcommand{\RMSESolReg}{2,226}
+\newcommand{\RMSESolMed}{3,822}
+\newcommand{\RDSol}{0,645}
+\newcommand{\TablaImputacion}{\fontsize{8.3}{10.2}\selectfont\begin{tabularx}{\linewidth}{@{}lXrrrr@{}}\toprule
+Variable & Tres predictores & Donantes & $R^2$ val. & RMSE reg. & RMSE med.\\\midrule
+MinTemp & Temp9am; Evaporation; Pressure3pm & 56\,512 & 0,827 & 2,69 & 6,48\\
+MaxTemp & Temp3pm; MinTemp; Evaporation & 56\,017 & 0,973 & 1,16 & 7,06\\
+Rainfall & Humidity3pm; Humidity9am; Sunshine & 51\,140 & 0,081 & 8,50 & 9,18\\
+Evaporation & MaxTemp; MinTemp; Humidity9am & 56\,479 & 0,417 & 3,27 & 4,33\\
+Sunshine & Humidity3pm; Cloud3pm; Cloud9am & 44\,903 & 0,645 & 2,23 & 3,82\\
+WindGustSpeed & WindSpeed3pm; WindSpeed9am; Pressure9am & 85\,703 & 0,617 & 8,27 & 13,41\\
+WindSpeed9am & WindGustSpeed; WindSpeed3pm; Humidity9am & 91\,836 & 0,404 & 6,69 & 8,74\\
+WindSpeed3pm & WindGustSpeed; WindSpeed9am; Pressure9am & 85\,703 & 0,482 & 6,15 & 8,54\\
+Humidity9am & Humidity3pm; Evaporation; Sunshine & 48\,718 & 0,543 & 12,60 & 18,65\\
+Humidity3pm & Sunshine; Rainfall; Humidity9am & 51\,140 & 0,588 & 13,13 & 20,45\\
+Pressure9am & Pressure3pm; MinTemp; WindGustSpeed & 85\,689 & 0,929 & 1,87 & 7,05\\
+Pressure3pm & Pressure9am; Temp9am; WindGustSpeed & 85\,666 & 0,932 & 1,84 & 7,08\\
+Cloud9am & Sunshine; Cloud3pm; Humidity3pm & 44\,903 & 0,495 & 1,99 & 2,88\\
+Cloud3pm & Sunshine; Cloud9am; Humidity3pm & 44\,903 & 0,541 & 1,80 & 2,74\\
+Temp9am & MinTemp; MaxTemp; Evaporation & 56\,732 & 0,928 & 1,78 & 6,65\\
+Temp3pm & MaxTemp; MinTemp; Evaporation & 56\,017 & 0,971 & 1,17 & 6,93\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaSeleccion}{\small\begin{tabularx}{\linewidth}{@{}lrrrrr@{}}\toprule
+Modelo & p & AIC & BIC & AUC OOF & Umbral\\\midrule
+M1 & 4 & 80\,289,2 & 80\,336,8 & 0,8213 & 0,5638\\
+M2 & 8 & 72\,746,5 & 72\,832,1 & 0,8604 & 0,6034\\
+M3 & 3 & 80\,848,3 & 80\,886,3 & 0,8180 & 0,5776\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaCoeficientesTres}{\small\begin{tabularx}{\linewidth}{@{}lrrr@{}}\toprule
+Predictor & M1 $\beta$ (OR) & M2 $\beta$ (OR) & M3 $\beta$ (OR)\\\midrule
+const & -0,415 (0,660) & -0,579 (0,561) & -0,416 (0,659)\\
+Humidity3pm & 0,894 (2,446) & 0,902 (2,465) & 0,802 (2,230)\\
+Sunshine & -0,660 (0,517) & -0,478 (0,620) & -0,600 (0,549)\\
+Rainfall & 0,384 (1,468) & --- & 0,375 (1,455)\\
+MaxTemp & 0,272 (1,313) & 0,095 (1,099) & ---\\
+WindGustSpeed & --- & 0,467 (1,596) & ---\\
+Pressure3pm & --- & -0,486 (0,615) & ---\\
+log1p\_Rainfall & --- & 0,258 (1,294) & ---\\
+Cloud3pm & --- & 0,193 (1,213) & ---\\
+Humidity9am & --- & 0,101 (1,106) & ---\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaMetricas}{\small\begin{tabularx}{\linewidth}{@{}llrrrrr@{}}\toprule
+Modelo & Muestra & Acc.\% & Prec.\% & Recall\% & F1 & AUC\\\midrule
+M1 & train & 77,90 & 50,54 & 66,65 & 0,575 & 0,8214\\
+M1 & test & 78,06 & 50,82 & 66,65 & 0,577 & 0,8240\\
+M2 & train & 81,55 & 57,52 & 67,65 & 0,622 & 0,8606\\
+M2 & test & 81,79 & 57,98 & 68,26 & 0,627 & 0,8619\\
+M3 & train & 78,32 & 51,30 & 64,97 & 0,573 & 0,8181\\
+M3 & test & 78,57 & 51,76 & 64,82 & 0,576 & 0,8208\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaBootstrap}{\fontsize{8.4}{10.3}\selectfont\begin{tabularx}{\linewidth}{@{}lrrrrr@{}}\toprule
+Predictor & $\hat\beta$ & IC Wald beta & IC boot beta & OR [IC boot] & Signo\%\\\midrule
+Humidity3pm & 0,902 & [0,877; 0,927] & [0,804; 1,025] & 2,465 [2,234; 2,787] & 100,0\\
+WindGustSpeed & 0,467 & [0,449; 0,486] & [0,399; 0,547] & 1,596 [1,491; 1,729] & 100,0\\
+Pressure3pm & -0,486 & [-0,506; -0,467] & [-0,602; -0,388] & 0,615 [0,548; 0,679] & 100,0\\
+Sunshine & -0,478 & [-0,506; -0,451] & [-0,550; -0,401] & 0,620 [0,577; 0,670] & 100,0\\
+log1p\_Rainfall & 0,258 & [0,241; 0,275] & [0,194; 0,308] & 1,294 [1,214; 1,360] & 100,0\\
+Cloud3pm & 0,193 & [0,169; 0,217] & [0,117; 0,260] & 1,213 [1,124; 1,297] & 100,0\\
+MaxTemp & 0,095 & [0,074; 0,116] & [-0,034; 0,212] & 1,099 [0,966; 1,237] & 92,6\\
+Humidity9am & 0,101 & [0,077; 0,125] & [0,011; 0,193] & 1,106 [1,011; 1,213] & 98,5\\
+\bottomrule\end{tabularx}}
+\newcommand{\PredictoresInestables}{\texttt{MaxTemp}}
+\newcommand{\NumeroFallosBootstrap}{0}
+\newcommand{\LocalidadesInfluyentes}{MountGinini, Wollongong, Ballarat}
+\newcommand{\TablaVIF}{\small\begin{tabularx}{\linewidth}{@{}lr@{}}\toprule
+Predictor & VIF\\\midrule
+Humidity3pm & 2,561\\
+WindGustSpeed & 1,325\\
+Pressure3pm & 1,522\\
+Sunshine & 3,054\\
+log1p\_Rainfall & 1,315\\
+Cloud3pm & 2,222\\
+MaxTemp & 1,856\\
+Humidity9am & 2,183\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaLinealidad}{\footnotesize\begin{tabularx}{\linewidth}{@{}lrr@{}}\toprule
+Predictor & p ajustado & $\Delta$ dev.\%\\\midrule
+Humidity3pm & $<0{,}001$ & 0,154\\
+WindGustSpeed & 1,000 & 0,001\\
+Pressure3pm & 1,000 & 0,001\\
+Sunshine & $<0{,}001$ & 0,127\\
+log1p\_Rainfall & $<0{,}001$ & 0,132\\
+MaxTemp & 0,405 & 0,004\\
+Humidity9am & 0,069 & 0,007\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaImpacto}{\small\begin{tabularx}{\linewidth}{@{}llrrrrrr@{}}\toprule
+Estrategia & Prueba & $n_{train}$ & $n_{test}$ & Loc. & AUC & Acc.\% & Recall\%\\\midrule
+Eliminación & Propia & 42\,282 & 18\,234 & 27 & 0,8813 & 82,83 & 70,98\\
+Eliminación & Común & 42\,282 & 18\,234 & 27 & 0,8813 & 82,83 & 70,98\\
+Mediana & Propia & 99\,535 & 42\,658 & 49 & 0,8589 & 81,68 & 67,75\\
+Mediana & Común & 99\,535 & 18\,234 & 27 & 0,8801 & 82,14 & 73,49\\
+Regresión & Propia & 99\,535 & 42\,658 & 49 & 0,8619 & 81,79 & 68,26\\
+Regresión & Común & 99\,535 & 18\,234 & 27 & 0,8809 & 82,98 & 70,96\\
+\bottomrule\end{tabularx}}
+\newcommand{\CoberturaEliminacion}{42,74}
+\newcommand{\LocEliminacion}{27}
+\newcommand{\TablaCoefImpacto}{\footnotesize\begin{tabularx}{\linewidth}{@{}lrrr@{}}\toprule
+Predictor & Eliminación & Mediana & Regresión\\\midrule
+Humidity3pm & 0,967 [0,926; 1,009] & 1,013 [0,989; 1,036] & 0,902 [0,877; 0,927]\\
+WindGustSpeed & 0,519 [0,490; 0,549] & 0,488 [0,470; 0,507] & 0,467 [0,449; 0,486]\\
+Pressure3pm & -0,492 [-0,524; -0,461] & -0,489 [-0,508; -0,470] & -0,486 [-0,506; -0,467]\\
+Sunshine & -0,488 [-0,520; -0,455] & -0,383 [-0,404; -0,362] & -0,478 [-0,506; -0,451]\\
+log1p\_Rainfall & 0,191 [0,164; 0,219] & 0,234 [0,217; 0,251] & 0,258 [0,241; 0,275]\\
+Cloud3pm & 0,245 [0,213; 0,276] & 0,287 [0,266; 0,308] & 0,193 [0,169; 0,217]\\
+MaxTemp & 0,108 [0,072; 0,143] & 0,067 [0,046; 0,087] & 0,095 [0,074; 0,116]\\
+Humidity9am & 0,070 [0,029; 0,111] & 0,148 [0,124; 0,172] & 0,101 [0,077; 0,125]\\
+\bottomrule\end{tabularx}}
+\newcommand{\TablaMonteCarlo}{\small\begin{tabularx}{\linewidth}{@{}lrrrrr@{}}\toprule
+Humedad & $n$ train & p lluvia & Media /30 & Capacidad 95\% & MCSE\\\midrule
+Alta & 18\,924 & 0,5834 & 17,52 & 22 & 0,027\\
+Menor & 78\,075 & 0,1357 & 4,04 & 7 & 0,019\\
+\bottomrule\end{tabularx}}
+\newcommand{\CapacidadAlta}{22}
+\newcommand{\CapacidadBaja}{7}
+\newcommand{\MediaMCAlta}{17,52}
+\newcommand{\ProbMCAlta}{58,34}
+\newcommand{\MediaMCBaja}{4,04}
+\newcommand{\ProbMCBaja}{13,57}
+\newcommand{\ORHumedad}{2,465}
+\newcommand{\ICHumedad}{[2,234; 2,787]}
+\newcommand{\DEHumedad}{20,60}
+\newcommand{\ORDoblarRain}{1,219}
+\newcommand{\FallbackSol}{35\,960}
+\newcommand{\ImputadosSol}{47\,607}
