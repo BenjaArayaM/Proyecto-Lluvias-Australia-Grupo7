@@ -1,0 +1,7 @@
+{
+  "criterio_predefinido": "Regresión si reduce >=5% RMSE de reconstrucción de Sunshine frente a mediana en validación interna de donantes; de otro modo mediana",
+  "reduccion_rmse_Sunshine": 0.41761062913913083,
+  "estrategia": "regresion",
+  "ajuste_con_datos": "solo entrenamiento; ninguna métrica de RainTomorrow de prueba interviene",
+  "limitacion": "La validación de donantes observados no valida las 19 estaciones sin Sunshine; imputación determinista condicionada a covariables"
+}

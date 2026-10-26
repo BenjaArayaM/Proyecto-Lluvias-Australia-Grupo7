@@ -1,0 +1,49 @@
+﻿variable_imputada,predictor,orden,rho_referencia,origen_correlacion,par_validado_S2
+MinTemp,Temp9am,1,0.899095916462006,Ampliación S3: entrenamiento,False
+MinTemp,Evaporation,2,0.580877954843242,Ampliación S3: entrenamiento,False
+MinTemp,Pressure3pm,3,-0.46916059312445,S1,False
+MaxTemp,Temp3pm,1,0.984475622856438,S1,True
+MaxTemp,MinTemp,2,0.73799499918514,S1,False
+MaxTemp,Evaporation,3,0.697731363120568,Ampliación S3: entrenamiento,False
+Rainfall,Humidity3pm,1,0.443635210982342,S1,True
+Rainfall,Humidity9am,2,0.442297377154105,Ampliación S3: entrenamiento,False
+Rainfall,Sunshine,3,-0.401306282005707,S1,False
+Evaporation,MaxTemp,1,0.697731363120568,Ampliación S3: entrenamiento,False
+Evaporation,MinTemp,2,0.580877954843242,Ampliación S3: entrenamiento,False
+Evaporation,Humidity9am,3,-0.562172279265012,Ampliación S3: entrenamiento,False
+Sunshine,Humidity3pm,1,-0.620348618296266,S1,True
+Sunshine,Cloud3pm,2,-0.719551640804546,Ampliación S3: entrenamiento,False
+Sunshine,Cloud9am,3,-0.687159872927233,Ampliación S3: entrenamiento,False
+WindGustSpeed,WindSpeed3pm,1,0.682280888953393,Ampliación S3: entrenamiento,False
+WindGustSpeed,WindSpeed9am,2,0.59074854682532,Ampliación S3: entrenamiento,False
+WindGustSpeed,Pressure9am,3,-0.427501358270203,Ampliación S3: entrenamiento,False
+WindSpeed9am,WindGustSpeed,1,0.59074854682532,Ampliación S3: entrenamiento,False
+WindSpeed9am,WindSpeed3pm,2,0.486266922388715,Ampliación S3: entrenamiento,False
+WindSpeed9am,Humidity9am,3,-0.288311072989415,Ampliación S3: entrenamiento,False
+WindSpeed3pm,WindGustSpeed,1,0.682280888953393,Ampliación S3: entrenamiento,False
+WindSpeed3pm,WindSpeed9am,2,0.486266922388715,Ampliación S3: entrenamiento,False
+WindSpeed3pm,Pressure9am,3,-0.279525732693905,Ampliación S3: entrenamiento,False
+Humidity9am,Humidity3pm,1,0.63701875359891,Ampliación S3: entrenamiento,False
+Humidity9am,Evaporation,2,-0.562172279265012,Ampliación S3: entrenamiento,False
+Humidity9am,Sunshine,3,-0.53066495949379,Ampliación S3: entrenamiento,False
+Humidity3pm,Sunshine,1,-0.620348618296266,S1,True
+Humidity3pm,Rainfall,2,0.443635210982342,S1,True
+Humidity3pm,Humidity9am,3,0.63701875359891,Ampliación S3: entrenamiento,False
+Pressure9am,Pressure3pm,1,0.959762902597367,Ampliación S3: entrenamiento,False
+Pressure9am,MinTemp,2,-0.465125948792219,Ampliación S3: entrenamiento,False
+Pressure9am,WindGustSpeed,3,-0.427501358270203,Ampliación S3: entrenamiento,False
+Pressure3pm,Pressure9am,1,0.959762902597367,Ampliación S3: entrenamiento,False
+Pressure3pm,Temp9am,2,-0.482117464952098,Ampliación S3: entrenamiento,False
+Pressure3pm,WindGustSpeed,3,-0.381929659456665,Ampliación S3: entrenamiento,False
+Cloud9am,Sunshine,1,-0.687159872927233,Ampliación S3: entrenamiento,False
+Cloud9am,Cloud3pm,2,0.616093477617013,Ampliación S3: entrenamiento,False
+Cloud9am,Humidity3pm,3,0.529774099342957,Ampliación S3: entrenamiento,False
+Cloud3pm,Sunshine,1,-0.719551640804546,Ampliación S3: entrenamiento,False
+Cloud3pm,Cloud9am,2,0.616093477617013,Ampliación S3: entrenamiento,False
+Cloud3pm,Humidity3pm,3,0.540455464314704,Ampliación S3: entrenamiento,False
+Temp9am,MinTemp,1,0.899095916462006,Ampliación S3: entrenamiento,False
+Temp9am,MaxTemp,2,0.89162261780582,Ampliación S3: entrenamiento,False
+Temp9am,Evaporation,3,0.672047349126919,Ampliación S3: entrenamiento,False
+Temp3pm,MaxTemp,1,0.984475622856438,S1,True
+Temp3pm,MinTemp,2,0.709459192274198,S1,False
+Temp3pm,Evaporation,3,0.678858082028663,Ampliación S3: entrenamiento,False

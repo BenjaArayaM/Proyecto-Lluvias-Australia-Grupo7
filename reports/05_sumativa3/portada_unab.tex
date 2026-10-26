@@ -1,0 +1,40 @@
+% Portada editable: estructura y posiciones del PDF de Sumativa 1 del Grupo 7.
+% Las coordenadas están en bp, medidas desde la esquina superior izquierda.
+% El logotipo es el recurso original extraído sin alteraciones de ese PDF.
+\newcommand{\portadaEvaluacion}{Evaluación Sumativa 3}
+\newcommand{\portadaSubtitulo}{Modelamiento Predictivo Integrado}
+\newcommand{\portadaProyectoUno}{Relación entre condiciones meteorológicas y lluvia al día}
+\newcommand{\portadaProyectoDos}{siguiente}
+\newcommand{\portadaFecha}{24 de octubre de 2026}
+\newcommand{\portadaRepo}{https://github.com/BenjaArayaM/Proyecto-Lluvias-Australia-Grupo7}
+\newcommand{\portadaTexto}[3]{%
+  \put(297.66,-#1){\makebox[0pt][c]{%
+    \fontfamily{ptm}\fontsize{#2bp}{#2bp}\selectfont\color{black}#3}}}
+\AddToShipoutPictureFG*{\AtPageUpperLeft{%
+  \setlength{\unitlength}{1bp}%
+  \put(297.60,-178.80){\makebox[0pt][c]{%
+    \includegraphics[width=125.28bp,height=103.92bp]{logo_unab.jpeg}}}%
+  \portadaTexto{203.40}{12}{UNIVERSIDAD ANDRÉS BELLO}%
+  \portadaTexto{223.32}{11.52}{Magíster en Ciencia de Datos e Inteligencia Artificial}%
+  \portadaTexto{251.28}{11.52}{MCDI501}%
+  \portadaTexto{265.08}{11.52}{Estadística Computacional para la Toma de Decisiones}%
+  \portadaTexto{309.36}{15}{\bfseries\portadaEvaluacion}%
+  \portadaTexto{332.64}{12}{\portadaSubtitulo}%
+  \portadaTexto{369.72}{18}{\portadaProyectoUno}%
+  \portadaTexto{390.48}{18}{\portadaProyectoDos}%
+  \portadaTexto{419.64}{11.04}{Informe técnico grupal · Grupo 7 · Ponderación 60 \%}%
+  \portadaTexto{451.92}{11.04}{\bfseries Integrantes}%
+  \portadaTexto{470.16}{11.04}{Benjamín Araya}%
+  \portadaTexto{483.48}{11.04}{Alan Cañete}%
+  \portadaTexto{496.80}{11.04}{Patricio Cortez}%
+  \portadaTexto{510.00}{11.04}{Jorge Guaico}%
+  \portadaTexto{541.32}{11.04}{Dataset: Rain in Australia --- Weather Australia}%
+  \portadaTexto{554.64}{11.04}{Docente: Jean Paul Maidana}%
+  \portadaTexto{567.84}{11.04}{Fecha: \portadaFecha}%
+  \portadaTexto{594.12}{11.04}{\bfseries Repositorio y rama del análisis}%
+  \portadaTexto{612.48}{11.04}{%
+    \href{\portadaRepo}{\color{blue}\underline{\portadaRepo}}}%
+}}
+\thispagestyle{empty}
+\null
+\clearpage

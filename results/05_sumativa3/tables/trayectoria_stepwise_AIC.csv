@@ -1,0 +1,9 @@
+﻿paso,accion,variable,aic,bic,predictores,n
+1,agrega,Humidity3pm,84395.9670605088,84414.983589749,Humidity3pm,99535
+2,agrega,WindGustSpeed,78957.6676815209,78986.1924753812,Humidity3pm; WindGustSpeed,99535
+3,agrega,Pressure3pm,76345.9394727508,76383.9725312311,Humidity3pm; WindGustSpeed; Pressure3pm,99535
+4,agrega,Sunshine,73848.5354333064,73896.0767564069,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine,99535
+5,agrega,log1p_Rainfall,72962.4122048461,73019.4617925667,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall,99535
+6,agrega,Cloud3pm,72802.4215401253,72868.9793924659,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm,99535
+7,agrega,MaxTemp,72770.2857528263,72846.351869787,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm; MaxTemp,99535
+8,agrega,Humidity9am,72746.5079556261,72832.0823372069,Humidity3pm; WindGustSpeed; Pressure3pm; Sunshine; log1p_Rainfall; Cloud3pm; MaxTemp; Humidity9am,99535

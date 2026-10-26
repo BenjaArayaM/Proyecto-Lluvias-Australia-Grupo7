@@ -1,0 +1,40 @@
+{
+  "fecha_utc": "2026-10-24T18:02:24.051636+00:00",
+  "archivo": "presentations/05_sumativa3/presentacion_sumativa3_grupo7.pptx",
+  "sha256": "40f06eee1352b58032396037fac6421554dcaf81755edb49f9b211a68ef61e62",
+  "diapositivas": 12,
+  "notas_orador": 12,
+  "tablas_nativas": 4,
+  "graficos_nativos": 6,
+  "libros_datos_embebidos": 6,
+  "graficos_tablas_editables": true,
+  "fuente": "Nimbus Sans",
+  "datos_graficos_redondeados_cifras_significativas": 12,
+  "validacion_integridad": "pass",
+  "hallazgos_geometria": 0,
+  "advertencias_geometria": 0,
+  "reimportacion_PPTX_final_correcta": true,
+  "revision_visual_PPTX_final_reimportado": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "reparto_planificado": {
+    "Benjamín Araya": "00:00–02:30",
+    "Jorge Guaico": "02:30–05:00",
+    "Alan Cañete": "05:00–07:30",
+    "Patricio Cortez": "07:30–10:00"
+  },
+  "apertura_PowerPoint_Windows_verificada": false,
+  "tiempo_y_participacion_en_video_verificados": false,
+  "grabacion_real_preparada": false
+}

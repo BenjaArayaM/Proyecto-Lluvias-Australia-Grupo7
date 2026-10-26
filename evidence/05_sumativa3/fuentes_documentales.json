@@ -1,0 +1,29 @@
+{
+  "fecha_utc": "2026-10-24T18:02:24.051636+00:00",
+  "materiales_adjuntos": [
+    {
+      "nombre": "INSTRUCCIONES SUMATIVA 3.docx",
+      "sha256": "80fea0b9ebf0cb71444ff4cd8258b2adaf3c5b8aa7ed6621b4aeb936275569ab",
+      "lectura_completa": true
+    },
+    {
+      "nombre": "Objetivo de la actividad SUMATIVA 3.docx",
+      "sha256": "ecfcba724ee8da567677fc1d9509ebc45025055858a0364c0b8ae2644b0e0a11",
+      "lectura_completa": true
+    },
+    {
+      "nombre": "INSTRUCCIONES Y RUBRICA REVISADA FORMATIVA 2.docx",
+      "sha256": "9ba737b1fb35c515927b291c08823f1a5b04e24a841c0aac55d995f6e9f31328",
+      "lectura_completa": true
+    },
+    {
+      "nombre": "SUMATIVA 2 INSTRUCCIONES Y RYUBRICA REVISADA.docx",
+      "sha256": "9a73064075764615b69a2df3a03d96245ca9d0b9bec69ab0d4f6e3cc5fde0886",
+      "lectura_completa": true
+    }
+  ],
+  "rubrica_vigente": "Texto aportado por Benjamín: Sumativa 3 fase 4, 108 puntos; 21+30+30+9+9+9.",
+  "discordancia": "Objetivo de la actividad SUMATIVA 3.docx describe S2: Fase 3, 20 %, 7 páginas, rúbrica 87 puntos; no se usa como enunciado vigente de S3.",
+  "otra_diferencia": "Instrucción específica solicita video; caracterización general dice video o en vivo. Material preparado para video.",
+  "fecha_limite_confirmada": null
+}

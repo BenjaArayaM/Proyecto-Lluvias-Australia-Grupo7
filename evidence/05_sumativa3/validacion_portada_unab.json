@@ -1,0 +1,92 @@
+{
+  "fecha_utc": "2026-10-24T18:02:24.051636+00:00",
+  "referencia": "Portada de informe_sumativa1_grupo7.pdf aportado por el estudiante",
+  "referencia_sha256": "a0bf9f5ff95a1253be644ae3272b4c781b88a0371950c57b4d724b95c3bc77c2",
+  "alineaciones": [
+    {
+      "texto": "UNIVERSIDAD ANDRÉS BELLO",
+      "S1_linea_base_bp": 203.40000915527344,
+      "S3_linea_base_bp": 203.39801025390625,
+      "diferencia_bp": 0.0019989013671875
+    },
+    {
+      "texto": "Magíster en Ciencia de Datos e Inteligencia Artificial",
+      "S1_linea_base_bp": 223.32000732421875,
+      "S3_linea_base_bp": 223.3179931640625,
+      "diferencia_bp": 0.00201416015625
+    },
+    {
+      "texto": "MCDI501",
+      "S1_linea_base_bp": 251.27999877929688,
+      "S3_linea_base_bp": 251.2769775390625,
+      "diferencia_bp": 0.003021240234375
+    },
+    {
+      "texto": "Integrantes",
+      "S1_linea_base_bp": 451.91998291015625,
+      "S3_linea_base_bp": 451.9149475097656,
+      "diferencia_bp": 0.005035400390625
+    },
+    {
+      "texto": "Benjamín Araya",
+      "S1_linea_base_bp": 470.1600036621094,
+      "S3_linea_base_bp": 470.1549377441406,
+      "diferencia_bp": 0.00506591796875
+    },
+    {
+      "texto": "Alan Cañete",
+      "S1_linea_base_bp": 483.4800109863281,
+      "S3_linea_base_bp": 483.4749450683594,
+      "diferencia_bp": 0.00506591796875
+    },
+    {
+      "texto": "Patricio Cortez",
+      "S1_linea_base_bp": 496.8000183105469,
+      "S3_linea_base_bp": 496.7939453125,
+      "diferencia_bp": 0.006072998046875
+    },
+    {
+      "texto": "Jorge Guaico",
+      "S1_linea_base_bp": 510.0,
+      "S3_linea_base_bp": 509.99395751953125,
+      "diferencia_bp": 0.00604248046875
+    },
+    {
+      "texto": "Docente: Jean Paul Maidana",
+      "S1_linea_base_bp": 554.6400146484375,
+      "S3_linea_base_bp": 554.6339721679688,
+      "diferencia_bp": 0.00604248046875
+    },
+    {
+      "texto": "Repositorio y rama del análisis",
+      "S1_linea_base_bp": 594.1199951171875,
+      "S3_linea_base_bp": 594.1129760742188,
+      "diferencia_bp": 0.00701904296875
+    }
+  ],
+  "estructura_conservada": [
+    "Logo",
+    "Universidad",
+    "Magíster",
+    "Código/nombre curso",
+    "Evaluación",
+    "Subtítulo",
+    "Proyecto",
+    "Grupo/ponderación",
+    "Cuatro integrantes",
+    "Dataset",
+    "Docente",
+    "Fecha",
+    "Repositorio"
+  ],
+  "campos_actualizados": [
+    "Evaluación Sumativa 3",
+    "Subtítulo",
+    "Ponderación 60 %",
+    "Fecha preparación 24/10/2026"
+  ],
+  "logo_original_sha256": "17757d77fc7eb13c98460c52ed248db86d7244de070ad630378fc0a9497ae6b4",
+  "logo_sin_modificaciones": true,
+  "revision_visual": true,
+  "sin_rama_remota_inventada": true
+}

@@ -1,4 +1,20 @@
-> Estado actual: F1 y S1 entregadas y retroalimentadas; S2 preparada con evidencia Work. Las fichas originales de F1 se conservan como registro histórico. La ficha vigente de S2 está en `continuidad_sumativa2.md`.
+<!-- ESTADO_S3_WINDOWS -->
+> **Estado S3 actualizado al 25 de octubre de 2026:** reproducción Windows
+> verificada: 16 celdas en orden, ningún error y 22 controles correctos.
+> Los resultados cotejados coinciden con Work dentro de tolerancia 1e-7.
+> Benjamín confirmó que PDF y PowerPoint abren en su computador.
+> Evidencias: `evidence/05_sumativa3/validacion_windows.json` y
+> `evidence/05_sumativa3/validacion_windows.md`.
+> Permanecen pendientes revisión académica grupal, ensayo/grabación,
+> revisión para commit, publicación y entrega en Canvas.
+>
+> Los registros originales de Work y las menciones de pendientes en los
+> materiales preparados entonces se conservan como antecedentes históricos.
+> Esta actualización acredita reproducción y apertura; no acredita por sí
+> sola revisión visual exhaustiva, participación grupal ni entrega.
+<!-- FIN_ESTADO_S3_WINDOWS -->
+
+> Estado actualizado al 24 de octubre de 2026: F1, S1, S2 y F2 entregadas y retroalimentadas, según lo informado por el estudiante y los materiales aportados. S3 desarrollada y validada en Work; Windows, revisión grupal, video y entrega pendientes. Las fichas siguientes se conservan como registro histórico; fichas vigentes: `continuidad_sumativa2.md` y `continuidad_sumativa3.md`.
 
 # Fichas de continuidad — MCDI501 — Grupo 7
 
@@ -110,3 +126,12 @@ No se inicia ninguna de esas fases en este paquete.
 ## 05_sumativa3 — Sumativa 3 — Cierre y comunicación
 
 **Estado:** pendiente de autorización, auditoría específica y desarrollo. Sin resultados generados. Al iniciar, revisar la ficha de F1, los vacíos pendientes y la rúbrica correspondiente. Rutas reservadas: `results/05_sumativa3/`, `reports/05_sumativa3/` y `evidence/05_sumativa3/`.
+
+
+## 04_formativa2 — Referencia para el cierre
+
+F2 fue entregada y retroalimentada por el profesor. S3 reproduce su partición 70/30 estratificada (99.535 / 42.658), métricas y matriz antes de modificar procedimientos. Referencia: recall 39,82 %, AUC 0,8164 y 5.755 falsos negativos. La prueba ya utilizada se declara en toda interpretación de S3. Los archivos originales se conservan.
+
+## 05_sumativa3 — Cierre integrado
+
+La ficha vigente está en [continuidad_sumativa3.md](continuidad_sumativa3.md). Conserva predictores, coeficientes/OR e intervalos, influencia por localidad, métricas, imputación, simulación, decisiones y rutas de evidencia. Notebook completo verificado en Work con 16 celdas, 22 controles y 2.000 remuestras; Windows, revisión grupal, video y entrega no se infieren de esa ejecución. Ver [reproduccion_sumativa3.md](reproduccion_sumativa3.md) antes de incorporar la actualización a una nueva rama creada por el estudiante.

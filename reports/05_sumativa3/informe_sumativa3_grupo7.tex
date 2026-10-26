@@ -1,0 +1,363 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[left=2.05cm,right=2.05cm,top=1.95cm,bottom=2.05cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,tabularx,graphicx,xcolor,fancyhdr,enumitem}
+\usepackage{caption,microtype,eso-pic}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\definecolor{azul}{HTML}{233D54}
+\definecolor{gris}{HTML}{565E64}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.40em}
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.16}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\captionsetup{font=small,labelfont=bf,skip=4pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{gris}MCDI501 \;|\; Sumativa 3: modelamiento integrado}
+\fancyhead[R]{\small\color{gris}Grupo 7}
+\fancyfoot[L]{\footnotesize\color{gris}Universidad Andrés Bello \;|\; Magíster en Ciencia de Datos e IA}
+\fancyfoot[R]{\footnotesize\thepage\,/\,10}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\titulo}[2]{\vspace*{0.1em}{\Large\bfseries\color{azul}#1}\par{\small\color{gris}#2}\par\vspace{0.35em}}
+\newcommand{\subtitulo}[1]{\par\vspace{0.1em}{\bfseries\color{azul}#1}\par}
+\newcommand{\figura}[3]{\begin{center}\includegraphics[width=\linewidth,height=#2,keepaspectratio]{../../results/05_sumativa3/figures/#1}\captionof{figure}{#3}\end{center}}
+\newcommand{\fuente}{\vspace{-0.3em}{\footnotesize\color{gris}Fuente: elaboración del Grupo 7; datos y cálculos de esta ejecución.}\par}
+\input{datos_sumativa3.tex}
+\begin{document}
+\input{portada_unab.tex}
+
+\titulo{1. Resumen ejecutivo e introducción}{Integración de evidencia y decisiones para clasificar RainTomorrow}
+El modelo seleccionado mediante validación interna alcanza un ROC-AUC de
+\AUCFinal{}, recall de \RecallFinal{}\,\% y precision de \PrecisionFinal{}\,\%
+en los 42.658 registros de prueba. El recall aumenta \CambioRecall{} puntos
+porcentuales respecto de F2, con un cambio de accuracy de \CambioAccuracy{}
+puntos. La mejora implica un intercambio entre detección y falsas alarmas:
+todavía quedan \FalsosNegativos{} días lluviosos sin detectar y
+\FalsosPositivos{} falsas alertas. El remuestreo identifica incertidumbre
+geográfica que el intervalo convencional subestima para algunos coeficientes.
+
+\subtitulo{Problema y alcance}
+Se estudia la relación entre condiciones meteorológicas de un día registrado
+y \texttt{RainTomorrow}. La aplicación de referencia es una alerta que ayude a
+planificar actividades sensibles a lluvia. El archivo \textit{Rain in Australia}
+(s.\,f.) contiene 145.460 observaciones, 23 columnas y 49 localidades.
+Las 3.267 respuestas ausentes se excluyen; quedan 142.193 registros etiquetados.
+Se conserva el archivo original y se documenta su identidad mediante SHA-256.
+El análisis es retrospectivo: el dataset no certifica una hora operacional de
+emisión ni disponibilidad en tiempo real de todas las mediciones del día.
+
+\begin{center}
+\captionof{table}{La evidencia anterior determina decisiones verificables de S3.}
+\small
+\begin{tabularx}{\linewidth}{@{}lXX@{}}\toprule
+Fase & Evidencia propia & Decisión en el cierre\\\midrule
+S1 y S2 & Diferencia media de humedad 20,08 pp; IC bootstrap [18,52; 21,62]. & Incorporar \texttt{Humidity3pm} e interpretar su asociación ajustada.\\
+S2 & MaxTemp--Temp3pm: $\rho=0,984$, estable bajo remuestreo. & Conservar MaxTemp y excluir Temp3pm de los clasificadores.\\
+S1 y S2 & Sunshine ausente en 48,01\,\% del archivo y en todas las filas de 19 localidades. & Comparar eliminación, mediana y regresión; declarar el supuesto de transporte a estaciones sin datos.\\
+S2 & Humedad--Rainfall cambia de 0,444 a 0,307 al filtrar en 2 mm. & Conservar extremos plausibles; evaluar log1p(Rainfall) sin eliminar lluvia legítima.\\
+F2 & Recall 39,82\,\%, AUC 0,8164 y 5.755 falsos negativos. & Ponderar clases y fijar umbrales con predicciones OOF de entrenamiento.\\\bottomrule
+\end{tabularx}
+\end{center}
+\fuente
+
+\subtitulo{Objetivo integrado}
+Comparar estrategias de faltantes y tres procedimientos logísticos, evaluar
+estabilidad de coeficientes y traducir la evidencia a recomendaciones.
+La partición 70/30 estratificada y la semilla 42 conservan F2: 99.535 registros
+de entrenamiento y 42.658 de prueba. Los valores de F2 se reprodujeron antes
+del desarrollo. Los antecedentes exploraron el archivo completo y F2 ya observó
+la prueba; los resultados describen esta comparación académica y no una
+validación externa independiente.
+\clearpage
+
+\titulo{2. Manejo de datos faltantes}{Regresión múltiple y elección informada de estrategia}
+Se recuperó la auditoría de S1. Entre respuestas conocidas, Sunshine presenta
+\FaltantesSunModelo{}\,\% de ausencia. El patrón por localidad cuestiona MCAR;
+MAR condicionado a covariables se utiliza como supuesto de trabajo, sin descartar
+MNAR (Rubin, 1976). La regresión determinista no elimina esta incertidumbre.
+
+Cada una de las 16 variables numéricas incompletas se modeló mediante OLS con
+tres predictores y casos completos de entrenamiento. Se priorizaron pares
+validados en S2 y se limitó la redundancia entre predictores. La matriz exportada
+de S1 cubre siete variables; las relaciones restantes se completaron y rotularon
+como \textit{ampliación S3 de entrenamiento}. La respuesta futura no participa
+en ninguna imputación. La validación interna retiene el 20\,\% de donantes.
+
+\begin{center}
+\captionof{table}{Reconstrucción de variables numéricas en donantes observados de entrenamiento.}
+\TablaImputacion
+\end{center}
+\fuente
+
+En Sunshine, el RMSE baja de \RMSESolMed{} a \RMSESolReg{} horas
+(\MejoraRMSE{}\,\%; $R^2=\RDSol{}$). Se eligió regresión con la regla
+predefinida de reducción de RMSE de al menos 5\,\% frente a mediana.
+La elección utiliza reconstrucción de entrenamiento y cobertura, no el desempeño
+de prueba. Mediana y eliminación se conservan para el análisis de sensibilidad.
+
+\figura{01_imputacion_regresion.png}{4.7cm}{Validación de Sunshine y QQ de residuos: buena reconstrucción no equivale a normalidad ni valida estaciones sin datos.}
+
+Si faltan covariables al aplicar una regresión, se usa su mediana auxiliar de
+entrenamiento: ocurrió en \FallbackSol{} de \ImputadosSol{} imputaciones de
+Sunshine en train. Los recortes físicos se aplican solo a valores imputados;
+los observados permanecen intactos. Shapiro y Breusch--Pagan señalan desviaciones
+de normalidad y homocedasticidad; las regresiones se utilizan para predicción
+condicional, con cautela inferencial. Los CSV detallan conteos y diagnósticos.
+\clearpage
+
+\titulo{3. Construcción y selección de modelos}{Variables informadas por S1/S2 y validación dentro de entrenamiento}
+M1 conserva Humidity3pm, Sunshine, Rainfall y MaxTemp de F2. M2 aplica stepwise
+bidireccional AIC a ocho candidatos: los antecedentes se complementan en train
+con viento, presión, humedad matinal y nubosidad. Log1p(Rainfall) mantiene el
+orden de las precipitaciones y modera su asimetría sin descartar extremos.
+M3 minimiza BIC entre los 14 subconjuntos de uno a tres predictores de M1.
+La restricción hace explícita la solicitud de un modelo reducido: no se presenta
+como el BIC mínimo entre todas las especificaciones.
+
+AIC y BIC se calculan sin ponderación, sobre las mismas observaciones, según
+sus penalizaciones por complejidad (Akaike, 1974; Schwarz, 1978).
+Después se reajusta cada modelo para clasificación con pesos
+$w_c=n/(2n_c)$: \PesoYes{} para lluvia y \PesoNo{} para ausencia
+(Scikit-learn developers, s.\,f.). Los scores resultantes no están calibrados
+automáticamente como probabilidades meteorológicas.
+
+\begin{center}
+\captionof{table}{Selección sobre entrenamiento: AIC/BIC no ponderados y métricas fuera de pliegue.}
+\TablaSeleccion
+\end{center}
+\fuente
+
+Los cinco pliegues estratificados reajustan imputación y escalamiento y repiten
+la selección de variables dentro del entrenamiento interno. Se escoge el mayor
+AUC OOF; diferencias de hasta 0,002 favorecen menos predictores. Cada umbral
+maximiza F1 OOF. La especificación y los umbrales quedan registrados antes de
+predecir prueba. El procedimiento elegido es \ModeloFinal{}, con
+umbral \UmbralFinal{} sobre su score ponderado.
+
+\begin{center}
+\captionof{table}{Coeficientes estandarizados y odds ratios de las tres especificaciones.}
+\TablaCoeficientesTres
+\end{center}
+\fuente
+
+En el modelo final, aumentar Humidity3pm en \DEHumedad{} pp se asocia con
+multiplicar las odds del ajuste ponderado por \ORHumedad{}, manteniendo
+constantes los otros predictores. Para log1p(Rainfall), duplicar $(1+\text{mm})$
+se asocia con OR=\ORDoblarRain{}. Un OR no multiplica directamente la probabilidad.
+Los signos ajustados pueden diferir de las correlaciones marginales de S1;
+no representan efectos causales. El notebook presenta los resúmenes y los
+intervalos convencionales de las tres especificaciones.
+\clearpage
+
+\titulo{4. Desempeño predictivo}{Discriminación, detección de lluvia y falsas alertas}
+\begin{center}
+\captionof{table}{Desempeño aparente de entrenamiento y de prueba con umbrales F1 OOF.}
+\TablaMetricas
+\end{center}
+\fuente
+\figura{03_modelos_roc_metricas.png}{5.6cm}{ROC y métricas de prueba. El AUC es discriminación y no porcentaje de clasificaciones correctas.}
+\figura{04_matrices_confusion.png}{7.7cm}{Matrices para los tres modelos en train y test. Filas reales, columnas predichas; conteos y porcentajes por clase real.}
+
+El modelo final obtiene accuracy \AccuracyFinal{}\,\%, precision
+\PrecisionFinal{}\,\%, recall \RecallFinal{}\,\%, F1 \FUnoFinal{} y PR-AUC
+\PRAUCFinal{}. Detecta \VerdaderosPositivos{} días de lluvia y omite
+\FalsosNegativos{}. El aumento del recall frente a F2 convive con más falsas
+alarmas; el uso de alertas requiere valorar ese costo. La mejora cambia
+variables, imputación, pesos y umbral simultáneamente, por lo que no se atribuye
+a una única intervención. Se publican además métricas con umbral 0,50 como referencia.
+\clearpage
+
+\titulo{5. Estabilidad de coeficientes}{Bootstrap de localidades y comparación con intervalos tradicionales}
+Se obtuvieron \BootstrapValidas{} remuestras válidas y
+\NumeroFallosBootstrap{} fallos, remuestreando las 49 localidades de entrenamiento
+con reemplazo. Sus registros disponibles permanecen juntos. En cada remuestra
+se reajustan regresiones de imputación, medianas auxiliares, escala y pesos de
+clase. Se fijan las listas de predictores: la inferencia es condicional a la
+selección y no incorpora su incertidumbre completa. La independencia entre
+localidades sigue siendo un supuesto (Cameron y Miller, 2015).
+
+Para acelerar sin modificar el estimador se usan multiplicidades de localidad
+y estadísticos OLS por conglomerado. Se verificó la equivalencia contra duplicación
+real de filas y un GLM independiente. Las betas se expresan por la misma DE de
+referencia, evitando mezclar escalas entre remuestras.
+
+\begin{center}
+\captionof{table}{IC 95\,\% de betas y OR. Signo\% es la frecuencia descriptiva de conservar el signo original.}
+\TablaBootstrap
+\end{center}
+\fuente
+\figura{05_bootstrap_OR.png}{6.8cm}{Intervalos Wald y percentil del modelo final. OR=1 indica ausencia de asociación ajustada en esta parametrización.}
+
+El intervalo percentil incluye cero para \PredictoresInestables{}; su
+correspondiente intervalo de OR incluye uno. La comparación con Wald muestra
+por qué significancia convencional y estabilidad geográfica son preguntas
+distintas. Humidity3pm conserva una asociación positiva, con OR
+\ORHumedad{} e IC bootstrap \ICHumedad{} por \DEHumedad{} pp.
+Se calculó también BCa mediante jackknife de 49 localidades y se exportaron
+distribuciones y convergencia por prefijos. La frecuencia de signo no es una
+probabilidad posterior. El remuestreo no resuelve MNAR ni confusión no medida.
+\clearpage
+
+\titulo{6. Diagnóstico y alcance inferencial}{Multicolinealidad, forma funcional, residuos e influencia}
+\begin{minipage}[t]{0.47\linewidth}
+\captionof{table}{VIF en entrenamiento preparado.}
+\TablaVIF
+\end{minipage}\hfill
+\begin{minipage}[t]{0.50\linewidth}
+\captionof{table}{Box--Tidwell exploratorio y cambio relativo de deviance.}
+\TablaLinealidad
+\end{minipage}
+\par\medskip
+El VIF máximo es \MaxVIF{}, sin evidencia de redundancia extrema como la del
+par MaxTemp--Temp3pm descartado. Las extensiones no lineales detectan desviaciones
+para algunas variables; sus reducciones relativas de deviance ayudan a separar
+significancia con gran muestra de importancia práctica. Los valores p son
+exploratorios bajo el ajuste ponderado y no corrigen la dependencia espacial.
+Estos diagnósticos no permiten afirmar que la forma lineal del logit sea exacta.
+
+\figura{07_diagnostico.png}{6.2cm}{Residuos y calibración OOF. Un AUC favorable puede coexistir con scores que no coinciden con frecuencias observadas.}
+
+La regresión logística no exige residuos normales ni homocedásticos. Se
+examinaron residuos de deviance y Pearson, leverage y Cook. El umbral descriptivo
+$4/n$ marca \CookMarcados{} registros; no se eliminaron automáticamente.
+La magnitud de las señales y el contexto meteorológico deben acompañar cualquier
+decisión de depuración. Conservar extremos plausibles responde a la sensibilidad
+del filtro de S2, que cambiaba la muestra al cortar precipitaciones en 2 mm.
+
+\subtitulo{Influencia por localidad}
+El jackknife identifica \LocalidadesInfluyentes{} como las tres localidades
+con mayor cambio máximo de beta en escala común. Esto indica influencia sobre
+el ajuste, sin certificar errores de medición. Se publican las 49 omisiones y
+las 20 observaciones con mayor Cook para revisión trazable.
+
+\subtitulo{Interpretación de probabilidades}
+La ponderación de clases modifica el objetivo del ajuste. La curva de calibración
+OOF evidencia la distancia entre score y frecuencia real de lluvia. En este trabajo
+el score sirve para ordenar y clasificar con un umbral validado internamente;
+su uso como probabilidad operacional requiere calibración y validación adecuadas
+al horizonte y al contexto de decisión.
+\clearpage
+
+\titulo{7. Impacto de la imputación}{Misma especificación, umbral y escala de interpretación}
+\begin{center}
+\captionof{table}{Comparación sobre prueba propia y sobre los mismos casos comunes.}
+\TablaImpacto
+\end{center}
+\fuente
+La eliminación cubre \CoberturaEliminacion{}\,\% de prueba y
+\LocEliminacion{} localidades. Un AUC superior en esa muestra no demuestra
+superioridad sobre estrategias que cubren las 49 localidades. Los casos comunes
+permiten comparar procedimientos sobre idénticos registros; aun así, describen
+una subpoblación con mayor completitud de medición.
+
+\figura{08_impacto_imputacion.png}{5.1cm}{Cobertura y AUC sobre casos comunes. El tamaño y la composición de la población importan para interpretar la diferencia.}
+
+\begin{center}
+\captionof{table}{Betas e IC Wald del modelo final por la misma DE de referencia.}
+\TablaCoefImpacto
+\end{center}
+\fuente
+
+La imputación por mediana concentra Sunshine y reduce su variación. La regresión
+conserva variación asociada a covariables, aunque produce encogimiento y depende
+de supuestos de transporte. La estrategia principal se eligió por reconstrucción
+de entrenamiento y conservación de cobertura. La comparación predictiva constituye
+un análisis de sensibilidad de esa decisión, manteniendo predictores y umbral.
+La ausencia estructurada y la incertidumbre sobre valores no observados impiden
+interpretar cualquier imputación como recuperación de la verdad meteorológica.
+\clearpage
+
+\titulo{8. Simulación para una decisión de planificación}{Ampliación S3 que incorpora la retroalimentación de S2}
+La simulación de S2 describía una media. En el cierre se formula una decisión
+explícita: cuánta capacidad para atender días lluviosos se necesita en un escenario
+hipotético de 30 días, aceptando 5\,\% de riesgo de excedencia. El riesgo es un
+supuesto de planificación, no un requisito operacional observado.
+
+Se estiman frecuencias solo en entrenamiento con Humidity3pm observado:
+\ProbMCAlta{}\,\% cuando la humedad es al menos 70\,\% y
+\ProbMCBaja{}\,\% cuando es menor. Bajo días iid y parámetros fijos,
+$D\sim\mathrm{Binomial}(30,\widehat p)$. Se generan 10.000 escenarios por grupo,
+se contrasta la media con $30\widehat p$ y se toma el cuantil discreto superior
+del 95\,\% como capacidad de referencia.
+
+\begin{center}
+\captionof{table}{Calibración de entrenamiento, resultados Monte Carlo y capacidad de referencia.}
+\TablaMonteCarlo
+\end{center}
+\fuente
+\figura{09_montecarlo_decision.png}{6.2cm}{Distribución del número de días lluviosos y capacidad que cubre al menos el 95\,\% de los escenarios simulados.}
+
+Las medias son \MediaMCAlta{} y \MediaMCBaja{} días; las capacidades resultan
+\CapacidadAlta{} y \CapacidadBaja{} días, respectivamente. El resultado informa
+una reserva de recursos bajo condiciones estipuladas y hace explícita la tolerancia
+al riesgo. Las tablas registran convergencia, MCSE y probabilidad analítica de
+exceder 15 días. Una ausencia de excedencias en 10.000 simulaciones no implica
+probabilidad nula: se informa también la cota binomial de Monte Carlo.
+
+\subtitulo{Discusión integrada}
+S1 caracteriza asociaciones y faltantes; S2 evalúa su estabilidad y muestra
+sensibilidad al rango de lluvia; F2 establece una referencia predictiva;
+S3 compara procedimientos, detecta coeficientes inestables y explicita decisiones.
+La simulación no pronostica 30 fechas futuras: ignora dependencia diaria,
+estacionalidad y parte de la incertidumbre de $p$. La partición aleatoria exigida
+evalúa la muestra disponible. La generalización temporal y geográfica queda
+como limitación, conforme al alcance indicado por el docente.
+\clearpage
+
+\titulo{9. Conclusiones y reproducción}{Recomendaciones sustentadas por el proyecto completo}
+\begin{itemize}
+\item \textbf{Detección y errores.} El procedimiento \ModeloFinal{} alcanza AUC
+\AUCFinal{} y recall \RecallFinal{}\,\%. Su uso debe valorar conjuntamente
+\FalsosNegativos{} omisiones y \FalsosPositivos{} falsas alertas; accuracy
+aislada no sustenta una decisión de alerta.
+\item \textbf{Cobertura y faltantes.} Se recomienda conservar la comparación con
+mediana y comunicar la dependencia de Sunshine respecto de estación. La eliminación
+reduce cobertura a \CoberturaEliminacion{}\,\%; la imputación no sustituye medición.
+\item \textbf{Incertidumbre.} La estabilidad de Humidity3pm contrasta con
+\PredictoresInestables{}. El intervalo por localidad complementa la inferencia
+convencional y mantiene visibles sus supuestos.
+\item \textbf{Aplicación.} Antes de operar se requiere definir horizonte,
+disponibilidad de variables, costos de errores y calibración. La capacidad
+\CapacidadAlta{}/\CapacidadBaja{} corresponde únicamente al escenario simulado.
+\end{itemize}
+
+\subtitulo{Trazabilidad y reproducción}
+El notebook maestro declara semillas 42 y 50101--50104, cinco pliegues y
+2.000 remuestras válidas. El código, tablas, figuras y JSON permiten reconstruir
+los resultados; las evidencias separan Work y Windows. El SHA-256 del original es
+{\fontsize{8.6}{10}\selectfont\texttt{573fd715cd69fcacc4df32024d823b450ae3edaae7e8ff2eeb623adbed424014}}.
+Las instrucciones de instalación y la auditoría de los seis criterios acompañan
+el repositorio. La participación real en el video y la entrega en Canvas requieren
+sus evidencias específicas.
+
+\subtitulo{Referencias}
+{\fontsize{9}{11}\selectfont
+\setlength{\parskip}{5pt}
+\hangindent=1.2em\hangafter=1 Akaike, H. (1974). A new look at the statistical model identification.
+\textit{IEEE Transactions on Automatic Control, 19}(6), 716--723.
+\url{https://doi.org/10.1109/TAC.1974.1100705}
+
+\hangindent=1.2em\hangafter=1 Cameron, A. C., \& Miller, D. L. (2015). A practitioner's guide to cluster-robust inference.
+\textit{Journal of Human Resources, 50}(2), 317--372.
+\url{https://doi.org/10.3368/jhr.50.2.317}
+
+\hangindent=1.2em\hangafter=1 \textit{Rain in Australia}. (s.\,f.). Kaggle.
+\url{https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package}
+
+\hangindent=1.2em\hangafter=1 Rubin, D. B. (1976). Inference and missing data.
+\textit{Biometrika, 63}(3), 581--592.
+\url{https://doi.org/10.1093/biomet/63.3.581}
+
+\hangindent=1.2em\hangafter=1 Schwarz, G. (1978). Estimating the dimension of a model.
+\textit{The Annals of Statistics, 6}(2), 461--464.
+\url{https://doi.org/10.1214/aos/1176344136}
+
+\hangindent=1.2em\hangafter=1 Scikit-learn developers. (s.\,f.). \textit{compute\_class\_weight}.
+\url{https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html}
+}
+\end{document}

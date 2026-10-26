@@ -1,0 +1,156 @@
+{
+  "base_commit": "28e3a8a0805e11fd1b93beb273db7ca4060aa557",
+  "metodo": "Lectura mediante API de GitHub; sin comandos Git",
+  "archivos": [
+    {
+      "archivo": ".gitignore",
+      "blob_sha1": "6e104312927a3a9feea08b424a1168e2ca0a5f06",
+      "sha256": "bd2aa661226c0040c1f2c9d1f529dc9aa2460a06c3dbb23e1428fa9b927e9968"
+    },
+    {
+      "archivo": "README.md",
+      "blob_sha1": "ac36f414cf6df7ff3df83cdfe50651d538a84e9e",
+      "sha256": "d28d6559b54e8590e72d13faddd49f119ea19b0c3cb8976e294f00e86fd3eb46"
+    },
+    {
+      "archivo": "docs/continuidad.md",
+      "blob_sha1": "fc23eeaf61ab6c83d1aa04051f8c177ec85c39a0",
+      "sha256": "36e079083df43d5d54d586011ebe2f406cb806239681a20fa6c7cd5e1d3012c7"
+    },
+    {
+      "archivo": "docs/continuidad_sumativa2.md",
+      "blob_sha1": "b263df4dfe70c2ef4469a44e9d327cc541933590",
+      "sha256": "e54f407319e8779f379f4b59597d62b99ac7d5e84fc92afec93373ee179e437f"
+    },
+    {
+      "archivo": "notebooks/04_formativa2_modelamiento_predictivo.ipynb",
+      "blob_sha1": "e356ada51d772a053ee50294b2425e0e835db404",
+      "sha256": "fa64d6620dddfc622ca7efef20c590fab70c0e0a6df49331c9aa9ee7445eaa4b"
+    },
+    {
+      "archivo": "requirements-lock-windows.txt",
+      "blob_sha1": "19ec973f0cb7caa1b75057a993ce0df6300f8a69",
+      "sha256": "981e1ff92258096f7f86ccac441f2170beb50e264a54182feb03f9dd8aec4103"
+    },
+    {
+      "archivo": "requirements-sumativa2.txt",
+      "blob_sha1": "e5c5740c76e95d8478edc138d6e426bf6b42881c",
+      "sha256": "bd306b2b42df9bee51eac1838b691faf3e51a2af493e559205f68cef0eb45bdc"
+    },
+    {
+      "archivo": "requirements.txt",
+      "blob_sha1": "2e66641b9f176c210be779b4984311ad12640baa",
+      "sha256": "cacdd39f3f33d883f65c08e23b5bc30b77253462ded2b6f6857a009e251c2759"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/correlacion_objetivo.csv",
+      "blob_sha1": "664ded160a08a5d00e5dd629b5758e297723f2a8",
+      "sha256": "1d6d75db300b8db73d681c4f8ea6670951d2a6efba251c1b480e2feafbecddc8"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/faltantes.csv",
+      "blob_sha1": "e6892d1a2ead98fac7ed54a6a33591108c09d11b",
+      "sha256": "87fb1c00d104d832e7a9b453276741cfba699889b4ed481414804d854feff2d6"
+    },
+    {
+      "archivo": "results/01_formativa1/tables/matriz_correlacion.csv",
+      "blob_sha1": "acba33e7fd9260dfebb01280f73beda637b2541b",
+      "sha256": "8f7a11d54ff255128b8e45e58d50696c3a90fc68c50daeea08c7d96395529ee7"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/auditoria_calidad_datos.csv",
+      "blob_sha1": "a83fbc801538fe41555e8f1b5a6ea706a23f494a",
+      "sha256": "55ad9ae7340f15bd4f0e0ecdbf0708eb291cbb077aa08d70cc5d3a8869a04a67"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/dependencia_temporal_humedad.csv",
+      "blob_sha1": "1842f7af09815459ce33539624e31bc535c6e0be",
+      "sha256": "89ff7d852b6f0d8df5708f192ce46ff54724251f2302d377bd52a33d594832be"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/estadistica_descriptiva_curtosis.csv",
+      "blob_sha1": "4adea82b62031cc099b7ac2c39f44ee2458d6e96",
+      "sha256": "91e07539192d034a5934a6f44240ad7b70d5733f6d389112122341fb80073090"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/intervalo_proporcion_lluvia.csv",
+      "blob_sha1": "98ef419bbaa2132463ab6962a1d32340cb639aec",
+      "sha256": "3072a9ad4576b314aadef21c70d28fce75771ece3ee81a907753e754af97dcc1"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/intervalos_medias_localidades.csv",
+      "blob_sha1": "3d3d81629c6a869675f8ab078ec868c56385ce2a",
+      "sha256": "21cfd9f54cc032758a98809d3bca7f2cab5199b3a1e8f40bbd4f7d52f6cdb379"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/matriz_correlaciones_spearman.csv",
+      "blob_sha1": "40f0fb46d87d9520323010126ea0e8ecd9fe9335",
+      "sha256": "bf8a1d4b661f5aee6c5a492897cb74dc13282a973ab2051f12759dafb5ac020a"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/n_pares_correlaciones.csv",
+      "blob_sha1": "8075f4af6243cc05e4e661b6bf101acef465b12f",
+      "sha256": "bcc25c61af1de59a0b8d08b879ca75225c768fb54eee86f486c6f0d5a792df38"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/porcentajes_lluvia_hoy_manana.csv",
+      "blob_sha1": "cf9d6596d22ef3bf19d840b5080b57fb33d7cd59",
+      "sha256": "2746b04466a07a377c77151302e5b380497e3c1c4a611c685d824418972ecb16"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/proporcion_lluvia_localidades.csv",
+      "blob_sha1": "3cba72071bdd3a05974d89c962016571e3653c21",
+      "sha256": "eef44df24361895eff57e45a4768343244e96520bb99cba2b7f1bd154cc71345"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/sensibilidad_lluvia_por_localidad.csv",
+      "blob_sha1": "f59fc13057ca14ea0ea26860d2fa340c805d6c8a",
+      "sha256": "eeb1dcc7befe28411874e8f52938132cbb22377d8ac33eb9f9804717fe156a48"
+    },
+    {
+      "archivo": "results/02_sumativa1/tables/tabla_contingencia_lluvia.csv",
+      "blob_sha1": "7ed7371fb8d8c52bcc4ffaa8d9deeb3f64ec5cca",
+      "sha256": "32aba74c2420d0ba2caf779f25d0f894a50dd2847948112492445cef5b6b1405"
+    },
+    {
+      "archivo": "results/03_sumativa2/resultados_validados_s2.json",
+      "blob_sha1": "e4cd7b50dc8e0d138a0d655d7eb2eb6096094b6d",
+      "sha256": "0cefebada97a2f3bf2f1b9aa8d591904d9508fab361873f0f3060a54031a1ea6"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/coeficientes_logit.csv",
+      "blob_sha1": "c368c61855faaac78f5a6cfa27e3c611c624b492",
+      "sha256": "9c1d90512157bcfb5fa97e0e9caeced5259861ac5b5a45f20ad84c6c3bed834d"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/matriz_confusion.csv",
+      "blob_sha1": "76f1499e3553a306bd632d901a1fc70c0b6da7f2",
+      "sha256": "a6b11aa904b79e5425b2ca107cbeb2b2a8a65a31ac1876bbea2b96394f7b6313"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/metricas_test.csv",
+      "blob_sha1": "4056633ba065d822c95afdf659eceadeb3a69028",
+      "sha256": "24644818035e04738cb22851affc0c7bb69f2ab5c55726751e6e713adabd1a8a"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/particion.csv",
+      "blob_sha1": "a7866b5e9265c5640b96e949b50e3b983f96d418",
+      "sha256": "d8cb22753c501376af68f9c3fa1894794083027553f1821f1bee9ebe2ac95ec7"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/preprocesamiento.csv",
+      "blob_sha1": "847ed4360dc55c408aba82b78e50d440a6ad5a5d",
+      "sha256": "c1e201091ec8b6549b0dac82b17d86ae4e3651f7abfcde48189a1a7f9c947907"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/resumen_modelamiento.json",
+      "blob_sha1": "15d1870e8390b89007e4801054b6fccc5b2d903f",
+      "sha256": "f0182ce71f67d884a75f47f3c9a983115f70d1ec32cadb0dcd37460193d89532"
+    },
+    {
+      "archivo": "results/04_formativa2_jorge/vif_predictores.csv",
+      "blob_sha1": "72c31da359551ed01cfe5a20b3e1a5bcb92e247c",
+      "sha256": "5345014bb14563fa1b08df714f0de2117e73d18a6b5e16aaf93566f0692d1602"
+    }
+  ]
+}

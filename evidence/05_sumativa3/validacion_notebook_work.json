@@ -1,0 +1,41 @@
+{
+  "fecha_utc": "2026-10-24T18:02:24.051636+00:00",
+  "notebook": "notebooks/05_sumativa3_modelamiento_integrado.ipynb",
+  "sha256": "bc537491f96f83063047e1ceb115e5fe1b66d4db2bad17ea1689137e3f04ed05",
+  "metodo": "Kernel ipykernel.inprocess real y nuevo; evita sockets TCP del entorno Work.",
+  "nbformat_valido": true,
+  "celdas_totales": 34,
+  "celdas_codigo": 16,
+  "orden": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "errores_guardados": 0,
+  "ejecuciones_completas": 2,
+  "controles_correctos": 22,
+  "replicas_bootstrap_validas": 2000,
+  "pliegues_cv": 5,
+  "metadata_ejecucion_work": {
+    "bootstrap_validas": 2000,
+    "celdas_codigo_ejecutadas": 16,
+    "errores": 0,
+    "metodo": "ipykernel.inprocess: kernel real nuevo sin sockets TCP",
+    "pliegues_validacion": 5,
+    "tiempo_segundos": 137.32781938200014
+  },
+  "ejecucion_windows_verificada": false
+}

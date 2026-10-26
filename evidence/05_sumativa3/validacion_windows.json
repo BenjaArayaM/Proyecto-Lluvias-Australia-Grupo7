@@ -1,0 +1,40 @@
+{
+  "fecha_registro_utc": "2026-10-25T18:58:29.761569+00:00",
+  "fecha_ejecucion_utc": "2026-10-25T18:22:52.864259+00:00",
+  "evidencia_primaria": "ejecucion_sumativa3_windows.json",
+  "python": "3.12.0",
+  "versiones": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "ipykernel": "7.4.0",
+    "nbformat": "5.11.1"
+  },
+  "verificacion_local": "El estudiante ejecutó verificar_entrega_sumativa3.py y compartió su salida correcta: 16 celdas en orden, sin errores, 22 controles correctos, CSV intacto y huellas coincidentes.",
+  "comparacion_windows_work": {
+    "procedencia": "Comparación ejecutada por Benjamín y salida revisada en la conversación.",
+    "grupos_comparados": [
+      "modelo_final",
+      "metricas_tres_modelos",
+      "impacto_imputacion",
+      "montecarlo_decision_ampliacion_S3",
+      "bootstrap.intervalos"
+    ],
+    "tolerancia_relativa": 1e-07,
+    "tolerancia_absoluta": 1e-07,
+    "diferencias_fuera_tolerancia": 0
+  },
+  "archivos_comparacion_sha256": {
+    "results/05_sumativa3/resultados_validados_s3.json": "83ba208065d8d06d48c10c6bd5cc77c0406c4c10823b6618c7e99d9171ff162d",
+    "presentations/05_sumativa3/datos_presentacion.json": "3e9a7dde4e31fbfca88cc042968b1516e7db149226d0f543828993d6db9393eb"
+  },
+  "pendientes": [
+    "Apertura y revisión local de PDF y PPTX",
+    "Revisión conceptual grupal y grabación",
+    "Revisión de archivos para commit y publicación por el estudiante",
+    "Entrega en Canvas"
+  ]
+}
